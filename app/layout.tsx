@@ -95,6 +95,8 @@ export default function RootLayout({
           __html: JSON.stringify(schemaData),
         }}
       />
+      <script id="adsense-init" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5703495087334224"
+     crossOrigin="anonymous"></script>
       </head>
       
       <body className={`${inter.variable} ${playfair.variable} antialiased`}>
