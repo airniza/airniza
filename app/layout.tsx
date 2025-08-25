@@ -1,0 +1,108 @@
+import type { Metadata } from "next";
+import { Inter, Playfair_Display } from "next/font/google";
+import "./globals.css";
+import Footer from "@/components/Footer";
+import { GoogleAnalytics } from "@next/third-parties/google";
+import NewNavigation from "@/components/NewNavigation";
+
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  variable: "--font-playfair",
+});
+
+export const metadata: Metadata = {
+  title: {
+    default: "Airniza",
+    template: "%s | Airniza"
+  },
+  description:
+    "Check real-time Air Quality Index (AQI), PM2.5, humidity, and temperature to monitor air pollution instantly.",
+    applicationName: "Airniza",
+    openGraph:{
+      siteName: "Airniza",
+      title: "Airniza",
+      description: "Check real-time AQI, PM2.5, humidity, and temperature to stay informed about air pollution instantly.",
+      url: "https://airniza.com",
+      type: "website"
+
+
+    },
+    other: {"apple-mobile-web-app-title": "Airniza",
+            "apple-mobile-web-app-capable": "Yes",
+            "apple-mobile-web-app-status-bar-style": "default"
+
+    }
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+
+        const schemaData = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://airniza.com/#website",
+  "name": "Airniza",
+  "alternateName": "Current AQI Near Me",
+  "url": "https://airniza.com/",
+  "description": "Check live Air Quality Index (AQI), air pollution levels, PM2.5, temperature and humidity updates in your city.",
+  "inLanguage": "en",
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://airniza.com/#organization",
+    "name": "Airniza",
+    "url": "https://airniza.com/",
+    "logo": {
+      "@type": "ImageObject",
+      "@id": "https://airniza.com/#logo",
+      "url": "https://airniza.com/logo.png",
+      "width": 250,
+      "height": 60,
+      "caption": "Airniza Logo"
+    },
+    "sameAs": [
+      "https://www.facebook.com/profile.php?id=61579195018666",
+      "https://x.com/air_quality_now"
+    ]
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://airniza.com/"
+  },
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://airniza.com/search?query={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+
+
+
+
+
+
+  return (
+    <html lang="en" suppressHydrationWarning >
+      
+      <head>
+       <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(schemaData),
+        }}
+      />
+      </head>
+      
+      <body className={`${inter.variable} ${playfair.variable} antialiased`}>
+        <NewNavigation />
+        {children}
+        <Footer />
+        <GoogleAnalytics gaId="G-C4HYV9CTDC" />
+      </body>
+    </html>
+  );
+}
