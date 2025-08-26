@@ -36,28 +36,37 @@ export const locations = [
     },
     {
       state: "florida",
-      cities: ["jacksonville","miami","tampa","orlando","port-st-lucie","hialeah","cape-coral","tallahassee", "fort-lauderdale","pembroke-pines","hollywood","gainesville","miramar","palm-bay","coral-springs","west-palm-beach","lehigh-acres","lakeland","spring-hill","pompano-beach","clearwater","brandon",
-        
-        
-        
-        
-        "miami-gardens","davie","riverview","palm-coast","boca-raton","plantation-city","deltona","sunrise","fort-myers","north-port","alafaya","deerfield-beach","melbourne","town-n-country","daytona-beach","homestead","kissimmee","doral","miami-beach","boynton-beach","largo","pine-hills","the-villages","kendall","lauderhill","tamarac","wesley-chapel","poinciana","st-cloud","weston","ocala","delray-beach","sanford","port-orange"],
+      cities: ["jacksonville","miami","tampa","orlando","port-st-lucie","hialeah","cape-coral","tallahassee", "fort-lauderdale","pembroke-pines","hollywood","gainesville","miramar","palm-bay","coral-springs","west-palm-beach","lehigh-acres","lakeland","spring-hill","pompano-beach","clearwater","brandon","miami-gardens","davie","riverview","palm-coast","boca-raton","plantation","deltona","sunrise","fort-myers","north-port","alafaya","deerfield-beach","melbourne","town-n-country","daytona-beach","homestead","kissimmee","doral","miami-beach","boynton-beach","largo","pine-hills","the-villages","kendall","lauderhill","tamarac","poinciana","weston","ocala","delray-beach","port-orange"],
     },
     {
       state: "georgia",
-      cities: ["atlanta", "savannah", "augusta", "macon"],
+      cities: ["atlanta","macon","savannah","athens","south-fulton","sandy-springs","roswell","warner-robins","mableton","alpharetta","marietta","stonecrest","smyrna","valdosta","dunwoody"],
     },
     {
       state: "hawaii",
-      cities: ["honolulu", "pearl-city", "hilo", "kahului"],
+      cities: ["honolulu","east-honolulu","hilo","pearl-city","kailua","waipahu","kaneohe","kahului","mililani-town","kapolei","makakilo","schofield-barracks","ocean-pointe","wailuku","kaneohe","halawa","waimalu","waianae","royal-kunia","hawaiian-paradise-park","maili","nanakuli","waihee-waiehu"],
     },
-    {
+      {
       state: "idaho",
-      cities: ["boise", "idaho-falls", "twin-falls", "pocatello"],
+      cities: ["boise","meridian","nampa","caldwell","idaho-falls","pocatello","twin-falls","post-falls","mountain-home"],
     },
-    {
+     {
       state: "illinois",
-      cities: ["chicago", "springfield", "naperville", "peoria"],
+      cities: ["chicago","naperville","joliet","rockford","elgin","champaign","waukegan","cicero","schaumburg","evanston","arlington-heights","bolingbrook","decatur","palatine","skokie","des-plaines","orland-park","oak-lawn","mount-prospect","tinley-park","normal","hoffman-estates","downers-grove",
+        
+        
+        
+        
+        
+
+
+
+
+
+
+
+        
+        "glenview","elmhurst","lombard","buffalo-grove"],
     },
     {
       state: "indiana",
