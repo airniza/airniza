@@ -52,21 +52,7 @@ export const locations = [
     },
      {
       state: "illinois",
-      cities: ["chicago","naperville","joliet","rockford","elgin","champaign","waukegan","cicero","schaumburg","evanston","arlington-heights","bolingbrook","decatur","palatine","skokie","des-plaines","orland-park","oak-lawn","mount-prospect","tinley-park","normal","hoffman-estates","downers-grove",
-        
-        
-        
-        
-        
-
-
-
-
-
-
-
-        
-        "glenview","elmhurst","lombard","buffalo-grove"],
+      cities: ["chicago","naperville","joliet","rockford","elgin","champaign","waukegan","cicero","schaumburg","evanston","arlington-heights","bolingbrook","decatur","palatine","skokie","des-plaines","orland-park","oak-lawn","mount-prospect","tinley-park","normal","hoffman-estates","downers-grove","buffalo-grove"],
     },
     {
       state: "indiana",
@@ -78,7 +64,7 @@ export const locations = [
     },
     {
       state: "kansas",
-      cities: ["wichita", "topeka", "overland-park", "kansas-city"],
+      cities: ["wichita", "topeka", "overland-park"],
     },
     {
       state: "kentucky",
@@ -90,7 +76,7 @@ export const locations = [
     },
     {
       state: "maine",
-      cities: ["portland", "augusta", "bangor", "lewiston"],
+      cities: ["bangor"],
     },
     {
       state: "maryland",
@@ -98,7 +84,7 @@ export const locations = [
     },
     {
       state: "massachusetts",
-      cities: ["boston", "worcester", "springfield", "cambridge"],
+      cities: ["boston", "worcester"],
     },
     {
       state: "michigan",
@@ -106,7 +92,7 @@ export const locations = [
     },
     {
       state: "minnesota",
-      cities: ["minneapolis", "saint-paul", "duluth", "rochester"],
+      cities: ["minneapolis", "saint-paul", "duluth", ],
     },
     {
       state: "mississippi",
@@ -114,7 +100,7 @@ export const locations = [
     },
     {
       state: "missouri",
-      cities: ["kansas-city", "st-louis", "springfield", "columbia"],
+      cities: ["kansas-city", "springfield"],
     },
     {
       state: "montana",
@@ -122,7 +108,7 @@ export const locations = [
     },
     {
       state: "nebraska",
-      cities: ["omaha", "lincoln", "grand-island", "kearney"],
+      cities: ["omaha", "lincoln", ],
     },
     {
       state: "nevada",
@@ -130,7 +116,7 @@ export const locations = [
     },
     {
       state: "new-hampshire",
-      cities: ["nashua", "concord", "portsmouth"],
+      cities: ["nashua",],
     },
     {
       state: "new-jersey",
@@ -138,7 +124,7 @@ export const locations = [
     },
     {
       state: "new-mexico",
-      cities: ["albuquerque", "santa-fe", "las-cruces", "roswell"],
+      cities: ["albuquerque", "las-cruces"],
     },
     {
       state: "new-york",
@@ -162,7 +148,7 @@ export const locations = [
     },
     {
       state: "oregon",
-      cities: ["portland", "salem", "eugene", "bend"],
+      cities: ["portland", "eugene", "bend"],
     },
     {
       state: "pennsylvania",
@@ -174,7 +160,7 @@ export const locations = [
     },
     {
       state: "south-carolina",
-      cities: ["columbia", "charleston", "greenville", "myrtle-beach"],
+      cities: ["columbia", "charleston", "myrtle-beach"],
     },
     {
       state: "south-dakota",
@@ -190,11 +176,12 @@ export const locations = [
     },
     {
       state: "utah",
-      cities: ["salt-lake-city", "provo", "ogden", "st-george"],
+      cities: ["salt-lake-city", "provo", "ogden"],
     },
     {
       state: "vermont",
-      cities: ["burlington", "montpelier", "rutland", "bennington"],
+      cities: ["south-burlington","brattleboro","essex-junction"]
+,
     },
     {
       state: "virginia",
@@ -206,7 +193,8 @@ export const locations = [
     },
     {
       state: "west-virginia",
-      cities: ["charleston", "huntington", "morgantown", "wheeling"],
+      cities: ["parkersburg","weirton","beckley"]
+,
     },
     {
       state: "wisconsin",
@@ -218,6 +206,12 @@ export const locations = [
     },
   ],
 },
+
+
+
+
+
+
   // Canada start
   {
     country: "canada",
@@ -228,11 +222,11 @@ export const locations = [
       },
       {
         state: "british-columbia",
-        cities: ["vancouver", "victoria", "kelowna"],
+        cities: ["vancouver", "kelowna"],
       },
       {
         state: "quebec",
-        cities: ["montreal", "quebec-city", "gatineau"],
+        cities: ["quebec-city", "gatineau"],
       },
       {
         state: "alberta",
@@ -240,7 +234,7 @@ export const locations = [
       },
       {
         state: "manitoba",
-        cities: ["winnipeg", "brandon"],
+        cities: ["winnipeg"],
       },
     ],
   },
