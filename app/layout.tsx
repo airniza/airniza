@@ -15,7 +15,7 @@ const playfair = Playfair_Display({
 export const metadata: Metadata = {
   title: {
     default: "Airniza",
-    template: "%s | Airniza"
+    template: "%s - Airniza"
   },
   description:
     "Check real-time Air Quality Index (AQI), PM2.5, humidity, and temperature to monitor air pollution instantly.",
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
 
     },
     other: {"apple-mobile-web-app-title": "Airniza",
-            "apple-mobile-web-app-capable": "Yes",
+            "mobile-web-app-capable": "Yes",
             "apple-mobile-web-app-status-bar-style": "default"
 
     }
@@ -87,19 +87,19 @@ export default function RootLayout({
 
   return (
     <html lang="en" suppressHydrationWarning >
-      
       <head>
-       <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(schemaData),
-        }}
-      />
       <script id="adsense-init" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5703495087334224"
      crossOrigin="anonymous"></script>
       </head>
       
       <body className={`${inter.variable} ${playfair.variable} antialiased`}>
+        <script
+        type="application/ld+json"
+        suppressHydrationWarning
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(schemaData),
+        }}
+      />
         <NewNavigation />
         {children}
         <Footer />
