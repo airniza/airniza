@@ -1,4 +1,4 @@
-
+import Image from "next/image";
 export const metadata = {
     title: "Best place to put Dehumidifier in 2 story house",
     description: "Proper placement is crucial for all air and humidity controll equipment. Many houseowners wonder about best place to put dehumidifier in 2 story house.",
@@ -88,6 +88,18 @@ export default function dehumidifier2storyHouse () {
       />
   <h1 className="text-3xl font-bold">Best place to put Dehumidifier in 2 story house</h1>
   <p className="mt-3">Proper placement is crucial for all air and humidity controll equipment. Many houseowners wonder about best place to put dehumidifier in 2 story house. The best locations are central areas or high moisture spaces like bathrooms and basements. For more details you need to read complete article.</p>
+  <div className="max-w-3xl mx-auto mb-8 mt-8 ">
+      <div className="relative w-full aspect-[1200/630]">
+    <Image
+     src="/blog-images/best-place-to-put-dehumidifier-in-2-story-house.webp"
+     fill
+     priority
+     alt="Best place to put Dehumidifier in 2 story house"
+     className="object-cover rounded-lg"
+     sizes="(max-width: 768px) 100vw, 768px"
+    />
+    </div>
+    </div>
   <p className="mt-3">In this guide, we will break down exactly where to place your unit for maximum effectiveness, whether you are dealing with a humid basement or aiming whole house moisture control. You will also learn why some locations work better than others and avoid placement mistakes that waste energy.</p>
   <h2 className="text-2xl font-bold mt-3">Placement strategies for 2 story house</h2>
   <ol className="list-decimal list-inside mt-3 space-y-3">

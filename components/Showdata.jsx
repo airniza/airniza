@@ -50,7 +50,7 @@ export default function Showaqi() {
       
       {/* Map section */}
       <div className="relative h-[67vh]">
-        <MapComponent lati={latitude} longi={longitude} zoom={11} />
+        <MapComponent lati={latitude} longi={longitude} zoom={8} />
       </div>
 
       {/* Overlapping AQI content */}
@@ -59,7 +59,7 @@ export default function Showaqi() {
               style={{
                 backgroundImage: `linear-gradient(to bottom left, ${fore}66 0%, white 50%)`,
               }}
-              className="grid grid-cols-1 relative rounded-xl shadow-lg md:grid-cols-7 gap-4 -mt-40 p-4 lg:ml-10 lg:mr-10 ml-3 mr-3"
+              className="grid grid-cols-1 relative rounded-xl md:grid-cols-7 gap-4 -mt-40 p-4 lg:ml-10 lg:mr-10 ml-3 mr-3"
             >
               {/* Left Section - AQI */}
               <div className="md:col-span-4">

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 
@@ -99,18 +100,30 @@ export default function BestairpurifiersPage() {
     
      <h1 className="text-3xl font-bold mt-4">Best Air Purifiers for Allergies, Asthma and Dust</h1>
   <p className="mt-3">The most surprising thing is that due to stagnant ventilation, pet dander, dust and the buildup of chemicals, indoor air can be more polluted than outdoor air. In this article we will explore the best air purifiers for allergies, asthma and dust, without saying anything negative about other brands. This list of air purifiers for asthma, allergies and dust is not based on third-party lab tests, it is based on my work and real-world experience.</p>
-  <p className="mt-3">`However, most people are well aware of manufacturer’s claims, third-party lab test results and the games played by influencers. Before we move further in this article, I would like to clarify that this article is not sponsored by any individual or manufacturer.`</p>
+  <div className="max-w-3xl mx-auto mb-8 mt-8 ">
+    <div className="relative w-full aspect-[1200/630]">
+  <Image
+   src="/blog-images/best-air-purifiers-for-allergies-asthma-and-dust.webp"
+   fill
+   priority
+   alt="best air purifiers for asthma, allergy"
+   className="object-cover rounded-lg"
+   sizes="(max-width: 768px) 100vw, 768px"
+  />
+  </div>
+  </div>
+  <p className="mt-3">However, most people are well aware of manufacturer’s claims, third-party lab test results and the games played by influencers. Before we move further in this article, I would like to clarify that this article is not sponsored by any individual or manufacturer.</p>
   <h2 className="text-2xl font-bold mt-3">Key Factors to consider when choosing the best air purifiers for asthma, allergies and dust</h2>
   <p className="mt-3">Before I list the models worth considering, I would like to highlight the key factors you should keep in the mind when choosing an air purifier for asthma, allergy or dust.</p>
   <ol className="list-decimal list-inside space-y-3">
-    <li><p>`Room Size – Whenever you visit e-commerce websites to buy an air purifier , you will come across many small sized air purifiers claiming to clean large rooms. They make this claim based on just one air change per hour, whereas according to AHAM, the recommended number is 4.8 ACH. When such units are changing the air only once per hour, they may remove the older particles, but during that same hour, a new set of allergy causing elements has already entered the room. That’s why you should choose a unit that maintains the recommended air changes per hour according to your room size.`</p></li>
-    <li><p>`Filter – At the very least, the air purifier should have a TrueHEPA filter that can capture 99.97% of particles that are 0.3 microns or larger. In fact the Asthma & and Allergy foundation of America (AAFA) also recommends using HEPA filters. Terms like TrueHEPA, HEPA-type, HEPA-like and HyperHEPA can easily confuse buyers. You can either go with recommended units or feel free to take advice from me.`</p></li>
-    <li><p>`Activated carbon filter – It helps remove harmful gases, odors and chemical fumes that can trigger asthma and allergies. Activated carbon filters do not remove dust or pollen particles- that is the job of a HEPA filter. That’s why they are used together.`</p></li>
-    <li><p>`Noise – Even if an air purifier changes the air 8 times an hour, you will likely avoid using it if it produces noise like a vacuum cleaner. That’s why you should choose a unit that generates a comfortable noise level of no more than 45 dB.`</p></li>
-    <li><p>`Seal – Air purifier filters are designed to capture very tiny particles (as small as 0.3 microns). Even a small leak in the seal can allow unfiltered air to bypass the filter. Without a good seal allergy causing elements will keep bypassing repeatedly.`</p></li>
-    <li><p>`Pre filter (optional) – This often works as the first line of defense. It is designed to capture larger particles such as pet dander, hair, dust particles etc. Its main function is to stop these large sized particles before they reach the main filter.`</p></li>
-    <li><p>`Ozone Emissions – When an air purifier emits ozone, problems like allergy and asthma can worsen. Ozone can remove certain harmful allergens, but it also irritates the respiratory system. That’s why you should choose a unit that does not emit ozone.`</p></li>
-    <li><p>`UV-C Light (Optional) – It is a germicidal ultraviolet radiation that can deactivate microorganisms by destroying their DNA. This means it can kill bacteria and viruses, helping reduce symptoms of allergies and asthma. However, it is optional – not everyone necessarily needs it.`</p></li>
+    <li><p>Room Size – Whenever you visit e-commerce websites to buy an air purifier , you will come across many small sized air purifiers claiming to clean large rooms. They make this claim based on just one air change per hour, whereas according to AHAM, the recommended number is 4.8 ACH. When such units are changing the air only once per hour, they may remove the older particles, but during that same hour, a new set of allergy causing elements has already entered the room. That’s why you should choose a unit that maintains the recommended air changes per hour according to your room size.</p></li>
+    <li><p>Filter – At the very least, the air purifier should have a TrueHEPA filter that can capture 99.97% of particles that are 0.3 microns or larger. In fact the Asthma & and Allergy foundation of America (AAFA) also recommends using HEPA filters. Terms like TrueHEPA, HEPA-type, HEPA-like and HyperHEPA can easily confuse buyers. You can either go with recommended units or feel free to take advice from me.`</p></li>
+    <li><p>`Activated carbon filter – It helps remove harmful gases, odors and chemical fumes that can trigger asthma and allergies. Activated carbon filters do not remove dust or pollen particles- that is the job of a HEPA filter. That’s why they are used together.</p></li>
+    <li><p>Noise – Even if an air purifier changes the air 8 times an hour, you will likely avoid using it if it produces noise like a vacuum cleaner. That’s why you should choose a unit that generates a comfortable noise level of no more than 45 dB.</p></li>
+    <li><p>Seal – Air purifier filters are designed to capture very tiny particles (as small as 0.3 microns). Even a small leak in the seal can allow unfiltered air to bypass the filter. Without a good seal allergy causing elements will keep bypassing repeatedly.</p></li>
+    <li><p>Pre filter (optional) – This often works as the first line of defense. It is designed to capture larger particles such as pet dander, hair, dust particles etc. Its main function is to stop these large sized particles before they reach the main filter.</p></li>
+    <li><p>Ozone Emissions – When an air purifier emits ozone, problems like allergy and asthma can worsen. Ozone can remove certain harmful allergens, but it also irritates the respiratory system. That’s why you should choose a unit that does not emit ozone.</p></li>
+    <li><p>UV-C Light (Optional) – It is a germicidal ultraviolet radiation that can deactivate microorganisms by destroying their DNA. This means it can kill bacteria and viruses, helping reduce symptoms of allergies and asthma. However, it is optional – not everyone necessarily needs it.</p></li>
   </ol>
   <p className="mt-3">For those suffering from allergies or asthma, an ideal air purifier could be one that produces less than 45 dB of noise, has a HEPA filter along with an activated carbon filter and does not emit ozone.</p>
   <p className="mt-3">This list includes models that either meet the above criteria or based on my work experience and real-world use, are among the best for asthma and allergies.</p>

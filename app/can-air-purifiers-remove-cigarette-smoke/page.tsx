@@ -1,9 +1,9 @@
-
+import Image from "next/image";
 
 
 export const metadata = {
     title: "Can Air Purifiers remove Cigarette Smoke?",
-    description: "The smoke from burning tobacco is extremely dangerous. We should always protect ourselves and our families from such smoke. In this blog post I will answer this common question",
+    description: "The smoke from burning tobacco is extremely dangerous. We should always protect ourselves and our families from such smoke. In this blog post I will answer this common question.",
     alternates: {
       canonical: "https://airniza.com/can-air-purifiers-remove-cigarette-smoke"
     }
@@ -87,6 +87,18 @@ export default function CigaretteBlogPost () {
       />
    <h1 className="text-2xl font-bold">Can Air Purifiers remove Cigarette Smoke?</h1>
    <p className="mt-3">The smoke from burning tobacco is extremely dangerous. We should always protect ourselves and our families from such smoke. In this blog post I will answer a common question: Can air purifiers remove cigarette smoke? The short answer is yes, but you will need the right air purifier to do this job effectively. As you know, cigarette smoke is one of the most harmful indoor air pollutants. It contains thousands of chemicals, many of which are harmful and toxic to your lungs. The smell sticks to furniture, walls and clothes and it can cause breathing problems. Removing this smoke from indoors is not easy but it is possible with right tools.</p>
+   <div className="max-w-3xl mx-auto mb-8 mt-8 ">
+         <div className="relative w-full aspect-[1200/630]">
+       <Image
+        src="/blog-images/can-air-purifiers-remove-cigarette-smoke-effectively.webp"
+        fill
+        priority
+        alt="Can Air Purifiers remove Cigarette Smoke"
+        className="object-cover rounded-lg"
+        sizes="(max-width: 768px) 100vw, 768px"
+       />
+       </div>
+       </div>
    <p className="mt-3">In the past few years, I have noticed that many people buy air purifiers for cigarette smoke without knowing which key features to look for. I consider this a waste of money. Buying just any air purifier would not solve your air related problems. It’s important to understand all the key variables before making a purchase. Before choosing an air purifier for cigarette smoke, you should consider several factors. These include any health issues in your family, coverage area and key features of the purifier. From an family health perspective, you should consider how many children and elderly members are in the home, whether anyone is allergy-prone and if there is a pregnent woman in the household, among other factors.</p>
 
    <h2 className="text-2xl font-bold mt-3">Key features that an air purifier should have to remove cigarette smoke</h2>

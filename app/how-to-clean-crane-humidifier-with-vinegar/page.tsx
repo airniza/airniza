@@ -1,4 +1,4 @@
-
+import Image from "next/image";
 export const metadata = {
     title: "How to Clean Humidifier with vinegar",
     description: "A humidifier requires regular cleaning that ensures both efficiency and protects air quality together with mold and bacteria prevention. Regular cleaning of is essential",
@@ -88,6 +88,18 @@ export default function CleanHumidifier () {
       />
     <h1 className="text-3xl font-bold">How to Clean Humidifier with vinegar</h1>
     <p className="mt-3">A humidifier requires regular cleaning that ensures both efficiency and protects air quality together with mold and bacteria prevention. Regular cleaning of your humidifier helps to extend its operational lifetime. The correct method to maintain Crane humidifier cleanliness involves this sequential guide. In this guide we will break down how to clean crane humidifier with vinegar.</p>
+    <div className="max-w-3xl mx-auto mb-8 mt-8 ">
+               <div className="relative w-full aspect-[1200/630]">
+             <Image
+              src="/blog-images/how-to-clean-crane-humidifier-with-vinegar.webp"
+              fill
+              priority
+              alt="How to Clean Humidifier with vinegar"
+              className="object-cover rounded-lg"
+              sizes="(max-width: 768px) 100vw, 768px"
+             />
+             </div>
+             </div>
     <h2 className="text-2xl font-bold mt-3">Why cleaning your Humidifier is important</h2>
     <p className="mt-3">You Need To Regularly Clean Your Humidifier For Several Reasons Mold and bacteria along with mineral deposits inside an uncleaned humidifier release air contaminants when operating. Having uncleaned equipment will produce respiratory complications together with allergic reactions. The regular cleaning of your humidifier according to manufacturer instructions ensures both high performance quality and sanitary function.</p>
     <h3 className="text-2xl font-bold mt-3">What you will need?</h3>

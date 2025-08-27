@@ -1,4 +1,4 @@
-
+import Image from "next/image";
 export const metadata = {
     title: "How long to run Air purifier in Bedroom?",
     description: "Air purifiers are essential devices for keeping indoor air clean. A common question that many houseowners have is how long to run air purifier in bedroom?",
@@ -82,6 +82,18 @@ export default function RunPurifierBedroom () {
       />
   <h1 className="text-3xl font-bold">How long to run Air purifier in Bedroom?</h1>
   <p className="mt-3">Air purifiers are essential devices for keeping indoor air clean. A common question that many houseowners have is how long to run air purifier in bedroom? The ideal runtime for an air purifier depends on several aspects such as the air quality in the bedroom, its size, the type of device and your specific needs.</p>
+     <div className="max-w-3xl mx-auto mb-8 mt-8 ">
+           <div className="relative w-full aspect-[1200/630]">
+         <Image
+          src="/blog-images/how-long-to-run-air-purifier-in-bedroom-1.webp"
+          fill
+          priority
+          alt="How long to run Air purifier in Bedroom"
+          className="object-cover rounded-lg"
+          sizes="(max-width: 768px) 100vw, 768px"
+         />
+         </div>
+         </div>
   <p className="mt-3">For better results, I would suggest running the air purifier continuously if you have allergies, asthma or pets. While sleeping, the air purifier should be opearated for at least 8-12 hours daily to effectively filter allergens and polutants. If your device has an auto mode, it’s recommended to use it. The air purifier can adjust the fan speed based on the air quality, helping to save energy.</p>
   <h2 className="text-2xl font-bold mt-3">Factors that affect the runtime of an air purifier in the bedroom</h2>
   <ol className="mt-3 list-decimal list-inside space-y-2">

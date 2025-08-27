@@ -1,3 +1,5 @@
+import CountrywiseSection from "@/components/CountrywiseSection";
+import FeaturedSection from "@/components/helpers/FeaturedSection";
 import Showdata from "@/components/Showdata";
 
 
@@ -19,6 +21,8 @@ export default function Home() {
       
       <main>
         <Showdata />
+        <CountrywiseSection/>
+        <FeaturedSection/>
       </main>
     </div>
   );
