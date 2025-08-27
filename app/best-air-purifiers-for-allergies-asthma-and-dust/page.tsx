@@ -103,7 +103,7 @@ export default function BestairpurifiersPage() {
   <div className="max-w-3xl mx-auto mb-8 mt-8 ">
     <div className="relative w-full aspect-[1200/630]">
   <Image
-   src="/blog-images/best-air-purifiers-for-allergies-asthma-and-dust.webp"
+   src="/blog-images/Best-Air-Purifiers-for-Allergies-Asthma-and-dust.webp"
    fill
    priority
    alt="best air purifiers for asthma, allergy"

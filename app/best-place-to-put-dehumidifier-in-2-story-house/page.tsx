@@ -91,7 +91,7 @@ export default function dehumidifier2storyHouse () {
   <div className="max-w-3xl mx-auto mb-8 mt-8 ">
       <div className="relative w-full aspect-[1200/630]">
     <Image
-     src="/blog-images/best-place-to-put-dehumidifier-in-2-story-house.webp"
+     src="/blog-images/Best-place-to-put-dehumidifier-in-2-story-house.webp"
      fill
      priority
      alt="Best place to put Dehumidifier in 2 story house"

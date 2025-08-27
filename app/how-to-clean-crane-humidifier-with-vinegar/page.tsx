@@ -91,7 +91,7 @@ export default function CleanHumidifier () {
     <div className="max-w-3xl mx-auto mb-8 mt-8 ">
                <div className="relative w-full aspect-[1200/630]">
              <Image
-              src="/blog-images/how-to-clean-crane-humidifier-with-vinegar.webp"
+              src="/blog-images/How-to-clean-Crane-Humidifier-with-vinegar.webp"
               fill
               priority
               alt="How to Clean Humidifier with vinegar"

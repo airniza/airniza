@@ -90,7 +90,7 @@ export default function CigaretteBlogPost () {
    <div className="max-w-3xl mx-auto mb-8 mt-8 ">
          <div className="relative w-full aspect-[1200/630]">
        <Image
-        src="/blog-images/can-air-purifiers-remove-cigarette-smoke-effectively.webp"
+        src="/blog-images/Can-Air-Purifiers-remove-Cigarette-Smoke-effectively.webp"
         fill
         priority
         alt="Can Air Purifiers remove Cigarette Smoke"

@@ -85,7 +85,7 @@ export default function RunPurifierBedroom () {
      <div className="max-w-3xl mx-auto mb-8 mt-8 ">
            <div className="relative w-full aspect-[1200/630]">
          <Image
-          src="/blog-images/how-long-to-run-air-purifier-in-bedroom-1.webp"
+          src="/blog-images/How-long-to-run-Air-purifier-in-Bedroom-1.webp"
           fill
           priority
           alt="How long to run Air purifier in Bedroom"
