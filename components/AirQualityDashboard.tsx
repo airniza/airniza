@@ -35,7 +35,7 @@ export default function AirQualityDashboard ({breadcrumbs,place,state,country,he
   const lastUpdated = new Date().toISOString();
   
   const location = [place,state,country].filter(Boolean).join(", ");
-  const defaultHeading = `${place || state || country} Air Quality Index (AQI) and ${country} Air Pollution.`
+  const defaultHeading = `${place || state || country} Air Quality Index (AQI) and Air Pollution`
 
 
 

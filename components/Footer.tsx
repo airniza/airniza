@@ -37,7 +37,7 @@ return (
 <p className="text-muted-foreground mb-4">
 Airniza provides real-time air quality insights to help you make
 healthier lifestyle choices. Our goal is to keep you informed
-about pollution levels in your <Link href="/united-states">city</Link> with reliable and
+about pollution levels in your city with reliable and
 easy-to-understand data.
 </p>
 <div className="flex space-x-4">

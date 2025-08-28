@@ -8,7 +8,7 @@ export const locations = [
     },
     {
       state: "alaska",
-      cities: ["anchorage","fairbanks","juneau","badger","knik-fairview","college","wasilla","tanaina","kalifornsky","ketchikan","kenai","kodiak","farmers-loop"],
+      cities: ["anchorage","fairbanks","juneau","badger","knik-fairview","college","wasilla","tanaina","kalifornsky","ketchikan","kodiak","farmers-loop"],
     },
     {
       state: "arizona",
@@ -238,4 +238,60 @@ export const locations = [
       },
     ],
   },
+  {
+  country: "united-arab-emirates",
+  states: [
+    {
+      state: "abu-dhabi",
+      cities: ["abu-dhabi", "al-ain"],
+    },
+    {
+      state: "dubai",
+      cities: ["dubai"],
+    },
+    {
+      state: "sharjah",
+      cities: ["sharjah", "khorfakkan"],
+    },
+    {
+      state: "ras-al-khaimah",
+      cities: ["ras-al-khaimah"],
+    },
+    {
+      state: "fujairah",
+      cities: ["fujairah"],
+    },
+    {
+      state: "ajman",
+      cities: ["ajman"],
+    },
+    {
+      state: "umm-al-quwain",
+      cities: ["umm-al-quwain"],
+    },
+  ],
+},
+{
+  country: "united-kingdom",
+  states: [
+    {
+      state: "england",
+      cities: ["london", "manchester", "birmingham", "liverpool", "leeds", "newcastle"],
+    },
+    {
+      state: "scotland",
+      cities: ["edinburgh", "glasgow", "aberdeen", "dundee"],
+    },
+    {
+      state: "wales",
+      cities: ["cardiff", "swansea", "newport"],
+    },
+    {
+      state: "northern-ireland",
+      cities: ["belfast", "derry"],
+    },
+  ],
+}
+
+
 ];
