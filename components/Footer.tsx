@@ -27,12 +27,7 @@ return (
 {/* Brand + intro + social */}
 <div>
 <div className="mb-3">
-  <Image
-                src="/logo.png"
-                width={140}
-                height={140}
-                alt="airniza logo"
-                 />
+  <p className="font-semibold text-foreground mb-4">Airniza</p>
 </div>
 <p className="text-muted-foreground mb-4">
 Airniza provides real-time air quality insights to help you make
