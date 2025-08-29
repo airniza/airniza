@@ -1,10 +1,20 @@
 import Link from "next/link";
 
+
+
+
+export const metadata = {
+  title: "Blog",
+  description: "Airniza Blog page", 
+  alternates:{
+    canonical: "https://airniza.com/blog"
+  }
+}
+
+
+
+
 export default function BlogPage () {
-
-
-
-
 
   return <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center">
     <h1 className="text-3xl font-bold">Latest Blog Posts</h1>

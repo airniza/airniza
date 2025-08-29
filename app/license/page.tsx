@@ -1,4 +1,17 @@
 import Link from "next/link";
+import { title } from "process";
+
+
+export const metadata = {
+  title: "License",
+  description: "Airniza license page", 
+  alternates:{
+    canonical: "https://airniza.com/license"
+  }
+}
+
+
+
 
 export default function LicensePage() {
   const licenseSchema = {

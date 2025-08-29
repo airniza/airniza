@@ -1,5 +1,18 @@
 import Link from "next/link";
 
+
+
+
+export const metadata = {
+  title: "Privacy Policy",
+  description: "Airniza privacy policy page", 
+  alternates:{
+    canonical: "https://airniza.com/privacy-policy"
+  }
+}
+
+
+
 export default function PrivacyPolicy () {
 
   return  <main className="max-w-4xl mx-auto p-6 space-y-6">

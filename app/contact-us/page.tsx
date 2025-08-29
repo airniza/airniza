@@ -1,17 +1,22 @@
-export default function ContactUs () {
+import ContactPageHelper from "@/components/helpers/ContactPageHelper";
 
-  return <div className="p-10"><h1 className="text-3xl text-center font-bold font-serif p-10">Contact Us</h1>
-    <p>You can Contact us here:-</p>
-    <ul className="list-disc font-bold pl-7 mt-3">
-      <li>Email</li>
-      <li>Facebook</li>
-      <li>Instagram</li>
-      <li>X</li>
-      <li>Linkedin</li>
-    </ul>
-    
-    
-    
+export const metadata = {
+  title: "Contact Us",
+  description: "Airniza Contact Us page", 
+  alternates:{
+    canonical: "https://airniza.com/contact-us"
+  }
+}
+
+export default function ContactPage() {
+  return (
+    <div className="max-w-lg mx-auto p-6">
+      <h1 className="text-3xl font-bold mb-4">Contact Us</h1>
+      <p className="mb-6 text-gray-600">
+        Have questions or feedback? Fill out the form below and we will get back
+        to you as soon as possible.
+      </p>
+      <ContactPageHelper />
     </div>
-    
+  );
 }

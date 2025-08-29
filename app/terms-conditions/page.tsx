@@ -1,5 +1,17 @@
 import Link from "next/link";
 
+
+export const metadata = {
+  title: "Terms & Conditions",
+  description: "Airniza terms & conditions page", 
+  alternates:{
+    canonical: "https://airniza.com/terms-conditions"
+  }
+}
+
+
+
+
 export default function TermsConditions() {
   return (
     <main className="max-w-4xl mx-auto p-6 space-y-6">

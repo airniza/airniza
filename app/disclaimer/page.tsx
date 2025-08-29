@@ -1,5 +1,13 @@
 import Link from "next/link";
 
+export const metadata = {
+  title: "Disclaimer",
+  description: "Airniza Disclaimer page", 
+  alternates:{
+    canonical: "https://airniza.com/disclaimer"
+  }
+}
+
 export default function Disclaimer () {
   return <main className="max-w-4xl mx-auto p-6 space-y-6">
       <h1 className="text-3xl font-bold">Disclaimer</h1>

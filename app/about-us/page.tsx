@@ -1,5 +1,14 @@
 import Link from "next/link";
 
+
+export const metadata = {
+  title: "About Us",
+  description: "Airniza About Us page", 
+  alternates:{
+    canonical: "https://airniza.com/about-us"
+  }
+}
+
 export default function AboutPage () {
   return <div className="px-10 py-12">
     <h1 className="text-3xl font-bold mb-4">About Us</h1>
