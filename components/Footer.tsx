@@ -1,6 +1,5 @@
 import { Facebook, X } from "lucide-react";
 import Link from "next/link";
-import Image from "next/image";
 
 const socialLinks = [
 { icon: Facebook, href: "https://www.facebook.com/profile.php?id=61576733752711", label: "Facebook" },
