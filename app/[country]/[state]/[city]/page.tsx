@@ -1,16 +1,16 @@
 import AirQualityDashboard from "@/components/AirQualityDashboard";
 import Faqs from "@/components/Faqs";
-import FetchCityData from "@/components/FetchCityData";
 import { RelatedCities } from "@/components/RelatedCities";
 import { CitySchema } from "@/components/allSchema/CitySchema";
 import { CityPageBreadcrumbs } from "@/components/allBreadcrumbs/CityPageBreadcrumbs";
 import { PlaceToSlug } from "@/components/helpers/PlaceToSlug";
 import IndoorAirQuality from "@/components/IndoorAirQuality";
 import HealthRecommendations from "@/components/HealthRecommendations";
+import FetchLocationData from "@/components/FetchLocationData";
 
 // Shared Promise Start
 async function getData(place: string) {
-  return FetchCityData(place);
+  return FetchLocationData(place);
 }
 // Shared Promise End
 
@@ -76,11 +76,13 @@ export default async function CityPage({
   const citySlug = formatCitySlug(city); // "lucknow"
   const cityName = formatCityName(citySlug); // "Lucknow"
 
-  const { aqi, pm25, condition, exp, temp, state,country, humidity, ws } =
+  const { aqi, pm2_5, condition, exp, temp, state,country, humidity, ws } =
     await getData(cityName);
     const countrySlug = PlaceToSlug(country);
     const stateSlug = PlaceToSlug(state);
       
+    
+    
     
 
   const schemaData = CitySchema({
@@ -88,7 +90,7 @@ export default async function CityPage({
     pageUrl: `https://airniza.com/${countrySlug}/${stateSlug}/${citySlug}-air-quality`,
     country: country,
     Aqi: aqi,
-    Pm2five: pm25,
+    Pm2five: pm2_5,
     Temp: temp,
     Humidity: humidity,
     Ws: ws,
@@ -137,6 +139,7 @@ export default async function CityPage({
           Frequently Asked Questions about Air Quality {cityName}
         </h3>
         <Faqs place={cityName} aqi={aqi} status={condition} exp={exp} />
+        
       </div>
     </main>
   );

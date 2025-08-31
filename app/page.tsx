@@ -23,6 +23,7 @@ export default function Home() {
         <Showdata />
         <CountrywiseSection/>
         <FeaturedSection/>
+        
       </main>
     </div>
   );

@@ -19,9 +19,9 @@ type dashboardProps = {
   country: string;
   heading?: string;
   aqi: number;
-  temp: number;
+  temp: number | null;
   humidity: number;
-  ws: number;
+  ws: number | null;
 
 };
 

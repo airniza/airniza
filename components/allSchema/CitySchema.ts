@@ -4,9 +4,9 @@ type schemaProps = {
   country: string;
   state: string;
   Aqi: number;
-  Temp: number;
+  Temp: number | null;
   Humidity: number;
-  Ws: number;
+  Ws: number | null;
   Pm2five: string | undefined;
   Condition: string;
   exp: string;
