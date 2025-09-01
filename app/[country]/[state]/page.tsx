@@ -1,13 +1,13 @@
 import { locations } from "@/components/Locations"; 
 import Link from "next/link";
 import { StateBreadcrumbs } from "@/components/allBreadcrumbs/stateBreadcrumbs";
-import FetchCityData from "@/components/FetchCityData";
 import AirQualityDashboard from "@/components/AirQualityDashboard";
 import { Badge } from "@/components/ui/badge"; 
+import FetchLocationData from "@/components/FetchLocationData";
 
 // ✅ Shared Promise: Fetch AQI and weather data for given location
 async function getData(place: string) {
-  return FetchCityData(place);
+  return FetchLocationData(place);
 }
 
 // ✅ Metadata function

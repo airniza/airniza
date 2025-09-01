@@ -1,13 +1,13 @@
 import { locations } from "@/components/Locations";
 import Link from "next/link";
 import { CountryBreadcrumbs } from "@/components/allBreadcrumbs/countryBreadcrumbs";
-import FetchCityData from "@/components/FetchCityData";
 import AirQualityDashboard from "@/components/AirQualityDashboard";
 import { Badge } from "@/components/ui/badge";
+import FetchLocationData from "@/components/FetchLocationData";
 
 // Shared Promise Start
 async function getData(place: string) {
-  return FetchCityData(place); // Always call API based on URL slug/param
+  return FetchLocationData(place); // Always call API based on URL slug/param
 }
 // Shared Promise End
 
