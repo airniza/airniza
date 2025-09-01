@@ -10,7 +10,7 @@ type schemaProps = {
   Pm2five: string | undefined;
   Condition: string;
   exp: string;
-}
+};
 
 export function CitySchema({
   City,
@@ -28,14 +28,40 @@ export function CitySchema({
   return {
     "@context": "https://schema.org",
     "@graph": [
+      // Organization
+      {
+        "@type": "Organization",
+        "@id": "https://airniza.com/#organization",
+        "name": "Airniza",
+        "url": "https://airniza.com/",
+        "logo": "https://airniza.com/logo.png"
+      },
+
       // WebPage
       {
         "@type": "WebPage",
         "@id": `${pageUrl}#webpage`,
-        "name": `${City} Air Quality Index (AQI) and ${country} Air Pollution`,
-        "description": `Stay informed with ${City} air quality index (AQI) and pollution updates in ${country}. Monitor PM2.5, health risks, and daily air pollution levels.`,
+        "name": `${City} Air Quality Index (AQI) and Air Pollution`,
+        "description": `The current air quality in ${City} is ${Aqi} (${Condition}). PM2.5 is ${Pm2five} µg/m³, temperature ${Temp}°C, humidity ${Humidity}%, and wind speed ${Ws} km/h. Real-time updates.`,
         "url": pageUrl,
         "inLanguage": "en",
+        "keywords": [
+          `${City} AQI`,
+          `${City} Air Quality`,
+          `${City} Air Pollution`,
+          `PM2.5 in ${City}`,
+          `Weather and AQI in ${City}`,
+          `Air Quality Index ${country}`
+        ],
+        "about": [
+          { "@type": "Thing", "name": "Air Quality Index" },
+          { "@type": "Thing", "name": "PM2.5" },
+          { "@type": "Thing", "name": "Air Pollution" }
+        ],
+        "mentions": [
+          { "@type": "Place", "name": `${City}` },
+          { "@type": "Place", "name": `${state}, ${country}` }
+        ],
         "isPartOf": {
           "@id": "https://airniza.com/#website"
         },
@@ -70,6 +96,13 @@ export function CitySchema({
         "creator": { "@id": "https://airniza.com/#organization" },
         "license": "https://creativecommons.org/licenses/by/4.0/",
         "spatialCoverage": { "@type": "Place", "name": `${City}` },
+        "keywords": [
+          `${City} AQI data`,
+          `Air Quality Dataset`,
+          `${City} PM2.5 levels`,
+          `Air Pollution Statistics`,
+          `Air Quality Monitoring Data`
+        ],
         "variableMeasured": [
           { "@type": "PropertyValue", "name": "AQI", "value": Aqi, "unitText": "AQI" },
           { "@type": "PropertyValue", "name": "PM2.5", "value": Pm2five, "unitText": "µg/m³" },
@@ -81,7 +114,7 @@ export function CitySchema({
         "dateModified": new Date().toISOString()
       },
 
-      // FAQPage
+      // FAQPage (no extra Q/A added)
       {
         "@type": "FAQPage",
         "@id": `${pageUrl}#faq`,

@@ -43,10 +43,12 @@ export async function generateMetadata({
   
 
   const pageUrl = `${siteURL}/${country}/${state}/${citySlug}-air-quality`;
+  const { aqi, pm2_5, condition, temp, humidity, ws } =
+    await getData(cityName);
 
   return {
     title: `${cityName} Air Quality Index (AQI) and Air Pollution`,
-    description: `Check live ${cityName} Air Quality Index (AQI), air pollution levels, PM2.5, temperature and humidity updates.`,
+    description: `The current air quality in ${cityName} is ${aqi} (${condition}). PM2.5 is ${pm2_5} µg/m³, temperature ${temp}°C, humidity ${humidity}%, and wind speed ${ws} km/h. Real-time updates.`,
     alternates: {
       canonical: pageUrl,
     },
