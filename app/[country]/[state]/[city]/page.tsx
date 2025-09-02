@@ -43,7 +43,7 @@ export async function generateMetadata({
   
 
   const pageUrl = `${siteURL}/${country}/${state}/${citySlug}-air-quality`;
-  const { aqi, pm2_5, condition, temp, humidity, ws } =
+  const { aqi, pm2_5, condition, ic, temp, humidity, ws, } =
     await getData(cityName);
 
   return {
@@ -53,17 +53,18 @@ export async function generateMetadata({
       canonical: pageUrl,
     },
     openGraph: {
-      title: `${cityName} Air Quality Index (AQI) and ${countryName} Air Pollution`,
-      description: `Check live ${cityName} Air Quality Index (AQI), air pollution levels, PM2.5, temperature and humidity updates.`,
+      title: `${cityName} Air Quality Index (AQI) and Air Pollution`,
+      description: `Live ${cityName} Air Quality Index (AQI) is ${aqi} (${condition}). PM2.5: ${pm2_5} µg/m³ | Temp: ${temp}°C | Humidity: ${humidity}%. Stay updated in real time.`,
       url: pageUrl,
       siteName: "Airniza",
       locale: "en_US",
       type: "website",
+      images: [`/aqi-icons/${ic}.webp`],
     },
     twitter: {
       card: "summary_large_image",
-      title: `${cityName} Air Quality Index (AQI) and ${countryName} Air Pollution`,
-      description: `Check live ${cityName} Air Quality Index (AQI), air pollution levels, PM2.5, temperature and humidity updates.`,
+      title: `Live ${cityName} Air Quality Index (AQI) is ${aqi} (${condition}). PM2.5: ${pm2_5} µg/m³ | Temp: ${temp}°C | Humidity: ${humidity}%. Stay updated in real time.`,
+      images: [`/aqi-icons/${ic}.webp`],
     },
   };
 }

@@ -60,7 +60,7 @@ export default async function FetchLocationData(city: string) {
 
    const pollutants = { pm2_5, pm10, no2, o3, so2, co };
    const aqi = calculateOverallAQI(pollutants);
-   const { condition, exp } = AqiStatus(aqi);
+   const { condition, exp,ic } = AqiStatus(aqi);
 
 
 
@@ -68,6 +68,7 @@ export default async function FetchLocationData(city: string) {
   return {
     aqi,
     condition,
+    ic,
     exp,
     temp,   // °C
     humidity,     // %
