@@ -63,7 +63,8 @@ export async function generateMetadata({
     },
     twitter: {
       card: "summary_large_image",
-      title: `Live ${cityName} Air Quality Index (AQI) is ${aqi} (${condition}). PM2.5: ${pm2_5} µg/m³ | Temp: ${temp}°C | Humidity: ${humidity}%. Stay updated in real time.`,
+      title: `${cityName} Air Quality Index (AQI) and Air Pollution`,
+      description: `Live ${cityName} Air Quality Index (AQI) is ${aqi} (${condition}). PM2.5: ${pm2_5} µg/m³ | Temp: ${temp}°C | Humidity: ${humidity}%. Stay updated in real time.`,
       images: [`/aqi-icons/${ic}.webp`],
     },
   };
