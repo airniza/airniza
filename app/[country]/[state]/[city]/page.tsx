@@ -103,7 +103,12 @@ export default async function CityPage({
     Ws: ws,
     Condition: condition,
     state: state,
-    exp: exp
+    exp: exp,
+    Pm10: pm10,
+    O3: o3,
+    NO2: no2,
+    SO2: so2,
+    CO: co,
   });
 
   return (

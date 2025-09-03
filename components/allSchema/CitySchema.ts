@@ -1,3 +1,4 @@
+
 type schemaProps = {
   City: string;
   pageUrl: string;
@@ -7,10 +8,19 @@ type schemaProps = {
   Temp: number | null;
   Humidity: number;
   Ws: number | null;
-  Pm2five: string | undefined;
+  Pm2five?: string;
+  Pm10: string;
+  O3: string;
+  NO2: string;
+  SO2: string;
+  CO: string;
   Condition: string;
   exp: string;
 };
+
+
+
+
 
 export function CitySchema({
   City,
@@ -19,6 +29,11 @@ export function CitySchema({
   country,
   Aqi,
   Pm2five,
+  Pm10,
+  O3,
+  NO2,
+  SO2,
+  CO,
   Temp,
   Humidity,
   Ws,
@@ -42,7 +57,7 @@ export function CitySchema({
         "@type": "WebPage",
         "@id": `${pageUrl}#webpage`,
         "name": `${City} Air Quality Index (AQI) and Air Pollution`,
-        "description": `The current air quality in ${City} is ${Aqi} (${Condition}). PM2.5 is ${Pm2five} µg/m³, temperature ${Temp}°C, humidity ${Humidity}%, and wind speed ${Ws} km/h. Real-time updates.`,
+        "description": `The current air quality in ${City} is ${Aqi} (${Condition}). PM2.5 is ${Pm2five} µg/m³, PM10 is ${Pm10} µg/m³, O3 is ${O3} µg/m³, NO2 is ${NO2} µg/m³, SO2 is ${SO2} µg/m³, CO is ${CO} mg/m³, temperature ${Temp}°C, humidity ${Humidity}%, and wind speed ${Ws} km/h. Real-time updates.`,
         "url": pageUrl,
         "inLanguage": "en",
         "keywords": [
@@ -56,6 +71,11 @@ export function CitySchema({
         "about": [
           { "@type": "Thing", "name": "Air Quality Index" },
           { "@type": "Thing", "name": "PM2.5" },
+          { "@type": "Thing", "name": "PM10" },
+          { "@type": "Thing", "name": "O3" },
+          { "@type": "Thing", "name": "NO2" },
+          { "@type": "Thing", "name": "SO2" },
+          { "@type": "Thing", "name": "CO" },
           { "@type": "Thing", "name": "Air Pollution" }
         ],
         "mentions": [
@@ -78,6 +98,11 @@ export function CitySchema({
           "observedProperty": [
             { "@type": "PropertyValue", "name": "Air Quality Index", "value": Aqi, "unitText": "AQI" },
             { "@type": "PropertyValue", "name": "PM2.5", "value": Pm2five, "unitText": "µg/m³" },
+            { "@type": "PropertyValue", "name": "PM10", "value": Pm10, "unitText": "µg/m³" },
+            { "@type": "PropertyValue", "name": "O3", "value": O3, "unitText": "ppb" },
+            { "@type": "PropertyValue", "name": "NO2", "value": NO2, "unitText": "ppb" },
+            { "@type": "PropertyValue", "name": "SO2", "value": SO2, "unitText": "ppb" },
+            { "@type": "PropertyValue", "name": "CO", "value": CO, "unitText": "ppm" },
             { "@type": "PropertyValue", "name": "Temperature", "value": Temp, "unitText": "°C" },
             { "@type": "PropertyValue", "name": "Humidity", "value": Humidity, "unitText": "%" },
             { "@type": "PropertyValue", "name": "Wind Speed", "value": Ws, "unitText": "km/h" },
@@ -91,7 +116,7 @@ export function CitySchema({
         "@type": "Dataset",
         "@id": `${pageUrl}#dataset`,
         "name": `Current Air Quality Index (AQI) for ${City}`,
-        "description": `Live AQI and PM2.5 data for ${City}. Check real-time air quality updates.`,
+        "description": `Live AQI and pollutant data for ${City}. Check real-time air quality updates.`,
         "url": pageUrl,
         "creator": { "@id": "https://airniza.com/#organization" },
         "license": "https://creativecommons.org/licenses/by/4.0/",
@@ -106,6 +131,11 @@ export function CitySchema({
         "variableMeasured": [
           { "@type": "PropertyValue", "name": "AQI", "value": Aqi, "unitText": "AQI" },
           { "@type": "PropertyValue", "name": "PM2.5", "value": Pm2five, "unitText": "µg/m³" },
+          { "@type": "PropertyValue", "name": "PM10", "value": Pm10, "unitText": "µg/m³" },
+          { "@type": "PropertyValue", "name": "O3", "value": O3, "unitText": "ppb" },
+          { "@type": "PropertyValue", "name": "NO2", "value": NO2, "unitText": "ppb" },
+          { "@type": "PropertyValue", "name": "SO2", "value": SO2, "unitText": "ppb" },
+          { "@type": "PropertyValue", "name": "CO", "value": CO, "unitText": "ppm" },
           { "@type": "PropertyValue", "name": "Temperature", "value": Temp, "unitText": "°C" },
           { "@type": "PropertyValue", "name": "Humidity", "value": Humidity, "unitText": "%" },
           { "@type": "PropertyValue", "name": "Wind Speed", "value": Ws, "unitText": "km/h" }
@@ -114,7 +144,7 @@ export function CitySchema({
         "dateModified": new Date().toISOString()
       },
 
-      // FAQPage (no extra Q/A added)
+      // FAQPage
       {
         "@type": "FAQPage",
         "@id": `${pageUrl}#faq`,
