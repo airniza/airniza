@@ -7,6 +7,7 @@ import { PlaceToSlug } from "@/components/helpers/PlaceToSlug";
 import IndoorAirQuality from "@/components/IndoorAirQuality";
 import HealthRecommendations from "@/components/HealthRecommendations";
 import FetchLocationData from "@/components/FetchLocationData";
+import MajorPollutants from "@/components/MajorPollutants";
 
 // Shared Promise Start
 async function getData(place: string) {
@@ -82,7 +83,7 @@ export default async function CityPage({
   const citySlug = formatCitySlug(city); // "lucknow"
   const cityName = formatCityName(citySlug); // "Lucknow"
 
-  const { aqi, pm2_5, condition, exp, temp, state,country, humidity, ws } =
+  const {  aqi, condition,exp,temp,humidity,ws,state,country,co,no2,o3,so2,pm2_5,pm10, } =
     await getData(cityName);
     const countrySlug = PlaceToSlug(country);
     const stateSlug = PlaceToSlug(state);
@@ -131,6 +132,8 @@ export default async function CityPage({
           />
         }
       />
+
+      <MajorPollutants pm25={pm2_5} pm10={pm10} no2={no2} o3={o3} co={co} so2={so2} place={cityName}/>
 
       <RelatedCities
         country={country}
