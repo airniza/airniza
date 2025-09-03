@@ -47,9 +47,7 @@ export default function RootLayout({
   "@type": "WebSite",
   "@id": "https://airniza.com/#website",
   "name": "Airniza",
-  "alternateName": "Current AQI Near Me",
   "url": "https://airniza.com/",
-  "description": "Check live Air Quality Index (AQI), air pollution levels, PM2.5, temperature and humidity updates in your city.",
   "inLanguage": "en",
   "publisher": {
     "@type": "Organization",
@@ -69,16 +67,13 @@ export default function RootLayout({
       "https://x.com/air_quality_now"
     ]
   },
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "https://airniza.com/"
-  },
   "potentialAction": {
     "@type": "SearchAction",
     "target": "https://airniza.com/search?query={search_term_string}",
     "query-input": "required name=search_term_string"
   }
 }
+
 
 
 
