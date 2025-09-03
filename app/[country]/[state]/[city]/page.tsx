@@ -59,6 +59,9 @@ export async function generateMetadata({
       locale: "en_US",
       type: "website",
       images: [`https://airniza.com/api/og?city=${encodeURIComponent(cityName)}&aqi=${aqi}`],
+      facebook: {
+      appId: "24164145333270926",
+    },
     },
     twitter: {
       card: "summary_large_image",
