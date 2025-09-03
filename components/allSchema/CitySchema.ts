@@ -38,7 +38,7 @@ export function CitySchema({
   return {
     "@context": "https://schema.org",
     "@graph": [
-      // Organization
+      // ✅ Organization
       {
         "@type": "Organization",
         "@id": "https://airniza.com/#organization",
@@ -47,12 +47,12 @@ export function CitySchema({
         "logo": "https://airniza.com/logo.png"
       },
 
-      // WebPage
+      // ✅ WebPage
       {
         "@type": "WebPage",
         "@id": `${pageUrl}#webpage`,
         "name": `${City} Air Quality Index (AQI) and Air Pollution`,
-        "description": `The current air quality in ${City} is ${Aqi} (${Condition}). PM2.5 is ${Pm2five} µg/m³, PM10 is ${Pm10} µg/m³, O3 is ${O3} µg/m³, NO2 is ${NO2} µg/m³, SO2 is ${SO2} µg/m³, CO is ${CO} mg/m³, temperature ${Temp}°C, humidity ${Humidity}%, and wind speed ${Ws} km/h. Real-time updates.`,
+        "description": `The current air quality in ${City} is ${Aqi} (${Condition}). PM2.5 is ${Pm2five} µg/m³, PM10 is ${Pm10} µg/m³, O3 is ${O3} µg/m³, NO2 is ${NO2} µg/m³, SO2 is ${SO2} µg/m³, CO is ${CO} mg/m³, temperature ${Temp}°C, humidity ${Humidity}%, and wind speed ${Ws} km/h.`,
         "url": pageUrl,
         "inLanguage": "en",
         "keywords": [
@@ -83,14 +83,17 @@ export function CitySchema({
         "breadcrumb": {
           "@id": `${pageUrl}#breadcrumb`
         },
+        // ✅ FIXED mainEntity
         "mainEntity": {
-          "@type": "Observation",
-          "observedNode": {
+          "@type": "Dataset",
+          "name": `${City} Air Quality Data`,
+          "description": `Real-time AQI and pollutant data for ${City}, ${state}, ${country}.`,
+          "spatialCoverage": {
             "@type": "Place",
             "name": `${City}, ${state}, ${country}`
           },
-          "dateObserved": new Date().toISOString(),
-          "observedProperty": [
+          "dateModified": new Date().toISOString(),
+          "variableMeasured": [
             { "@type": "PropertyValue", "name": "Air Quality Index", "value": Aqi, "unitText": "AQI" },
             { "@type": "PropertyValue", "name": "PM2.5", "value": Pm2five, "unitText": "µg/m³" },
             { "@type": "PropertyValue", "name": "PM10", "value": Pm10, "unitText": "µg/m³" },
@@ -106,7 +109,7 @@ export function CitySchema({
         }
       },
 
-      // Dataset
+      // ✅ Dataset (extra block)
       {
         "@type": "Dataset",
         "@id": `${pageUrl}#dataset`,
@@ -139,7 +142,7 @@ export function CitySchema({
         "dateModified": new Date().toISOString()
       },
 
-      // FAQPage
+      // ✅ FAQPage
       {
         "@type": "FAQPage",
         "@id": `${pageUrl}#faq`,
@@ -157,7 +160,7 @@ export function CitySchema({
             "name": `How often is the air quality in ${City} updated?`,
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": `The air quality data for ${City} is usually updated instantly using monitoring stations and sensors. This ensures residents can track real-time changes in the Air Quality Index (AQI).`
+              "text": `The air quality data for ${City} is usually updated instantly using monitoring stations and sensors.`
             }
           },
           {
@@ -165,21 +168,21 @@ export function CitySchema({
             "name": `What is a safe AQI level for healthy air quality?`,
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": `An AQI level of 0 to 50 is considered safe and healthy for breathing. At this range, the air quality is clean, and there is little or no risk to human health. People of all age groups, including children, elderly, and those with respiratory or heart conditions, can safely spend time outdoors without concerns. Once the AQI rises above this level, sensitive groups may begin to experience mild health effects depending on the air quality category.`
+              "text": `An AQI level of 0 to 50 is considered safe and healthy for breathing.`
             }
           },
           {
             "@type": "Question",
-            "name": `Which AQI standard do use to measure air quality?`,
+            "name": `Which AQI standard do you use to measure air quality?`,
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": `We use the US AQI (United States Air Quality Index) standard for measuring air quality. It is widely accepted internationally and provides a consistent way to understand how polluted the air is.`
+              "text": `We use the US AQI (United States Air Quality Index) standard for measuring air quality.`
             }
           }
         ]
       },
 
-      // BreadcrumbList
+      // ✅ BreadcrumbList
       {
         "@type": "BreadcrumbList",
         "@id": `${pageUrl}#breadcrumb`,

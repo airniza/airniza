@@ -84,7 +84,7 @@ or government sources.
 
 {/* Bottom bar */}
 <div className="mt-12 pt-8 border-t border-border/50 text-center text-sm text-muted-foreground">
-<p>©️ {new Date().getFullYear()} Airniza • All rights reserved</p>
+<p>© {new Date().getFullYear()} Airniza • All rights reserved</p>
 </div>
 </div>
 </footer>
