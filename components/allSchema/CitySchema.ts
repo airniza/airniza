@@ -1,4 +1,3 @@
-
 type schemaProps = {
   City: string;
   pageUrl: string;
@@ -17,10 +16,6 @@ type schemaProps = {
   Condition: string;
   exp: string;
 };
-
-
-
-
 
 export function CitySchema({
   City,
@@ -89,8 +84,8 @@ export function CitySchema({
           "@id": `${pageUrl}#breadcrumb`
         },
         "mainEntity": {
-          "@type": "AirQualityObservation",
-          "location": {
+          "@type": "Observation",
+          "observedNode": {
             "@type": "Place",
             "name": `${City}, ${state}, ${country}`
           },
