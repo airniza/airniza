@@ -42,7 +42,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
 
-        const schemaData = {
+     // WebSite schema
+ const schemaData = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   "@id": "https://airniza.com/#website",
@@ -72,7 +73,7 @@ export default function RootLayout({
     "target": "https://airniza.com/search?query={search_term_string}",
     "query-input": "required name=search_term_string"
   }
-}
+};
 
 
 

@@ -37,7 +37,7 @@ export function CitySchema({
 }: schemaProps) {
   return [
 
-    // ✅ Organization + WebPage ek block me
+    // ✅ Organization + WebPage
     {
       "@context": "https://schema.org",
       "@graph": [
@@ -77,17 +77,13 @@ export function CitySchema({
             { "@type": "Place", "name": `${City}` },
             { "@type": "Place", "name": `${state}, ${country}` }
           ],
-          "isPartOf": {
-            "@id": "https://airniza.com/#website"
-          },
-          "breadcrumb": {
-            "@id": `${pageUrl}#breadcrumb`
-          }
+          "isPartOf": { "@id": "https://airniza.com/#website" },
+          "breadcrumb": { "@id": `${pageUrl}#breadcrumb` }
         }
       ]
     },
 
-    // ✅ Dataset alag block
+    // ✅ Dataset
     {
       "@context": "https://schema.org",
       "@type": "Dataset",
@@ -97,7 +93,10 @@ export function CitySchema({
       "url": pageUrl,
       "creator": { "@id": "https://airniza.com/#organization" },
       "license": "https://creativecommons.org/licenses/by/4.0/",
-      "spatialCoverage": { "@type": "Place", "name": `${City}, ${state}, ${country}` },
+      "spatialCoverage": {
+        "@type": "Place",
+        "name": `${City}, ${state}, ${country}`
+      },
       "keywords": [
         `${City} AQI data`,
         `Air Quality Dataset`,
@@ -121,7 +120,7 @@ export function CitySchema({
       "dateModified": new Date().toISOString()
     },
 
-    // ✅ FAQ alag block
+    // ✅ FAQ
     {
       "@context": "https://schema.org",
       "@type": "FAQPage",
@@ -162,7 +161,7 @@ export function CitySchema({
       ]
     },
 
-    // ✅ Breadcrumb alag block
+    // ✅ Breadcrumb
     {
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
