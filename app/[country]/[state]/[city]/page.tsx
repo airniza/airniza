@@ -45,29 +45,32 @@ export async function generateMetadata({
   const pageUrl = `${siteURL}/${country}/${state}/${citySlug}-air-quality`;
   const { aqi, pm2_5, condition, temp, humidity, ws, } =
     await getData(cityName);
+    
+    const metaDescription = `The current air quality in ${cityName} is ${aqi} (${condition}). PM2.5 is ${pm2_5} µg/m³, temperature ${temp}°C, humidity ${humidity}%, and wind speed ${ws} km/h. Real-time updates.`
 
   return {
+  title: `${cityName} Air Quality Index (AQI) and Air Pollution`,
+  description: metaDescription,
+  alternates: {
+    canonical: pageUrl,
+  },
+  openGraph: {
     title: `${cityName} Air Quality Index (AQI) and Air Pollution`,
-    description: `The current air quality in ${cityName} is ${aqi} (${condition}). PM2.5 is ${pm2_5} µg/m³, temperature ${temp}°C, humidity ${humidity}%, and wind speed ${ws} km/h. Real-time updates.`,
-    alternates: {
-      canonical: pageUrl,
-    },
-    openGraph: {
-      title: `${cityName} Air Quality Index (AQI) and Air Pollution`,
-      description: `Live ${cityName} Air Quality Index (AQI) is ${aqi} (${condition}). PM2.5: ${pm2_5} µg/m³ | Temp: ${temp}°C | Humidity: ${humidity}%. Stay updated in real time.`,
-      url: pageUrl,
-      siteName: "Airniza",
-      locale: "en_US",
-      type: "website",
-      images: [`https://airniza.com/api/og?city=${encodeURIComponent(cityName)}&aqi=${aqi}`],
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: `${cityName} Air Quality Index (AQI) and Air Pollution`,
-      description: `Live ${cityName} Air Quality Index (AQI) is ${aqi} (${condition}). PM2.5: ${pm2_5} µg/m³ | Temp: ${temp}°C | Humidity: ${humidity}%. Stay updated in real time.`,
-      images: [`https://airniza.com/api/og?city=${encodeURIComponent(cityName)}&aqi=${aqi}`],
-    }
-  };
+    description: metaDescription,
+    url: pageUrl,
+    siteName: "Airniza",
+    locale: "en_US",
+    type: "website",
+    images: [`https://airniza.com/api/og?city=${encodeURIComponent(cityName)}&aqi=${aqi}`],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${cityName} Air Quality Index (AQI) and Air Pollution`,
+    description: metaDescription,
+    images: [`https://airniza.com/api/og?city=${encodeURIComponent(cityName)}&aqi=${aqi}`],
+  }
+};
+
 }
 
 export default async function CityPage({
