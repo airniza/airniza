@@ -90,6 +90,7 @@ export default function RootLayout({
       <head>
       <script id="adsense-init" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5703495087334224"
      crossOrigin="anonymous"></script>
+     <meta property="fb:app_id" content="24164145333270926" />
       </head>
       
       <body className={`${inter.variable} ${playfair.variable} antialiased`}>

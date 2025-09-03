@@ -66,10 +66,7 @@ export async function generateMetadata({
       title: `${cityName} Air Quality Index (AQI) and Air Pollution`,
       description: `Live ${cityName} Air Quality Index (AQI) is ${aqi} (${condition}). PM2.5: ${pm2_5} µg/m³ | Temp: ${temp}°C | Humidity: ${humidity}%. Stay updated in real time.`,
       images: [`https://airniza.com/api/og?city=${encodeURIComponent(cityName)}&aqi=${aqi}`],
-    },
-    other: [
-      { name: "fb:app_id", content: "24164145333270926" } // <- FB App ID
-    ],
+    }
   };
 }
 
