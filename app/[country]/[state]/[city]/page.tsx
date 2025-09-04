@@ -83,7 +83,7 @@ export default async function CityPage({
   const citySlug = formatCitySlug(city); // "lucknow"
   const cityName = formatCityName(citySlug); // "Lucknow"
 
-  const {  aqi, condition,exp,temp,humidity,ws,state,country,co,no2,o3,so2,pm2_5,pm10, } =
+  const {  aqi, condition,exp,temp,humidity,ws,state,country,co,no2,o3,so2,pm2_5,pm10, mainPollutant } =
     await getData(cityName);
     const countrySlug = PlaceToSlug(country);
     const stateSlug = PlaceToSlug(state);
@@ -126,6 +126,8 @@ export default async function CityPage({
         state={state}
         country={country}
         aqi={aqi}
+        pm25={pm2_5}
+        mainPollutant={mainPollutant}
         temp={temp}
         humidity={humidity}
         ws={ws}
@@ -138,7 +140,7 @@ export default async function CityPage({
         }
       />
 
-      <MajorPollutants pm25={pm2_5} pm10={pm10} no2={no2} o3={o3} co={co} so2={so2} place={cityName}/>
+      <MajorPollutants pm25={pm2_5} pm10={pm10} no2={no2} o3={o3} co={co} so2={so2} place={cityName} />
 
       <RelatedCities
         country={country}

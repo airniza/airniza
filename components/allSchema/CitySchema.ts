@@ -7,12 +7,12 @@ type schemaProps = {
   Temp: number | null;
   Humidity: number;
   Ws: number | null;
-  Pm2five?: string;
-  Pm10: string;
-  O3: string;
-  NO2: string;
-  SO2: string;
-  CO: string;
+  Pm2five?: number;
+  Pm10: number;
+  O3: number;
+  NO2: number;
+  SO2: number;
+  CO: number;
   Condition: string;
   exp: string;
 };

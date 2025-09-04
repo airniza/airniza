@@ -7,7 +7,6 @@ import Image from "next/image";
 import { MdWaterDrop } from "react-icons/md";
 import { FaTemperatureThreeQuarters } from "react-icons/fa6";
 import { TbBuildingWindTurbine } from "react-icons/tb";
-import Pm25Converter from "./Pm25Converter";
 import { ReactElement } from "react";
 
 
@@ -22,13 +21,14 @@ type dashboardProps = {
   temp: number | null;
   humidity: number;
   ws: number | null;
+  mainPollutant?:string;
+  pm25?:number;
 
 };
 
-export default function AirQualityDashboard ({breadcrumbs,place,state,country,heading,aqi,temp,humidity,ws}:dashboardProps) {
+export default function AirQualityDashboard ({breadcrumbs,place,state,country,heading,aqi,temp,pm25,humidity,ws,mainPollutant}:dashboardProps) {
       
-  //PM2.5 Conversion
-   const pm25 = Pm25Converter(aqi); 
+  
   // air quality status
   const { condition, fore, ic } = AqiStatus(aqi);
       //last updated for msg
@@ -52,7 +52,7 @@ export default function AirQualityDashboard ({breadcrumbs,place,state,country,he
           <h1 className="text-2xl font-bold font-serif mt-3">
            {heading || defaultHeading}
           </h1>
-          <p className="mt-3 text-muted-foreground ">Stay updated with the latest air quality index (AQI) for {location}  . With an AQI of {aqi} ({condition}), PM2.5 at {pm25?.toFixed(1)}µg/m³, humidity at {humidity}%, and temperature around {temp}°C. Explore current air pollution levels and learn how to protect yourself and your family from pollution exposure.</p>
+          <p className="mt-3 text-muted-foreground ">Stay updated with the latest air quality index (AQI) for {location}  . With an AQI of {aqi} ({condition}), PM2.5 at {pm25} µg/m³, humidity at {humidity}%, and temperature around {temp}°C. Explore current air pollution levels and learn how to protect yourself and your family from pollution exposure.</p>
           <div className="flex flex-wrap items-center justify-between flex-1 gap-4 mt-4">
             {/* Radiation ball and AQI */}
             <div className="flex flex-col">
@@ -86,10 +86,10 @@ export default function AirQualityDashboard ({breadcrumbs,place,state,country,he
           {/* PM2.5 */}
           <div className="mt-4 text-sm md:text-base flex justify-between">
             <p className="font-bold">
-              PM2.5:
+              Main Pollutant:
               <span className="font-semibold text-muted-foreground">
                 {" "}
-                {pm25?.toFixed(1)} µg/m³
+                {mainPollutant}
               </span>
             </p>
             <LiveUpdatedText initialTime={lastUpdated}/>
