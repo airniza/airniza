@@ -64,8 +64,8 @@ export default function RootLayout({
       "caption": "Airniza Logo"
     },
     "sameAs": [
-      "https://www.facebook.com/profile.php?id=61579195018666",
-      "https://x.com/air_quality_now"
+      "https://www.facebook.com/profile.php?id=61580240519068",
+      "https://x.com/airniza_real"
     ]
   },
   "potentialAction": {
