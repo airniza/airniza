@@ -8,7 +8,7 @@ interface MajorPollutantsProps {
   o3: number
   co: number
   so2: number
-  place: string
+  place?: string
 }
 
 export default function MajorPollutants({

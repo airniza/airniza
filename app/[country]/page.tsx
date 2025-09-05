@@ -4,6 +4,10 @@ import { CountryBreadcrumbs } from "@/components/allBreadcrumbs/countryBreadcrum
 import AirQualityDashboard from "@/components/AirQualityDashboard";
 import { Badge } from "@/components/ui/badge";
 import FetchLocationData from "@/components/FetchLocationData";
+import IndoorAirQuality from "@/components/IndoorAirQuality";
+import HealthRecommendations from "@/components/HealthRecommendations";
+import Faqs from "@/components/Faqs";
+import MajorPollutants from "@/components/MajorPollutants";
 
 // Shared Promise Start
 async function getData(place: string) {
@@ -52,7 +56,7 @@ export default async function CountryPage({
   const countryName = countrySlug.replace(/-/g, " ").replace(/\b\w/g, c => c.toUpperCase());
 
   // ✅ API call always based on URL param
-  const { aqi, temp, humidity, ws } = await getData(countrySlug);
+  const { aqi, temp, humidity, ws,condition,exp,mainPollutant,pm2_5,pm10,no2,o3,co,so2 } = await getData(countrySlug);
 
   // Local data: only show states if country exists in locations
   const countryData = locations.find(c => c.country === countrySlug);
@@ -60,6 +64,7 @@ export default async function CountryPage({
   return (
     <main className="p-0">
       <AirQualityDashboard
+        mainPollutant={mainPollutant}
         country={countryName}
         aqi={aqi}
         temp={temp}
@@ -68,6 +73,7 @@ export default async function CountryPage({
         heading={`${countryName} Air Quality Index (AQI) and Air Pollution`}
         breadcrumbs={<CountryBreadcrumbs country={countryName} />}
       />
+      <MajorPollutants pm25={pm2_5} pm10={pm10} no2={no2} o3={o3} co={co} so2={so2}  />
 
       {/* Show states list only if available in local data */}
       {countryData && (
@@ -99,6 +105,15 @@ export default async function CountryPage({
           </div>
         </div>
       )}
+      <IndoorAirQuality aqi={aqi} country={countryName}/>
+       <HealthRecommendations aqi={aqi} country={countryName}/>
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+                    <h3 className="text-2xl font-bold mb-3">
+                      Frequently Asked Questions about Air Quality {countryName}
+                    </h3>
+                    <Faqs place={countryName} aqi={aqi} status={condition} exp={exp} />
+                    
+                  </div>
     </main>
   );
 }

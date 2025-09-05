@@ -4,6 +4,10 @@ import { StateBreadcrumbs } from "@/components/allBreadcrumbs/stateBreadcrumbs";
 import AirQualityDashboard from "@/components/AirQualityDashboard";
 import { Badge } from "@/components/ui/badge"; 
 import FetchLocationData from "@/components/FetchLocationData";
+import MajorPollutants from "@/components/MajorPollutants";
+import IndoorAirQuality from "@/components/IndoorAirQuality";
+import HealthRecommendations from "@/components/HealthRecommendations";
+import Faqs from "@/components/Faqs";
 
 // ✅ Shared Promise: Fetch AQI and weather data for given location
 async function getData(place: string) {
@@ -47,7 +51,7 @@ export default async function StatePage({
 }) {
   const { state, country } = await params;
 
-  if (!state || !country) throw new Error("Country or state not provided in params");
+  if (!state || !country) throw new Error("Country or state not provided");
 
   // ✅ Normalize slugs to display names
   const stateSlug = state;
@@ -56,7 +60,7 @@ export default async function StatePage({
   const countryName = country.replace(/-/g, " ").replace(/\b\w/g, c => c.toUpperCase());
 
   // ✅ Always fetch data from API (even if local data exists)
-  const { aqi,temp, humidity, ws } =
+  const { aqi,temp, humidity, ws, pm2_5,pm10,no2,o3,co,so2,mainPollutant,exp,condition } =
     await getData(state);
 
   // ✅ Local data lookup for states & cities
@@ -70,11 +74,14 @@ export default async function StatePage({
         state={stateName}
         country={countryName}
         aqi={aqi}
+        pm25={pm2_5}
         temp={temp}
         humidity={humidity}
         ws={ws}
+        mainPollutant={mainPollutant}
         breadcrumbs={<StateBreadcrumbs country={country} state={state} />}
       />
+       <MajorPollutants pm25={pm2_5} pm10={pm10} no2={no2} o3={o3} co={co} so2={so2}  />
 
       {/* ✅ Show cities if available in local data */}
       {stateData && (
@@ -100,6 +107,16 @@ export default async function StatePage({
           </div>
         </div>
       )}
+      <IndoorAirQuality aqi={aqi} state={stateName} country={countryName}/>
+      <HealthRecommendations aqi={aqi} state={stateName} country={countryName}/>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+              <h3 className="text-2xl font-bold mb-3">
+                Frequently Asked Questions about Air Quality {stateName}
+              </h3>
+              <Faqs place={stateName} aqi={aqi} status={condition} exp={exp} />
+              
+            </div>
+      
     </main>
   );
 }
