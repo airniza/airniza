@@ -1,13 +1,13 @@
 import AirQualityDashboard from "@/components/AirQualityDashboard";
 import Faqs from "@/components/Faqs";
 import { RelatedCities } from "@/components/RelatedCities";
-import { CitySchema } from "@/components/allSchema/CitySchema";
 import { CityPageBreadcrumbs } from "@/components/allBreadcrumbs/CityPageBreadcrumbs";
 import { PlaceToSlug } from "@/components/helpers/PlaceToSlug";
 import IndoorAirQuality from "@/components/IndoorAirQuality";
 import HealthRecommendations from "@/components/HealthRecommendations";
 import FetchLocationData from "@/components/FetchLocationData";
 import MajorPollutants from "@/components/MajorPollutants";
+import { CitypageSchema } from "@/components/allSchema/CitypageSchema";
 
 // Shared Promise Start
 async function getData(place: string) {
@@ -92,7 +92,7 @@ export default async function CityPage({
     
     
 
-  const schemaData = CitySchema({
+  const schemaData = CitypageSchema({
     City: cityName,
     pageUrl: `https://airniza.com/${countrySlug}/${stateSlug}/${citySlug}-air-quality`,
     country: country,
