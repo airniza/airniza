@@ -1,10 +1,8 @@
 import { PlaceToSlug } from "../helpers/PlaceToSlug";
 
 type schemaProps = {
-  City: string;
-  pageUrl: string;
+  State: string;
   country: string;
-  state: string;
   Aqi: number;
   Temp: number | null;
   Humidity: number;
@@ -19,10 +17,8 @@ type schemaProps = {
   exp: string;
 };
 
-export function CitypageSchema({
-  City,
-  pageUrl,
-  state,
+export function StatepageSchema({
+  State,
   country,
   Aqi,
   Pm2five,
@@ -37,7 +33,7 @@ export function CitypageSchema({
   Condition,
   exp,
 }: schemaProps) {
-  const stateSlug = PlaceToSlug(state);
+  const stateSlug = PlaceToSlug(State);
   const countrySlug = PlaceToSlug(country);
 
   return [
@@ -45,16 +41,16 @@ export function CitypageSchema({
     {
       "@context": "https://schema.org",
       "@type": "WebPage",
-      name: `${City} Air Quality Index (AQI) and Air Pollution`,
-      description: `The current air quality in ${City} is ${Aqi} (${Condition}). PM2.5 is ${Pm2five} µg/m³, temperature ${Temp}°C, humidity ${Humidity}%, and wind speed ${Ws} km/h. Real-time updates.`,
-      url: pageUrl,
+      name: `${State} Air Quality Index (AQI) and ${country} Air Pollution`,
+      description: `The current air quality in ${State} is ${Aqi} (${Condition}). PM2.5 is ${Pm2five} µg/m³, temperature ${Temp}°C, humidity ${Humidity}%, and wind speed ${Ws} km/h. Real-time updates.`,
+      url: `https://airniza.com/${countrySlug}/${stateSlug}`,
       keywords: [
-        `${City} AQI`,
-        `${City} Air Quality`,
-        `${City} Air Pollution`,
-        `air quality ${City}`,
-        `aqi ${City}`,
-        `Air Quality Index ${City}`,
+        `${State} AQI`,
+        `${State} Air Quality`,
+        `${State} Air Pollution`,
+        `air quality ${State}`,
+        `aqi ${State}`,
+        `Air Quality Index ${State}`,
       ],
       datePublished: "2025-08-08T00:00:00.000Z",
       dateModified: new Date().toISOString(),
@@ -75,7 +71,7 @@ export function CitypageSchema({
       },
       mainEntity: {
         "@type": "Thing",
-        name: `${City} Air Quality Index and Air Pollution`,
+        name: `${State} Air Quality Index and Air Pollution`,
         additionalProperty: [
           {
             "@type": "PropertyValue",
@@ -156,14 +152,8 @@ export function CitypageSchema({
         {
           "@type": "ListItem",
           position: 3,
-          name: state,
+          name: `${State} Air Quality`,
           item: `https://airniza.com/${countrySlug}/${stateSlug}`,
-        },
-        {
-          "@type": "ListItem",
-          position: 4,
-          name: `${City} Air Quality`,
-          item: pageUrl,
         },
       ],
     },
@@ -172,9 +162,9 @@ export function CitypageSchema({
     {
       "@context": "https://schema.org",
       "@type": "Dataset",
-      name: `${City} Air Quality Index and Air Pollution Data`,
-      description: `Live Air Quality Index (AQI) and Air Pollution data for ${City}. Check real-time air quality updates`,
-      url: pageUrl,
+      name: `${State} Air Quality Index and Air Pollution Data`,
+      description: `Live Air Quality Index (AQI) and Air Pollution data for ${State}. Check real-time air quality updates`,
+      url: `https://airniza.com/${countrySlug}/${stateSlug}`,
       creator: {
         "@type": "Organization",
         name: "Airniza",
@@ -183,7 +173,7 @@ export function CitypageSchema({
       license: "https://creativecommons.org/licenses/by/4.0/",
       spatialCoverage: {
         "@type": "Place",
-        name: `${City}`,
+        name: `${State}`,
       },
       variableMeasured: [
         {
@@ -259,18 +249,18 @@ export function CitypageSchema({
       mainEntity: [
         {
           "@type": "Question",
-          name: `What is the air quality level in ${City} today?`,
+          name: `What is the air quality level in ${State} today?`,
           acceptedAnswer: {
             "@type": "Answer",
-            text: `The Air Quality Index (AQI) in ${City} today is ${Aqi}, which is categorized as ${Condition}. ${exp}`,
+            text: `The Air Quality Index (AQI) in ${State} today is ${Aqi}, which is categorized as ${Condition}. ${exp}`,
           },
         },
         {
           "@type": "Question",
-          name: `How often is the air quality in ${City} updated?`,
+          name: `How often is the air quality in ${State} updated?`,
           acceptedAnswer: {
             "@type": "Answer",
-            text: `The air quality data for ${City} is usually updated instantly using monitoring stations and sensors.`,
+            text: `The air quality data for ${State} is usually updated instantly using monitoring stations and sensors.`,
           },
         },
         {

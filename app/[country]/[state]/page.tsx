@@ -8,6 +8,7 @@ import MajorPollutants from "@/components/MajorPollutants";
 import IndoorAirQuality from "@/components/IndoorAirQuality";
 import HealthRecommendations from "@/components/HealthRecommendations";
 import Faqs from "@/components/Faqs";
+import { StatepageSchema } from "@/components/allSchema/StatepageSchema";
 
 // ✅ Shared Promise: Fetch AQI and weather data for given location
 async function getData(place: string) {
@@ -24,9 +25,11 @@ export async function generateMetadata({
 
   const stateName = state.replace(/-/g, " ").replace(/\b\w/g, c => c.toUpperCase());
   const countryName = country.replace(/-/g, " ").replace(/\b\w/g, c => c.toUpperCase());
+  const { aqi,temp, humidity, ws, pm2_5,condition } =
+    await getData(state);
 
   const title = `${stateName} Air Quality Index (AQI) and ${countryName} Air Pollution`;
-  const description = `Check live ${stateName} Air Quality Index (AQI), air pollution levels, PM2.5, temperature and humidity updates.`;
+  const description = `The current air quality in ${stateName} is ${aqi} (${condition}). PM2.5 is ${pm2_5} µg/m³, temperature ${temp}°C, humidity ${humidity}%, and wind speed ${ws} km/h. Real-time updates.`;
   const canonical = `https://airniza.com/${country}/${state}`;
 
   return {
@@ -66,9 +69,35 @@ export default async function StatePage({
   // ✅ Local data lookup for states & cities
   const countryData = locations.find(c => c.country === countrySlug);
   const stateData = countryData?.states.find(s => s.state === stateSlug);
+  //Statepage Schema
+  const schemaData = StatepageSchema ({
+    State: stateName,
+    country: countryName,
+    Aqi: aqi,
+    Pm2five: pm2_5,
+    Temp: temp,
+    Humidity: humidity,
+    Ws: ws,
+    Condition: condition,
+    exp: exp,
+    Pm10: pm10,
+    O3: o3,
+    NO2: no2,
+    SO2: so2,
+    CO: co,
+  });
 
   return (
     <main className="p-0">
+      
+      <script
+        type="application/ld+json"
+        suppressHydrationWarning
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(schemaData),
+        }}
+      />
+
       {/* ✅ Air Quality Dashboard */}
       <AirQualityDashboard
         state={stateName}

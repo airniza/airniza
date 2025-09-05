@@ -8,6 +8,7 @@ import IndoorAirQuality from "@/components/IndoorAirQuality";
 import HealthRecommendations from "@/components/HealthRecommendations";
 import Faqs from "@/components/Faqs";
 import MajorPollutants from "@/components/MajorPollutants";
+import { CountrypageSchema } from "@/components/allSchema/CountrypageSchema";
 
 // Shared Promise Start
 async function getData(place: string) {
@@ -26,10 +27,12 @@ export async function generateMetadata({
   const countryName = country
     .replace(/-/g, " ")
     .replace(/\b\w/g, (c) => c.toUpperCase());
+    const { aqi, temp, humidity, ws,condition,pm2_5 } = await getData(countryName);
 
   return {
     title: `${countryName} Air Quality Index (AQI) and Air Pollution`,
-    description: `Check live ${countryName} Air Quality Index (AQI), air pollution levels, PM2.5, temperature and humidity updates.`,
+    description: `The current air quality in ${countryName} is ${aqi} (${condition}). PM2.5 is ${pm2_5} µg/m³, temperature ${temp}°C, humidity ${humidity}%, and wind speed ${ws} km/h. Real-time updates.`,
+      url: `https://airniza.com/${country}`,
     alternates: {
       canonical: `https://airniza.com/${country}`,
     },
@@ -56,13 +59,37 @@ export default async function CountryPage({
   const countryName = countrySlug.replace(/-/g, " ").replace(/\b\w/g, c => c.toUpperCase());
 
   // ✅ API call always based on URL param
-  const { aqi, temp, humidity, ws,condition,exp,mainPollutant,pm2_5,pm10,no2,o3,co,so2 } = await getData(countrySlug);
+  const { aqi, temp, humidity, ws,condition,exp,mainPollutant,pm2_5,pm10,no2,o3,co,so2 } = await getData(countryName);
 
   // Local data: only show states if country exists in locations
   const countryData = locations.find(c => c.country === countrySlug);
 
+  //Country page Schema
+  const schemaData = CountrypageSchema ({
+    Country: countryName,
+     Aqi: aqi,
+    Pm2five: pm2_5,
+    Temp: temp,
+    Humidity: humidity,
+    Ws: ws,
+    Condition: condition,
+    exp: exp,
+    Pm10: pm10,
+    O3: o3,
+    NO2: no2,
+    SO2: so2,
+    CO: co,
+  })
+
   return (
     <main className="p-0">
+      <script
+        type="application/ld+json"
+        suppressHydrationWarning
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(schemaData),
+        }}
+      />
       <AirQualityDashboard
         mainPollutant={mainPollutant}
         country={countryName}
