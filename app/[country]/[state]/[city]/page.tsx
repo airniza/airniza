@@ -8,6 +8,7 @@ import HealthRecommendations from "@/components/HealthRecommendations";
 import FetchLocationData from "@/components/FetchLocationData";
 import MajorPollutants from "@/components/MajorPollutants";
 import { CitypageSchema } from "@/components/allSchema/CitypageSchema";
+import AdUnit from "@/components/AdUnit";
 
 // Shared Promise Start
 async function getData(place: string) {
@@ -141,6 +142,7 @@ export default async function CityPage({
       />
 
       <MajorPollutants pm25={pm2_5} pm10={pm10} no2={no2} o3={o3} co={co} so2={so2} place={cityName} />
+      <AdUnit adSlot="3496836699" adFormat="auto"/>
 
       <RelatedCities
         country={country}
