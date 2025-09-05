@@ -40,7 +40,7 @@ export function CountrypageSchema({
       "@type": "WebPage",
       name: `${Country} Air Quality Index (AQI) and Air Pollution`,
       description: `The current air quality in ${Country} is ${Aqi} (${Condition}). PM2.5 is ${Pm2five} µg/m³, temperature ${Temp}°C, humidity ${Humidity}%, and wind speed ${Ws} km/h. Real-time updates.`,
-      url: `https://airniza.com/${countrySlug}/${countrySlug}`,
+      url: `https://airniza.com/${countrySlug}`,
       keywords: [
         `${Country} AQI`,
         `${Country} Air Quality`,
