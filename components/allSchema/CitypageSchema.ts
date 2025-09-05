@@ -1,6 +1,5 @@
 import { PlaceToSlug } from "../helpers/PlaceToSlug";
 
-
 type schemaProps = {
   City: string;
   pageUrl: string;
@@ -20,7 +19,6 @@ type schemaProps = {
   exp: string;
 };
 
-
 export function CitypageSchema({
   City,
   pageUrl,
@@ -37,11 +35,11 @@ export function CitypageSchema({
   Humidity,
   Ws,
   Condition,
-  exp
+  exp,
 }: schemaProps) {
   const stateSlug = PlaceToSlug(state);
   const countrySlug = PlaceToSlug(country);
-  
+
   return [
     // WebPage Schema
     {
@@ -51,13 +49,13 @@ export function CitypageSchema({
       description: `The current air quality in ${City} is ${Aqi} (${Condition}). PM2.5 is ${Pm2five} µg/m³, temperature ${Temp}°C, humidity ${Humidity}%, and wind speed ${Ws} km/h. Real-time updates.`,
       url: pageUrl,
       keywords: [
-            `${City} AQI`,
-            `${City} Air Quality`,
-            `${City} Air Pollution`,
-            `air quality ${City}`,
-            `aqi ${City}`,
-            `Air Quality Index ${City}`
-          ],
+        `${City} AQI`,
+        `${City} Air Quality`,
+        `${City} Air Pollution`,
+        `air quality ${City}`,
+        `aqi ${City}`,
+        `Air Quality Index ${City}`,
+      ],
       datePublished: "2025-08-08T00:00:00.000Z",
       dateModified: new Date().toISOString(),
       inLanguage: "en",
@@ -68,6 +66,12 @@ export function CitypageSchema({
       publisher: {
         "@type": "Organization",
         name: "Airniza",
+        logo: {
+          "@type": "ImageObject",
+          url: "https://airniza.com/logo.png",
+          width: 250,
+          height: 60,
+        },
       },
       mainEntity: {
         "@type": "Thing",
@@ -136,14 +140,33 @@ export function CitypageSchema({
     {
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
-      itemListElement:  [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://airniza.com/" },
-        { "@type": "ListItem", "position": 2, "name": country, "item": `https://airniza.com/${countrySlug}`},
-        { "@type": "ListItem", "position": 3, "name": state, "item": `https://airniza.com/${countrySlug}/${stateSlug}`},
-        { "@type": "ListItem", "position": 4, "name": `${City} Air Quality`, "item": pageUrl }
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: "https://airniza.com/",
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: country,
+          item: `https://airniza.com/${countrySlug}`,
+        },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: state,
+          item: `https://airniza.com/${countrySlug}/${stateSlug}`,
+        },
+        {
+          "@type": "ListItem",
+          position: 4,
+          name: `${City} Air Quality`,
+          item: pageUrl,
+        },
       ],
     },
-
 
     // Dataset Schema
     {
@@ -236,36 +259,36 @@ export function CitypageSchema({
       mainEntity: [
         {
           "@type": "Question",
-          "name": `What is the air quality level in ${City} today?`,
-          "acceptedAnswer": {
+          name: `What is the air quality level in ${City} today?`,
+          acceptedAnswer: {
             "@type": "Answer",
-            "text": `The Air Quality Index (AQI) in ${City} today is ${Aqi}, which is categorized as ${Condition}. ${exp}`
-          }
+            text: `The Air Quality Index (AQI) in ${City} today is ${Aqi}, which is categorized as ${Condition}. ${exp}`,
+          },
         },
         {
           "@type": "Question",
-          "name": `How often is the air quality in ${City} updated?`,
-          "acceptedAnswer": {
+          name: `How often is the air quality in ${City} updated?`,
+          acceptedAnswer: {
             "@type": "Answer",
-            "text": `The air quality data for ${City} is usually updated instantly using monitoring stations and sensors.`
-          }
+            text: `The air quality data for ${City} is usually updated instantly using monitoring stations and sensors.`,
+          },
         },
         {
           "@type": "Question",
-          "name": `What is a safe AQI level for healthy air quality?`,
-          "acceptedAnswer": {
+          name: `What is a safe AQI level for healthy air quality?`,
+          acceptedAnswer: {
             "@type": "Answer",
-            "text": `An AQI level of 0 to 50 is considered safe and healthy for breathing.`
-          }
+            text: `An AQI level of 0 to 50 is considered safe and healthy for breathing.`,
+          },
         },
         {
           "@type": "Question",
-          "name": `Which AQI standard do you use to measure air quality?`,
-          "acceptedAnswer": {
+          name: `Which AQI standard do you use to measure air quality?`,
+          acceptedAnswer: {
             "@type": "Answer",
-            "text": `We use the US AQI (United States Air Quality Index) standard for measuring air quality.`
-          }
-        }
+            text: `We use the US AQI (United States Air Quality Index) standard for measuring air quality.`,
+          },
+        },
       ],
     },
   ];
