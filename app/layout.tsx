@@ -4,6 +4,7 @@ import "./globals.css";
 import Footer from "@/components/Footer";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import NewNavigation from "@/components/NewNavigation";
+import WebsiteSchema from "@/components/allSchema/WebsiteSchema";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
@@ -43,43 +44,7 @@ export default function RootLayout({
 }>) {
 
      // WebSite schema
- const schemaData = {
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "@id": "https://airniza.com/#website",
-  "name": "Airniza",
-  "url": "https://airniza.com/",
-  "inLanguage": "en",
-  "publisher": {
-    "@type": "Organization",
-    "@id": "https://airniza.com/#organization",
-    "name": "Airniza",
-    "url": "https://airniza.com/",
-    "logo": {
-      "@type": "ImageObject",
-      "@id": "https://airniza.com/#logo",
-      "url": "https://airniza.com/logo.png",
-      "width": 250,
-      "height": 60,
-      "caption": "Airniza Logo"
-    },
-    "sameAs": [
-      "https://www.facebook.com/profile.php?id=61580240519068",
-      "https://x.com/airniza_real"
-    ]
-  },
-  "potentialAction": {
-    "@type": "SearchAction",
-    "target": "https://airniza.com/search?query={search_term_string}",
-    "query-input": "required name=search_term_string"
-  }
-};
-
-
-
-
-
-
+ const schemaData = WebsiteSchema();
 
   return (
     <html lang="en" suppressHydrationWarning >

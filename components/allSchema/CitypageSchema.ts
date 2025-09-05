@@ -1,3 +1,6 @@
+import { PlaceToSlug } from "../helpers/PlaceToSlug";
+
+
 type schemaProps = {
   City: string;
   pageUrl: string;
@@ -36,6 +39,8 @@ export function CitypageSchema({
   Condition,
   exp
 }: schemaProps) {
+  const stateSlug = PlaceToSlug(state);
+  const countrySlug = PlaceToSlug(country);
   
   return [
     // WebPage Schema
@@ -133,8 +138,8 @@ export function CitypageSchema({
       "@type": "BreadcrumbList",
       itemListElement:  [
         { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://airniza.com/" },
-        { "@type": "ListItem", "position": 2, "name": country, "item": `https://airniza.com/${country}`},
-        { "@type": "ListItem", "position": 3, "name": state, "item": `https://airniza.com/${country}/${state}`},
+        { "@type": "ListItem", "position": 2, "name": country, "item": `https://airniza.com/${countrySlug}`},
+        { "@type": "ListItem", "position": 3, "name": state, "item": `https://airniza.com/${countrySlug}/${stateSlug}`},
         { "@type": "ListItem", "position": 4, "name": `${City} Air Quality`, "item": pageUrl }
       ],
     },
@@ -223,14 +228,6 @@ export function CitypageSchema({
       measurementTechnique: "Standard air quality measurement methods",
       dateModified: new Date().toISOString(),
     },
-
-
-
-
-
-
-
-
 
     // FAQ Schema
     {
