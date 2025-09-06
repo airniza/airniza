@@ -59,5 +59,10 @@ export const countryWise = [
     slug: "united-arab-emirates",
     image: "/country-icons/united-arab-emirates.png",
   },
+   {
+    name: "Australia",
+    slug: "australia",
+    image: "/country-icons/australia.png",
+  },
 ];
 

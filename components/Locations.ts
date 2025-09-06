@@ -207,11 +207,6 @@ export const locations = [
   ],
 },
 
-
-
-
-
-
   // Canada start
   {
     country: "canada",
@@ -238,6 +233,7 @@ export const locations = [
       },
     ],
   },
+  // UAE start
   {
   country: "united-arab-emirates",
   states: [
@@ -291,7 +287,110 @@ export const locations = [
       cities: ["belfast", "derry"],
     },
   ],
+},
+// Australia Start
+{
+  country: "australia",
+  states: [
+    {
+      state: "new-south-wales",
+      cities: [
+        "sydney",
+        "wollongong",
+        "coffs-harbour",
+        "dubbo",
+        "bathurst",
+        "port-macquarie",
+         "queanbeyan",
+      ],
+    },
+    {
+      state: "victoria",
+      cities: [
+        "melbourne",
+        "geelong",
+        "ballarat",
+        "bendigo",
+        "shepparton",
+        "warrnambool",
+        "mildura",
+        "traralgon",
+        "wodonga",
+        "morwell"
+      ],
+    },
+    {
+      state: "queensland",
+      cities: [
+        "brisbane",
+        "gold-coast",
+        "cairns",
+        "townsville",
+        "sunshine-coast",
+        "toowoomba",
+        "mackay",
+        "rockhampton",
+        "bundaberg",
+        "hervey-bay",
+         "wynyard",
+      ],
+    },
+    {
+      state: "western-australia",
+      cities: [
+        "perth",
+        "bunbury",
+        "geraldton",
+        "kalgoorlie",
+        "karratha",
+      ],
+    },
+    {
+      state: "south-australia",
+      cities: [
+        "adelaide",
+        "mount-gambier",
+        "whyalla",
+        "gawler",
+        "port-pirie",
+        "port-lincoln",
+        "murray-bridge",
+        "port-augusta",
+        "victor-harbor",
+        "mount-barker"
+      ],
+    },
+    {
+      state: "tasmania",
+      cities: [
+        "hobart",
+        "launceston",
+        "devonport",
+        "burnie",
+        "ulverstone",        
+        "new-norfolk",
+        "sorell-creek"
+      ],
+    },
+    {
+      state: "australian-capital-territory",
+      cities: [
+        "canberra",
+        "tuggeranong-administrative-district"
+       
+      ],
+    },
+    {
+      state: "northern-territory",
+      cities: [
+        "darwin",
+        "alice-springs",       
+        "nhulunbuy",
+        "tennant-creek",
+        "jabiru",
+        "maningrida"
+      ],
+    },
+  ],
 }
-
-
 ];
