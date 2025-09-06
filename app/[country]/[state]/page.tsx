@@ -25,11 +25,11 @@ export async function generateMetadata({
 
   const stateName = state.replace(/-/g, " ").replace(/\b\w/g, c => c.toUpperCase());
   const countryName = country.replace(/-/g, " ").replace(/\b\w/g, c => c.toUpperCase());
-  const { aqi,temp, humidity, ws, pm2_5,condition } =
+  const { aqi,temp, humidity, ws, condition,mainPollutant } =
     await getData(state);
 
   const title = `${stateName} Air Quality Index (AQI) and ${countryName} Air Pollution`;
-  const description = `The current air quality in ${stateName} is ${aqi} (${condition}). PM2.5 is ${pm2_5} µg/m³, temperature ${temp}°C, humidity ${humidity}%, and wind speed ${ws} km/h. Real-time updates.`;
+  const description = `The current air quality in ${stateName} is ${aqi} (${condition}). Main pollutant is ${mainPollutant}, temperature ${temp}°C, humidity ${humidity}%, and wind speed ${ws} km/h. Real-time updates.`;
   const canonical = `https://airniza.com/${country}/${state}`;
 
   return {
@@ -85,6 +85,7 @@ export default async function StatePage({
     NO2: no2,
     SO2: so2,
     CO: co,
+    mainPollutant: mainPollutant,
   });
 
   return (

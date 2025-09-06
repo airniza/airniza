@@ -14,6 +14,7 @@ type schemaProps = {
   CO: number;
   Condition: string;
   exp: string;
+  mainPollutant: string;
 };
 
 export function CountrypageSchema({
@@ -30,6 +31,7 @@ export function CountrypageSchema({
   Ws,
   Condition,
   exp,
+  mainPollutant
 }: schemaProps) {
   const countrySlug = PlaceToSlug(Country);
 
@@ -39,7 +41,7 @@ export function CountrypageSchema({
       "@context": "https://schema.org",
       "@type": "WebPage",
       name: `${Country} Air Quality Index (AQI) and Air Pollution`,
-      description: `The current air quality in ${Country} is ${Aqi} (${Condition}). PM2.5 is ${Pm2five} µg/m³, temperature ${Temp}°C, humidity ${Humidity}%, and wind speed ${Ws} km/h. Real-time updates.`,
+      description: `The current air quality in ${Country} is ${Aqi} (${Condition}). Main pollutant is ${mainPollutant}, temperature ${Temp}°C, humidity ${Humidity}%, and wind speed ${Ws} km/h. Real-time updates.`,
       url: `https://airniza.com/${countrySlug}`,
       keywords: [
         `${Country} AQI`,

@@ -44,10 +44,10 @@ export async function generateMetadata({
   
 
   const pageUrl = `${siteURL}/${country}/${state}/${citySlug}-air-quality`;
-  const { aqi, pm2_5, condition, temp, humidity, ws, } =
+  const { aqi, condition, temp, humidity, ws, mainPollutant } =
     await getData(cityName);
     
-    const metaDescription = `The current air quality in ${cityName} is ${aqi} (${condition}). PM2.5 is ${pm2_5} µg/m³, temperature ${temp}°C, humidity ${humidity}%, and wind speed ${ws} km/h. Real-time updates.`
+    const metaDescription = `The current air quality in ${cityName} is ${aqi} (${condition}). Main pollutant is ${mainPollutant}, temperature ${temp}°C, humidity ${humidity}%, and wind speed ${ws} km/h. Real-time updates.`
 
   return {
   title: `${cityName} Air Quality Index (AQI) and Air Pollution`,
@@ -110,6 +110,7 @@ export default async function CityPage({
     NO2: no2,
     SO2: so2,
     CO: co,
+    mainPollutant: mainPollutant
   });
 
   return (
@@ -121,7 +122,8 @@ export default async function CityPage({
           __html: JSON.stringify(schemaData),
         }}
       />
-
+      {/*Ad Unit 1 */}
+      <AdUnit adSlot="6101204334" adFormat="horizontal"/>
       <AirQualityDashboard
         place={cityName}
         state={state}
@@ -140,8 +142,10 @@ export default async function CityPage({
           />
         }
       />
-
+      {/*Ad Unit 2 */}
+       <AdUnit adSlot="8344224294" adFormat="auto"/>
       <MajorPollutants pm25={pm2_5} pm10={pm10} no2={no2} o3={o3} co={co} so2={so2} place={cityName} />
+      {/*Ad Unit 3 */}
       <AdUnit adSlot="3496836699" adFormat="auto"/>
 
       <RelatedCities
@@ -150,6 +154,8 @@ export default async function CityPage({
         currentState={state}
       />
        <IndoorAirQuality aqi={aqi} place={cityName} state={state} country={country}/>
+       {/*Ad Unit 4 */}
+       <AdUnit adSlot="4717622864" adFormat="fluid"/>
       <HealthRecommendations aqi={aqi} place={cityName} state={state} country={country}/>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">

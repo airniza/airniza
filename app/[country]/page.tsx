@@ -27,18 +27,18 @@ export async function generateMetadata({
   const countryName = country
     .replace(/-/g, " ")
     .replace(/\b\w/g, (c) => c.toUpperCase());
-    const { aqi, temp, humidity, ws,condition,pm2_5 } = await getData(countryName);
+    const { aqi, temp, humidity, ws,condition,mainPollutant } = await getData(countryName);
 
   return {
     title: `${countryName} Air Quality Index (AQI) and Air Pollution`,
-    description: `The current air quality in ${countryName} is ${aqi} (${condition}). PM2.5 is ${pm2_5} µg/m³, temperature ${temp}°C, humidity ${humidity}%, and wind speed ${ws} km/h. Real-time updates.`,
+    description: `The current air quality in ${countryName} is ${aqi} (${condition}). Main pollutant is ${mainPollutant}, temperature ${temp}°C, humidity ${humidity}%, and wind speed ${ws} km/h. Real-time updates.`,
       url: `https://airniza.com/${country}`,
     alternates: {
       canonical: `https://airniza.com/${country}`,
     },
     openGraph: {
       title: `${countryName} Air Quality Index (AQI)`,
-      description: `Live air quality in ${countryName}: Check AQI, PM2.5 levels, and pollution trends with instant updates.`,
+      description: `The current air quality in ${countryName} is ${aqi} (${condition}). Main pollutant is ${mainPollutant}, temperature ${temp}°C, humidity ${humidity}%, and wind speed ${ws} km/h. Real-time updates.`,
       url: `https://airniza.com/${country}`,
       type: "article",
     },
@@ -79,6 +79,7 @@ export default async function CountryPage({
     NO2: no2,
     SO2: so2,
     CO: co,
+    mainPollutant: mainPollutant
   })
 
   return (
