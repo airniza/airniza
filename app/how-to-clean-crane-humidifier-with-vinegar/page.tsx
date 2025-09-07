@@ -3,7 +3,7 @@ export const metadata = {
     title: "How to Clean Humidifier with vinegar",
     description: "A humidifier requires regular cleaning that ensures both efficiency and protects air quality together with mold and bacteria prevention. Regular cleaning of is essential",
     alternates: {
-      canonical: "https://airniza.com/how-to-clean-crane-humidifier-with-vinegar/"
+      canonical: "https://airniza.com/how-to-clean-crane-humidifier-with-vinegar"
     }
   };
 

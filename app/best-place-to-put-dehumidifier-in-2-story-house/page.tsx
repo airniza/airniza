@@ -3,7 +3,7 @@ export const metadata = {
     title: "Best place to put Dehumidifier in 2 story house",
     description: "Proper placement is crucial for all air and humidity controll equipment. Many houseowners wonder about best place to put dehumidifier in 2 story house.",
     alternates: {
-      canonical: "https://airniza.com/best-place-to-put-dehumidifier-in-2-story-house/"
+      canonical: "https://airniza.com/best-place-to-put-dehumidifier-in-2-story-house"
     }
   };
 
