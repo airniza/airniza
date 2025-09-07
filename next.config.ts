@@ -34,7 +34,7 @@ const nextConfig: NextConfig = {
               style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
               img-src 'self' data: https: https://www.googletagmanager.com https://www.google-analytics.com https://pagead2.googlesyndication.com https://www.gstatic.com;
               font-src 'self' https://fonts.gstatic.com data:;
-              connect-src 'self' https://www.google-analytics.com https://pagead2.googlesyndication.com https://fundingchoicesmessages.google.com https://tpc.googlesyndication.com;
+              connect-src 'self' https://www.google-analytics.com https://pagead2.googlesyndication.com https://fundingchoicesmessages.google.com https://tpc.googlesyndication.com https://api.radar.io;
               frame-src 'self' https://googleads.g.doubleclick.net https://tpc.googlesyndication.com;
               frame-ancestors 'none';
               base-uri 'self';
