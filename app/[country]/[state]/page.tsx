@@ -43,6 +43,7 @@ export async function generateMetadata({
       description,
       url: canonical,
       type: "website",
+       images: [`https://airniza.com/api/og?city=${encodeURIComponent(stateName)}&aqi=${aqi}`],
     },
   };
 }
