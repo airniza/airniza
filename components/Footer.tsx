@@ -9,8 +9,6 @@ const socialLinks = [
 ];
 
 const quickLinks = [
-{ name: "Home", href: "/" },
-{ name: "About Us", href: "/about-us" },
 { name: "Privacy Policy", href: "/privacy-policy" },
 { name: "Disclaimer", href: "/disclaimer" },
 { name: "Terms & Conditions", href: "/terms-conditions" },

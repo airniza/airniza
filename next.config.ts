@@ -1,10 +1,11 @@
-import type { NextConfig } from "next";
+import { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  poweredByHeader: false, // ✅ add this line to remove X-Powered-By
   async headers() {
     return [
       {
-        source: "/(.*)", // sabhi routes par headers apply honge
+        source: "/(.*)",
         headers: [
           {
             key: "Strict-Transport-Security",
