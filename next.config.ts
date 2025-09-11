@@ -30,17 +30,10 @@ const nextConfig: NextConfig = {
           {
             key: "Content-Security-Policy",
             value: `
-              default-src 'self';
-              script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://pagead2.googlesyndication.com https://www.gstatic.com https://cse.google.com;
-              style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
-              img-src 'self' data: https: https://www.googletagmanager.com https://www.google-analytics.com https://pagead2.googlesyndication.com https://www.gstatic.com;
-              font-src 'self' https://fonts.gstatic.com data:;
-              connect-src 'self' https://www.google-analytics.com https://pagead2.googlesyndication.com https://fundingchoicesmessages.google.com https://tpc.googlesyndication.com https://api.radar.io;
-              frame-src 'self' https://googleads.g.doubleclick.net https://tpc.googlesyndication.com;
-              frame-ancestors 'none';
-              base-uri 'self';
-              form-action 'self';
-            `.replace(/\s{2,}/g, " ").trim(),
+    default-src * 'unsafe-inline' 'unsafe-eval' data: blob:;
+  `
+              .replace(/\s{2,}/g, " ")
+              .trim(),
           },
         ],
       },
