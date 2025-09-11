@@ -34,6 +34,7 @@ export default async function SocialShare({ url }: ShareProps) {
           href={fbShare}
           target="_blank"
           rel="noopener noreferrer"
+          aria-label="Facebook"
           className="p-2 rounded-full bg-blue-600 text-white hover:opacity-90"
         >
           <FaFacebook className="w-5 h-5 sm:w-6 sm:h-6" />
@@ -42,6 +43,7 @@ export default async function SocialShare({ url }: ShareProps) {
           href={xShare}
           target="_blank"
           rel="noopener noreferrer"
+           aria-label="Twitter"
           className="p-2 rounded-full bg-black text-white hover:opacity-90"
         >
           <FaXTwitter className="w-5 h-5 sm:w-6 sm:h-6" />
@@ -50,6 +52,7 @@ export default async function SocialShare({ url }: ShareProps) {
           href={whatsappShare}
           target="_blank"
           rel="noopener noreferrer"
+           aria-label="Whatsapp"
           className="p-2 rounded-full bg-green-500 text-white hover:opacity-90"
         >
           <FaWhatsapp className="w-5 h-5 sm:w-6 sm:h-6" />
@@ -58,6 +61,7 @@ export default async function SocialShare({ url }: ShareProps) {
           href={linkedinShare}
           target="_blank"
           rel="noopener noreferrer"
+           aria-label="Linkedin"
           className="p-2 rounded-full bg-blue-700 text-white hover:opacity-90"
         >
           <FaLinkedin className="w-5 h-5 sm:w-6 sm:h-6" />
@@ -66,6 +70,7 @@ export default async function SocialShare({ url }: ShareProps) {
           href={pinterestShare}
           target="_blank"
           rel="noopener noreferrer"
+           aria-label="Pinterest"
           className="p-2 rounded-full bg-red-600 text-white hover:opacity-90"
         >
           <FaPinterest className="w-5 h-5 sm:w-6 sm:h-6" />
@@ -74,6 +79,7 @@ export default async function SocialShare({ url }: ShareProps) {
           href={emailShare}
           target="_blank"
           rel="noopener noreferrer"
+           aria-label="Email"
           className="p-2 rounded-full bg-gray-700 text-white hover:opacity-90"
         >
           <FaEnvelope className="w-5 h-5 sm:w-6 sm:h-6" />
