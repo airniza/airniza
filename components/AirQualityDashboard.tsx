@@ -2,7 +2,6 @@ import AirQualityBar from "./AirQualityBar";
 import AqiStatus from "./AqiStatus";
 import { LiveUpdatedText } from "./LastUpdatedText";
 import RadiationBall from "./RadiationBall";
-import { Button } from "./ui/button";
 import Image from "next/image";
 import { MdWaterDrop } from "react-icons/md";
 import { FaTemperatureThreeQuarters } from "react-icons/fa6";
@@ -75,11 +74,11 @@ export default function AirQualityDashboard ({breadcrumbs,place,state,country,he
             {/* Air Quality Status closer to AQI */}
             <div className="text-center">
               <p>Air Quality is</p>
-              <Button className="text-xl mt-1"
+              <div className="text-xl mt-1 pl-2 pr-2 rounded text-[#333333]"
                 style={{ backgroundColor: fore }}
-              >
+                 >
                 {condition}
-              </Button>
+              </div>
             </div>
           </div>
 

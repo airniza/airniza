@@ -17,9 +17,10 @@ export default function MobileNavigation () {
     {/* remove comment if needed theme toggle      <ThemeToggle/>    */} 
     <Sheet open={isOpen} onOpenChange={setIsOpen}>
   <SheetTrigger asChild>
-    <Button variant="ghost" size="icon">
-      <RiMenu3Fill/>
-    </Button>
+    <button className="p-2 rounded-md hover:bg-accent">
+    <RiMenu3Fill className="h-5 w-8" />
+    <span className="sr-only">Open menu</span>
+  </button>
     
   </SheetTrigger>
   <SheetContent>

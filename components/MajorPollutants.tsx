@@ -73,10 +73,10 @@ export default function MajorPollutants({
     }
 
     // Badge mapping
-    let colorClass = "bg-green-500"
-    if (status === "Good") colorClass = "bg-green-500"
-    else if (status === "Moderate") colorClass = "bg-yellow-500"
-    else if (status === "Unhealthy") colorClass = "bg-red-500"
+    let colorClass = "bg-[#00e400]"
+    if (status === "Good") colorClass = "bg-[#00e400]"
+    else if (status === "Moderate") colorClass = "bg-[#ffce1b]"
+    else if (status === "Unhealthy") colorClass = "bg-[#FFB366]"
 
     return { label: status, level, colorClass }
   }
@@ -93,7 +93,7 @@ export default function MajorPollutants({
             <Card key={p.name} className="rounded-2xl shadow-sm">
               <CardHeader className="flex flex-row items-center justify-between">
                 <CardTitle>{p.name}</CardTitle>
-                <Badge className={`text-xs ${colorClass} text-white`}>
+                <Badge className={`text-xs ${colorClass} text-[#333333]`}>
                   {label}
                 </Badge>
               </CardHeader>
