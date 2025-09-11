@@ -1,14 +1,11 @@
-import {
+import { 
   FaFacebook,
-  FaTwitter,
+  FaXTwitter,
   FaWhatsapp,
-  FaTelegram,
   FaLinkedin,
   FaPinterest,
   FaEnvelope,
-} from "react-icons/fa";
-
-import CopyLinkButton from "./CopyLinkButton"; // ✅ import
+} from "react-icons/fa6";
 
 type ShareProps = {
   url: string;
@@ -16,46 +13,72 @@ type ShareProps = {
   state?: string;
 };
 
-export default async function SocialShare({ url, city, state }: ShareProps) {
-  const baseText = `${city} current air quality`;
-  const hashtags = `AirQuality,AQI,${city.replace(/\s+/g, "")}${
-    state ? "," + state.replace(/\s+/g, "") : ""
-  }`;
-
-  const fbShare = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}&hashtag=%23AirQuality`;
-  const twitterShare = `https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=${encodeURIComponent(baseText)}&hashtags=${hashtags}`;
-  const whatsappShare = `https://wa.me/?text=${encodeURIComponent(`${baseText}\n${url}`)}`;
-  const telegramShare = `https://t.me/share/url?url=${encodeURIComponent(url)}&text=${encodeURIComponent(baseText)}`;
+export default async function SocialShare({ url }: ShareProps) {
+  const fbShare = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
+  const xShare = `https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}`;
+  const whatsappShare = `https://wa.me/?text=${encodeURIComponent(url)}`;
   const linkedinShare = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`;
-  const pinterestShare = `https://pinterest.com/pin/create/button/?url=${encodeURIComponent(url)}&description=${encodeURIComponent(baseText + " #" + hashtags.replace(/,/g, " #"))}`;
-  const emailShare = `mailto:?subject=${encodeURIComponent(baseText)}&body=${encodeURIComponent(`${baseText}\n${url}`)}`;
+  const pinterestShare = `https://pinterest.com/pin/create/button/?url=${encodeURIComponent(url)}`;
+  const emailShare = `mailto:?body=${encodeURIComponent(url)}`;
 
   return (
-    <div className="flex flex-wrap gap-3 mt-4">
-      <a href={fbShare} target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-blue-600 text-white hover:opacity-90">
-        <FaFacebook size={22} />
-      </a>
-      <a href={twitterShare} target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-sky-500 text-white hover:opacity-90">
-        <FaTwitter size={22} />
-      </a>
-      <a href={whatsappShare} target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-green-500 text-white hover:opacity-90">
-        <FaWhatsapp size={22} />
-      </a>
-      <a href={telegramShare} target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-blue-400 text-white hover:opacity-90">
-        <FaTelegram size={22} />
-      </a>
-      <a href={linkedinShare} target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-blue-700 text-white hover:opacity-90">
-        <FaLinkedin size={22} />
-      </a>
-      <a href={pinterestShare} target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-red-600 text-white hover:opacity-90">
-        <FaPinterest size={22} />
-      </a>
-      <a href={emailShare} target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-gray-700 text-white hover:opacity-90">
-        <FaEnvelope size={22} />
-      </a>
+    <div className="flex flex-wrap items-center gap-3 mt-4 justify-center">
+      {/* Text on left */}
+      <span className="text-base sm:text-lg font-medium text-gray-700">
+        Share on
+      </span>
 
-      {/* ✅ Client button alag file se */}
-      <CopyLinkButton url={url} city={city} />
+      {/* Icons */}
+      <div className="flex flex-wrap gap-3">
+        <a
+          href={fbShare}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="p-2 rounded-full bg-blue-600 text-white hover:opacity-90"
+        >
+          <FaFacebook className="w-5 h-5 sm:w-6 sm:h-6" />
+        </a>
+        <a
+          href={xShare}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="p-2 rounded-full bg-black text-white hover:opacity-90"
+        >
+          <FaXTwitter className="w-5 h-5 sm:w-6 sm:h-6" />
+        </a>
+        <a
+          href={whatsappShare}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="p-2 rounded-full bg-green-500 text-white hover:opacity-90"
+        >
+          <FaWhatsapp className="w-5 h-5 sm:w-6 sm:h-6" />
+        </a>
+        <a
+          href={linkedinShare}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="p-2 rounded-full bg-blue-700 text-white hover:opacity-90"
+        >
+          <FaLinkedin className="w-5 h-5 sm:w-6 sm:h-6" />
+        </a>
+        <a
+          href={pinterestShare}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="p-2 rounded-full bg-red-600 text-white hover:opacity-90"
+        >
+          <FaPinterest className="w-5 h-5 sm:w-6 sm:h-6" />
+        </a>
+        <a
+          href={emailShare}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="p-2 rounded-full bg-gray-700 text-white hover:opacity-90"
+        >
+          <FaEnvelope className="w-5 h-5 sm:w-6 sm:h-6" />
+        </a>
+      </div>
     </div>
   );
 }
