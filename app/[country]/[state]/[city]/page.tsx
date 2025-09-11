@@ -9,6 +9,7 @@ import FetchLocationData from "@/components/FetchLocationData";
 import MajorPollutants from "@/components/MajorPollutants";
 import { CitypageSchema } from "@/components/allSchema/CitypageSchema";
 import AdUnit from "@/components/AdUnit";
+import SocialShare from "@/components/SocialShare";
 
 // Shared Promise Start
 async function getData(place: string) {
@@ -163,6 +164,7 @@ export default async function CityPage({
           Frequently Asked Questions about Air Quality {cityName}
         </h3>
         <Faqs place={cityName} aqi={aqi} status={condition} exp={exp} />
+        <SocialShare url= {`https://airniza.com/${countrySlug}/${stateSlug}/${citySlug}-air-quality`} city= {cityName}/>
         
       </div>
     </main>
