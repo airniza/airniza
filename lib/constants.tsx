@@ -1,5 +1,5 @@
 export const navItems = [
-  { name: "Home",
+  { name: "Dashboard",
     href: "/",
   },
   { name: "About Us",
