@@ -124,7 +124,7 @@ export default async function CityPage({
         }}
       />
       {/*Ad Unit 1 */}
-      <AdUnit adSlot="6101204334" adFormat="horizontal"/>
+     
       <AirQualityDashboard
         place={cityName}
         state={state}
@@ -144,10 +144,10 @@ export default async function CityPage({
         }
       />
       {/*Ad Unit 2 */}
-       <AdUnit adSlot="8344224294" adFormat="auto"/>
+      
       <MajorPollutants pm25={pm2_5} pm10={pm10} no2={no2} o3={o3} co={co} so2={so2} place={cityName} />
       {/*Ad Unit 3 */}
-      <AdUnit adSlot="3496836699" adFormat="auto"/>
+      
 
       <RelatedCities
         country={country}
@@ -156,7 +156,7 @@ export default async function CityPage({
       />
        <IndoorAirQuality aqi={aqi} place={cityName} state={state} country={country}/>
        {/*Ad Unit 4 */}
-       <AdUnit adSlot="4717622864" adFormat="fluid"/>
+       
       <HealthRecommendations aqi={aqi} place={cityName} state={state} country={country}/>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
