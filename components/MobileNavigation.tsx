@@ -6,7 +6,6 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet"
 //import ThemeToggle from "./ThemeToggle"
-import { Button } from "./ui/button"
 import { navItems } from "@/lib/constants"
 import Link from "next/link"
 import { useState } from "react"

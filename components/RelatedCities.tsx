@@ -62,8 +62,8 @@ export function RelatedCities({ country, currentState, currentPlace }: PlacesLis
           </Link>
         ))}
 
-        <Link href={`/${normalizedCountry}/${normalizedState}`} className="gap-x-3">
-          <Button>See All</Button>
+        <Link href={`/${normalizedCountry}/${normalizedState}`} >
+          <Button className="gap-x-3">See All</Button>
         </Link>
       </div>
     </div>
