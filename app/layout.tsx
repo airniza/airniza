@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import Footer from "@/components/Footer";
@@ -16,25 +17,24 @@ const playfair = Playfair_Display({
 export const metadata: Metadata = {
   title: {
     default: "Airniza",
-    template: "%s - Airniza"
+    template: "%s - Airniza",
   },
   description:
     "Check real-time Air Quality Index (AQI), PM2.5, humidity, and temperature to monitor air pollution instantly.",
-    applicationName: "Airniza",
-    openGraph:{
-      siteName: "Airniza",
-      title: "Airniza",
-      description: "Check real-time AQI, PM2.5, humidity, and temperature to stay informed about air pollution instantly.",
-      url: "https://airniza.com",
-      type: "website"
-
-
-    },
-    other: {"apple-mobile-web-app-title": "Airniza",
-            "mobile-web-app-capable": "Yes",
-            "apple-mobile-web-app-status-bar-style": "default"
-
-    }
+  applicationName: "Airniza",
+  openGraph: {
+    siteName: "Airniza",
+    title: "Airniza",
+    description:
+      "Check real-time AQI, PM2.5, humidity, and temperature to stay informed about air pollution instantly.",
+    url: "https://airniza.com",
+    type: "website",
+  },
+  other: {
+    "apple-mobile-web-app-title": "Airniza",
+    "mobile-web-app-capable": "Yes",
+    "apple-mobile-web-app-status-bar-style": "default",
+  },
 };
 
 export default function RootLayout({
@@ -42,25 +42,29 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-
-     // WebSite schema
- const schemaData = WebsiteSchema();
+  // WebSite schema
+  const schemaData = WebsiteSchema();
 
   return (
-    <html lang="en" suppressHydrationWarning >
+    <html lang="en" suppressHydrationWarning>
       <head>
-      
-     <meta property="fb:app_id" content="24164145333270926" />
+        <Script
+          id="adsense-init"
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5703495087334224"
+          crossOrigin="anonymous"
+        />
+        <meta property="fb:app_id" content="24164145333270926" />
       </head>
-      
+
       <body className={`${inter.variable} ${playfair.variable} antialiased`}>
         <script
-        type="application/ld+json"
-        suppressHydrationWarning
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(schemaData),
-        }}
-      />
+          type="application/ld+json"
+          suppressHydrationWarning
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(schemaData),
+          }}
+        />
         <NewNavigation />
         {children}
         <Footer />
