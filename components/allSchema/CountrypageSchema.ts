@@ -254,7 +254,7 @@ export function CountrypageSchema({
           name: `How often is the air quality in ${Country} updated?`,
           acceptedAnswer: {
             "@type": "Answer",
-            text: `The air quality data for ${Country} is usually updated instantly using monitoring stations and sensors.`,
+            text: `The air quality data for ${Country} is usually updated instantly using monitoring stations and sensors. This ensures residents can track real-time changes in the Air Quality Index (AQI).`,
           },
         },
         {
@@ -262,7 +262,7 @@ export function CountrypageSchema({
           name: `What is a safe AQI level for healthy air quality?`,
           acceptedAnswer: {
             "@type": "Answer",
-            text: `An AQI level of 0 to 50 is considered safe and healthy for breathing.`,
+            text: `An AQI level of 0 to 50 is considered safe and healthy for breathing. At this range, the air quality is clean, and there is little or no risk to human health. People of all age groups, including children, elderly, and those with respiratory or heart conditions, can safely spend time outdoors without concerns. Once the AQI rises above this level, sensitive groups may begin to experience mild health effects depending on the air quality category.`,
           },
         },
         {
@@ -270,7 +270,7 @@ export function CountrypageSchema({
           name: `Which AQI standard do you use to measure air quality?`,
           acceptedAnswer: {
             "@type": "Answer",
-            text: `We use the US AQI (United Countrys Air Quality Index) standard for measuring air quality.`,
+            text: `We use the US AQI (United States Air Quality Index) standard for measuring air quality. It is widely accepted internationally and provides a consistent way to understand how polluted the air is. Learn more on the <a href='https://www.epa.gov/air-trends'>U.S. Environmental Protection Agency (EPA)</a> website.`,
           },
         },
       ],
