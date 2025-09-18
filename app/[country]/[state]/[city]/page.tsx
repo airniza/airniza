@@ -159,10 +159,6 @@ export default async function CityPage({
         currentPlace={cityName}
         currentState={state}
       />
-       <IndoorAirQuality aqi={aqi} place={cityName} state={state} country={country}/>
-       {/*Ad Unit 4 */}
-       
-      <HealthRecommendations aqi={aqi} place={cityName} state={state} country={country}/>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <h3 className="text-2xl font-bold mb-3">

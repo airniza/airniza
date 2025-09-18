@@ -1,9 +1,9 @@
-import { Facebook, X } from "lucide-react";
+import { Facebook, Twitter } from "lucide-react";
 import Link from "next/link";
 
 const socialLinks = [
 { icon: Facebook, href: "https://www.facebook.com/profile.php?id=61576733752711", label: "Facebook" },
-{ icon: X, href: "https://x.com/airniza_real", label: "X" },
+{ icon: Twitter, href: "https://x.com/airniza_real", label: "X" },
 
 
 ];

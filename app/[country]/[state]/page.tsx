@@ -1,8 +1,8 @@
-import { locations } from "@/components/Locations"; 
+import { locations } from "@/components/Locations";
 import Link from "next/link";
 import { StateBreadcrumbs } from "@/components/allBreadcrumbs/stateBreadcrumbs";
 import AirQualityDashboard from "@/components/AirQualityDashboard";
-import { Badge } from "@/components/ui/badge"; 
+import { Badge } from "@/components/ui/badge";
 import FetchLocationData from "@/components/FetchLocationData";
 import MajorPollutants from "@/components/MajorPollutants";
 import IndoorAirQuality from "@/components/IndoorAirQuality";
@@ -23,10 +23,15 @@ export async function generateMetadata({
 }) {
   const { country, state } = await params;
 
-  const stateName = state.replace(/-/g, " ").replace(/\b\w/g, c => c.toUpperCase());
-  const countryName = country.replace(/-/g, " ").replace(/\b\w/g, c => c.toUpperCase());
-  const { aqi,temp, humidity, ws, condition,mainPollutant } =
-    await getData(state);
+  const stateName = state
+    .replace(/-/g, " ")
+    .replace(/\b\w/g, (c) => c.toUpperCase());
+  const countryName = country
+    .replace(/-/g, " ")
+    .replace(/\b\w/g, (c) => c.toUpperCase());
+  const { aqi, temp, humidity, ws, condition, mainPollutant } = await getData(
+    state
+  );
 
   const title = `${stateName} Air Quality Index (AQI) and ${countryName} Air Pollution`;
   const description = `The current air quality in ${stateName} is ${aqi} (${condition}). Main pollutant is ${mainPollutant}, temperature ${temp}°C, humidity ${humidity}%, and wind speed ${ws} km/h. Real-time updates.`;
@@ -43,7 +48,11 @@ export async function generateMetadata({
       description,
       url: canonical,
       type: "website",
-       images: [`https://airniza.com/api/og?city=${encodeURIComponent(stateName)}&aqi=${aqi}`],
+      images: [
+        `https://airniza.com/api/og?city=${encodeURIComponent(
+          stateName
+        )}&aqi=${aqi}`,
+      ],
     },
   };
 }
@@ -59,19 +68,36 @@ export default async function StatePage({
 
   // ✅ Normalize slugs to display names
   const stateSlug = state;
-  const stateName = state.replace(/-/g, " ").replace(/\b\w/g, c => c.toUpperCase());
+  const stateName = state
+    .replace(/-/g, " ")
+    .replace(/\b\w/g, (c) => c.toUpperCase());
   const countrySlug = country;
-  const countryName = country.replace(/-/g, " ").replace(/\b\w/g, c => c.toUpperCase());
+  const countryName = country
+    .replace(/-/g, " ")
+    .replace(/\b\w/g, (c) => c.toUpperCase());
 
   // ✅ Always fetch data from API (even if local data exists)
-  const { aqi,temp, humidity, ws, pm2_5,pm10,no2,o3,co,so2,mainPollutant,exp,condition } =
-    await getData(state);
+  const {
+    aqi,
+    temp,
+    humidity,
+    ws,
+    pm2_5,
+    pm10,
+    no2,
+    o3,
+    co,
+    so2,
+    mainPollutant,
+    exp,
+    condition,
+  } = await getData(state);
 
   // ✅ Local data lookup for states & cities
-  const countryData = locations.find(c => c.country === countrySlug);
-  const stateData = countryData?.states.find(s => s.state === stateSlug);
+  const countryData = locations.find((c) => c.country === countrySlug);
+  const stateData = countryData?.states.find((s) => s.state === stateSlug);
   //Statepage Schema
-  const schemaData = StatepageSchema ({
+  const schemaData = StatepageSchema({
     State: stateName,
     country: countryName,
     Aqi: aqi,
@@ -91,7 +117,6 @@ export default async function StatePage({
 
   return (
     <main className="p-0">
-      
       <script
         type="application/ld+json"
         suppressHydrationWarning
@@ -106,7 +131,7 @@ export default async function StatePage({
         country={countryName}
         aqi={aqi}
         pm25={pm2_5}
-         NO2={no2}
+        NO2={no2}
         SO2={so2}
         CO={co}
         O3={o3}
@@ -117,15 +142,26 @@ export default async function StatePage({
         mainPollutant={mainPollutant}
         breadcrumbs={<StateBreadcrumbs country={country} state={state} />}
       />
-       <MajorPollutants pm25={pm2_5} pm10={pm10} no2={no2} o3={o3} co={co} so2={so2}  />
+      <MajorPollutants
+        pm25={pm2_5}
+        pm10={pm10}
+        no2={no2}
+        o3={o3}
+        co={co}
+        so2={so2}
+      />
 
       {/* ✅ Show cities if available in local data */}
       {stateData && (
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <h2 className="text-2xl font-semibold mb-3">Explore City-wise Air Quality Index (AQI) in {stateName}</h2>
+          <h2 className="text-2xl font-semibold mb-3">
+            Explore City-wise Air Quality Index (AQI) in {stateName}
+          </h2>
           <div className="flex flex-wrap gap-2">
             {stateData.cities.map((city) => {
-              const cityName = city.replace(/-/g, " ").replace(/\b\w/g, c => c.toUpperCase());
+              const cityName = city
+                .replace(/-/g, " ")
+                .replace(/\b\w/g, (c) => c.toUpperCase());
               return (
                 <Link
                   key={city}
@@ -143,16 +179,12 @@ export default async function StatePage({
           </div>
         </div>
       )}
-      <IndoorAirQuality aqi={aqi} state={stateName} country={countryName}/>
-      <HealthRecommendations aqi={aqi} state={stateName} country={countryName}/>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-              <h3 className="text-2xl font-bold mb-3">
-                Frequently Asked Questions about Air Quality {stateName}
-              </h3>
-              <Faqs place={stateName} aqi={aqi} status={condition} exp={exp} />
-              
-            </div>
-      
+        <h3 className="text-2xl font-bold mb-3">
+          Frequently Asked Questions about Air Quality {stateName}
+        </h3>
+        <Faqs place={stateName} aqi={aqi} status={condition} exp={exp} />
+      </div>
     </main>
   );
 }

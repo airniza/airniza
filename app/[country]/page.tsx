@@ -20,19 +20,21 @@ async function getData(place: string) {
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ country: string;}>;
+  params: Promise<{ country: string }>;
 }) {
   const { country } = await params;
 
   const countryName = country
     .replace(/-/g, " ")
     .replace(/\b\w/g, (c) => c.toUpperCase());
-    const { aqi, temp, humidity, ws,condition,mainPollutant } = await getData(countryName);
+  const { aqi, temp, humidity, ws, condition, mainPollutant } = await getData(
+    countryName
+  );
 
   return {
     title: `${countryName} Air Quality Index (AQI) and Air Pollution`,
     description: `The current air quality in ${countryName} is ${aqi} (${condition}). Main pollutant is ${mainPollutant}, temperature ${temp}°C, humidity ${humidity}%, and wind speed ${ws} km/h. Real-time updates.`,
-      url: `https://airniza.com/${country}`,
+    url: `https://airniza.com/${country}`,
     alternates: {
       canonical: `https://airniza.com/${country}`,
     },
@@ -48,7 +50,7 @@ export async function generateMetadata({
 export default async function CountryPage({
   params,
 }: {
-  params: Promise<{ country: string;}>;
+  params: Promise<{ country: string }>;
 }) {
   const { country } = await params;
 
@@ -56,18 +58,34 @@ export default async function CountryPage({
 
   // Slug -> Convert to readable country name
   const countrySlug = country;
-  const countryName = countrySlug.replace(/-/g, " ").replace(/\b\w/g, c => c.toUpperCase());
+  const countryName = countrySlug
+    .replace(/-/g, " ")
+    .replace(/\b\w/g, (c) => c.toUpperCase());
 
   // ✅ API call always based on URL param
-  const { aqi, temp, humidity, ws,condition,exp,mainPollutant,pm2_5,pm10,no2,o3,co,so2 } = await getData(countryName);
+  const {
+    aqi,
+    temp,
+    humidity,
+    ws,
+    condition,
+    exp,
+    mainPollutant,
+    pm2_5,
+    pm10,
+    no2,
+    o3,
+    co,
+    so2,
+  } = await getData(countryName);
 
   // Local data: only show states if country exists in locations
-  const countryData = locations.find(c => c.country === countrySlug);
+  const countryData = locations.find((c) => c.country === countrySlug);
 
   //Country page Schema
-  const schemaData = CountrypageSchema ({
+  const schemaData = CountrypageSchema({
     Country: countryName,
-     Aqi: aqi,
+    Aqi: aqi,
     Pm2five: pm2_5,
     Temp: temp,
     Humidity: humidity,
@@ -79,8 +97,8 @@ export default async function CountryPage({
     NO2: no2,
     SO2: so2,
     CO: co,
-    mainPollutant: mainPollutant
-  })
+    mainPollutant: mainPollutant,
+  });
 
   return (
     <main className="p-0">
@@ -106,7 +124,14 @@ export default async function CountryPage({
         ws={ws}
         breadcrumbs={<CountryBreadcrumbs country={countryName} />}
       />
-      <MajorPollutants pm25={pm2_5} pm10={pm10} no2={no2} o3={o3} co={co} so2={so2}  />
+      <MajorPollutants
+        pm25={pm2_5}
+        pm10={pm10}
+        no2={no2}
+        o3={o3}
+        co={co}
+        so2={so2}
+      />
 
       {/* Show states list only if available in local data */}
       {countryData && (
@@ -122,10 +147,7 @@ export default async function CountryPage({
                 .replace(/\b\w/g, (c) => c.toUpperCase());
 
               return (
-                <Link
-                  key={state.state}
-                  href={`/${countrySlug}/${state.state}`}
-                >
+                <Link key={state.state} href={`/${countrySlug}/${state.state}`}>
                   <Badge
                     variant="secondary"
                     className="cursor-pointer text-sm px-4 py-2 text-primary"
@@ -138,15 +160,13 @@ export default async function CountryPage({
           </div>
         </div>
       )}
-      <IndoorAirQuality aqi={aqi} country={countryName}/>
-       <HealthRecommendations aqi={aqi} country={countryName}/>
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-                    <h3 className="text-2xl font-bold mb-3">
-                      Frequently Asked Questions about Air Quality {countryName}
-                    </h3>
-                    <Faqs place={countryName} aqi={aqi} status={condition} exp={exp} />
-                    
-                  </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <h3 className="text-2xl font-bold mb-3">
+          Frequently Asked Questions about Air Quality {countryName}
+        </h3>
+        <Faqs place={countryName} aqi={aqi} status={condition} exp={exp} />
+      </div>
     </main>
   );
 }
