@@ -95,10 +95,15 @@ export default async function CountryPage({
         mainPollutant={mainPollutant}
         country={countryName}
         aqi={aqi}
+        pm25={pm2_5}
+        NO2={no2}
+        SO2={so2}
+        CO={co}
+        O3={o3}
+        PM10={pm10}
         temp={temp}
         humidity={humidity}
         ws={ws}
-        heading={`${countryName} Air Quality Index (AQI) and Air Pollution`}
         breadcrumbs={<CountryBreadcrumbs country={countryName} />}
       />
       <MajorPollutants pm25={pm2_5} pm10={pm10} no2={no2} o3={o3} co={co} so2={so2}  />

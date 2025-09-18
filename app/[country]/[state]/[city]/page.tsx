@@ -132,6 +132,11 @@ export default async function CityPage({
         aqi={aqi}
         pm25={pm2_5}
         mainPollutant={mainPollutant}
+        NO2={no2}
+        SO2={so2}
+        CO={co}
+        O3={o3}
+        PM10={pm10}
         temp={temp}
         humidity={humidity}
         ws={ws}

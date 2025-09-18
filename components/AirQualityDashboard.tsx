@@ -15,17 +15,21 @@ type dashboardProps = {
   place?: string;
   state?: string;
   country: string;
-  heading?: string;
   aqi: number;
   temp: number | null;
   humidity: number;
   ws: number | null;
   mainPollutant?:string;
   pm25?:number;
-
+  NO2:number;
+  SO2:number;
+  CO:number;
+  O3:number;
+  PM10:number;
+ 
 };
 
-export default function AirQualityDashboard ({breadcrumbs,place,state,country,heading,aqi,temp,pm25,humidity,ws,mainPollutant}:dashboardProps) {
+export default function AirQualityDashboard ({breadcrumbs,place,state,country,aqi,temp,pm25,humidity,ws,mainPollutant, NO2,SO2, CO,O3,PM10}:dashboardProps) {
       
   
   // air quality status
@@ -33,9 +37,8 @@ export default function AirQualityDashboard ({breadcrumbs,place,state,country,he
       //last updated for msg
   const lastUpdated = new Date().toISOString();
   
-  const location = [place,state,country].filter(Boolean).join(", ");
-  const defaultHeading = `${place || state || country} Air Quality Index (AQI) and Air Pollution`
-
+  //const location = [place,state,country].filter(Boolean).join(", ");
+  const singleLocation = `${place || state || country}`
 
 
   return <div
@@ -49,9 +52,9 @@ export default function AirQualityDashboard ({breadcrumbs,place,state,country,he
            {breadcrumbs}
           
           <h1 className="text-2xl font-bold font-serif mt-3">
-           {heading || defaultHeading}
+          {place || state || country} Air Quality Index (AQI) and Air Pollution
           </h1>
-          <p className="mt-3 text-muted-foreground ">Stay updated with the latest air quality index (AQI) for {location}  . With an AQI of {aqi} ({condition}), PM2.5 at {pm25} µg/m³, humidity at {humidity}%, and temperature around {temp}°C. Explore current air pollution levels and learn how to protect yourself and your family from pollution exposure.</p>
+          <p className="mt-3 text-muted-foreground ">The {singleLocation} Air Quality Index (AQI) today is {aqi} ({condition}). The dominant pollutant is {mainPollutant}. Other measured pollutants include NO₂ ({NO2} ppb), SO₂ ({SO2} ppb), CO ({CO} ppm), O₃ ({O3} ppm), PM10 ({PM10}µg/m³), PM2.5 ({pm25} µg/m³), contributing to air pollution.</p>
           <div className="flex flex-wrap items-center justify-between flex-1 gap-4 mt-4">
             {/* Radiation ball and AQI */}
             <div className="flex flex-col">
