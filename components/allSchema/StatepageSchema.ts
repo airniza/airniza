@@ -44,7 +44,7 @@ export function StatepageSchema({
       "@context": "https://schema.org",
       "@type": "WebPage",
       name: `${State} Air Quality Index (AQI) and ${country} Air Pollution`,
-      description: `The current air quality in ${State} is ${Aqi} (${Condition}). Main pollutant is ${mainPollutant}, temperature ${Temp}°C, humidity ${Humidity}%, and wind speed ${Ws} km/h. Real-time updates.`,
+      description: `The current air quality in ${State} is ${Aqi} (${Condition}). Main pollutant is ${mainPollutant}, temperature ${Temp}°C, humidity ${Humidity}%, and wind speed ${Ws} km/h.`,
       url: `https://airniza.com/${countrySlug}/${stateSlug}`,
       keywords: [
         `${State} AQI`,

@@ -48,7 +48,7 @@ export function CitypageSchema({
       "@context": "https://schema.org",
       "@type": "WebPage",
       name: `${City} Air Quality Index (AQI) and Air Pollution`,
-      description: `The current air quality in ${City} is ${Aqi} (${Condition}). Main pollutant is ${mainPollutant}, temperature ${Temp}°C, humidity ${Humidity}%, and wind speed ${Ws} km/h. Real-time updates.`,
+      description: `The current air quality in ${City} is ${Aqi} (${Condition}). Main pollutant is ${mainPollutant}, temperature ${Temp}°C, humidity ${Humidity}%, and wind speed ${Ws} km/h.`,
       url: pageUrl,
       keywords: [
         `${City} AQI`,

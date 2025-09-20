@@ -4,8 +4,6 @@ import { CountryBreadcrumbs } from "@/components/allBreadcrumbs/countryBreadcrum
 import AirQualityDashboard from "@/components/AirQualityDashboard";
 import { Badge } from "@/components/ui/badge";
 import FetchLocationData from "@/components/FetchLocationData";
-import IndoorAirQuality from "@/components/IndoorAirQuality";
-import HealthRecommendations from "@/components/HealthRecommendations";
 import Faqs from "@/components/Faqs";
 import MajorPollutants from "@/components/MajorPollutants";
 import { CountrypageSchema } from "@/components/allSchema/CountrypageSchema";
@@ -33,14 +31,14 @@ export async function generateMetadata({
 
   return {
     title: `${countryName} Air Quality Index (AQI) and Air Pollution`,
-    description: `The current air quality in ${countryName} is ${aqi} (${condition}). Main pollutant is ${mainPollutant}, temperature ${temp}°C, humidity ${humidity}%, and wind speed ${ws} km/h. Real-time updates.`,
+    description: `The current air quality in ${countryName} is ${aqi} (${condition}). Main pollutant is ${mainPollutant}, temperature ${temp}°C, humidity ${humidity}%, and wind speed ${ws} km/h.`,
     url: `https://airniza.com/${country}`,
     alternates: {
       canonical: `https://airniza.com/${country}`,
     },
     openGraph: {
       title: `${countryName} Air Quality Index (AQI)`,
-      description: `The current air quality in ${countryName} is ${aqi} (${condition}). Main pollutant is ${mainPollutant}, temperature ${temp}°C, humidity ${humidity}%, and wind speed ${ws} km/h. Real-time updates.`,
+      description: `The current air quality in ${countryName} is ${aqi} (${condition}). Main pollutant is ${mainPollutant}, temperature ${temp}°C, humidity ${humidity}%, and wind speed ${ws} km/h.`,
       url: `https://airniza.com/${country}`,
       type: "article",
     },

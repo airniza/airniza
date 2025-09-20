@@ -5,8 +5,6 @@ import AirQualityDashboard from "@/components/AirQualityDashboard";
 import { Badge } from "@/components/ui/badge";
 import FetchLocationData from "@/components/FetchLocationData";
 import MajorPollutants from "@/components/MajorPollutants";
-import IndoorAirQuality from "@/components/IndoorAirQuality";
-import HealthRecommendations from "@/components/HealthRecommendations";
 import Faqs from "@/components/Faqs";
 import { StatepageSchema } from "@/components/allSchema/StatepageSchema";
 
@@ -34,7 +32,7 @@ export async function generateMetadata({
   );
 
   const title = `${stateName} Air Quality Index (AQI) and ${countryName} Air Pollution`;
-  const description = `The current air quality in ${stateName} is ${aqi} (${condition}). Main pollutant is ${mainPollutant}, temperature ${temp}°C, humidity ${humidity}%, and wind speed ${ws} km/h. Real-time updates.`;
+  const description = `The current air quality in ${stateName} is ${aqi} (${condition}). Main pollutant is ${mainPollutant}, temperature ${temp}°C, humidity ${humidity}%, and wind speed ${ws} km/h.`;
   const canonical = `https://airniza.com/${country}/${state}`;
 
   return {

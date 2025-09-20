@@ -3,12 +3,9 @@ import Faqs from "@/components/Faqs";
 import { RelatedCities } from "@/components/RelatedCities";
 import { CityPageBreadcrumbs } from "@/components/allBreadcrumbs/CityPageBreadcrumbs";
 import { PlaceToSlug } from "@/components/helpers/PlaceToSlug";
-import IndoorAirQuality from "@/components/IndoorAirQuality";
-import HealthRecommendations from "@/components/HealthRecommendations";
 import FetchLocationData from "@/components/FetchLocationData";
 import MajorPollutants from "@/components/MajorPollutants";
 import { CitypageSchema } from "@/components/allSchema/CitypageSchema";
-import AdUnit from "@/components/AdUnit";
 import SocialShare from "@/components/SocialShare";
 
 // Shared Promise Start
@@ -48,7 +45,7 @@ export async function generateMetadata({
   const { aqi, condition, temp, humidity, ws, mainPollutant } =
     await getData(cityName);
     
-    const metaDescription = `The current air quality in ${cityName} is ${aqi} (${condition}). Main pollutant is ${mainPollutant}, temperature ${temp}°C, humidity ${humidity}%, and wind speed ${ws} km/h. Real-time updates.`
+    const metaDescription = `The current air quality in ${cityName} is ${aqi} (${condition}). Main pollutant is ${mainPollutant}, temperature ${temp}°C, humidity ${humidity}%, and wind speed ${ws} km/h.`
 
   return {
   title: `${cityName} Air Quality Index (AQI) and Air Pollution`,
