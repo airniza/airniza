@@ -11,7 +11,7 @@ export default function Footer() {
   return (
     <footer className="bg-[#333333] text-white py-6">
       {/* Quick Links Row */}
-      <div className="flex justify-center space-x-6 mb-4">
+      <div className="flex flex-wrap justify-center gap-4 mb-4 px-4 text-sm">
         {quickLinks.map((link, index) => (
           <Link
             key={index}
@@ -24,7 +24,7 @@ export default function Footer() {
       </div>
 
       {/* Copyright */}
-      <div className="text-center text-sm text-gray-400">
+      <div className="text-center text-xs sm:text-sm text-gray-400 px-4">
         © {new Date().getFullYear()} Airniza. All rights reserved.
       </div>
     </footer>
