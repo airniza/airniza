@@ -294,31 +294,33 @@ export const locations = [
   states: [
     {
       state: "new-south-wales",
-      cities: [
-        "sydney",
-        "wollongong",
-        "coffs-harbour",
-        "dubbo",
-        "bathurst",
-        "port-macquarie",
-         "queanbeyan",
-      ],
+      cities: ["sydney","queanbeyan", "kialla","wollongong","tweed-heads","port-macquarie","bathurst","coffs-harbour","goulburn","armidale",
+      "taree","cessnock","kiama","goonellabah","batemans-bay","mudgee","muswellbrook","bowral","byron-bay","cowra", "yarrawonga", "nowra"],
     },
     {
       state: "victoria",
-      cities: [
-        "melbourne",
-        "geelong",
-        "ballarat",
-        "bendigo",
-        "shepparton",
-        "warrnambool",
-        "mildura",
-        "traralgon",
-        "wodonga",
-        "morwell"
-      ],
+      cities: ["melbourne","geelong","city-of-melbourne","bendigo","ballarat","melton","frankston","mildura","warrnambool","shepparton","dandenong","traralgon", "bacchus-marsh","wodonga","wangaratta","warragul","wallan", "drouin","morwell","echuca","bairnsdale","swan-hill","benalla","colac","mooroopna","healesville","kyabram"],
     },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     {
       state: "queensland",
       cities: [
@@ -343,6 +345,7 @@ export const locations = [
         "geraldton",
         "kalgoorlie",
         "karratha",
+        "wagga-wagga",
       ],
     },
     {
