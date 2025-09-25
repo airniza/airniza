@@ -30,7 +30,7 @@ const nextConfig: NextConfig = {
           {
             key: "Content-Security-Policy",
             value: `
-    default-src * 'unsafe-inline' 'unsafe-eval' data: blob:;
+    default-src * 'unsafe-inline' data: blob:;
   `
               .replace(/\s{2,}/g, " ")
               .trim(),

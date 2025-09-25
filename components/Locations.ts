@@ -294,75 +294,64 @@ export const locations = [
   states: [
     {
       state: "new-south-wales",
-      cities: ["sydney","queanbeyan", "kialla","wollongong","tweed-heads","port-macquarie","bathurst","coffs-harbour","goulburn","armidale",
-      "taree","cessnock","kiama","goonellabah","batemans-bay","mudgee","muswellbrook","bowral","byron-bay","cowra", "yarrawonga", "nowra"],
+      cities: ["sydney","queanbeyan", "kialla","wollongong","tweed-heads","port-macquarie","bathurst","coffs-harbour","goulburn","armidale","taree","cessnock","kiama","goonellabah","batemans-bay","mudgee","muswellbrook","bowral","byron-bay","cowra", "yarrawonga", "nowra"],
     },
     {
       state: "victoria",
       cities: ["melbourne","geelong","city-of-melbourne","bendigo","ballarat","melton","frankston","mildura","warrnambool","shepparton","dandenong","traralgon", "bacchus-marsh","wodonga","wangaratta","warragul","wallan", "drouin","morwell","echuca","bairnsdale","swan-hill","benalla","colac","mooroopna","healesville","kyabram"],
     },
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     {
       state: "queensland",
-      cities: [
-        "brisbane",
-        "gold-coast",
-        "cairns",
-        "townsville",
-        "sunshine-coast",
-        "toowoomba",
-        "mackay",
-        "rockhampton",
-        "bundaberg",
-        "hervey-bay",
-         "wynyard",
-      ],
+      cities: ["brisbane","gold-coast","toowoomba","townsville","cairns","mackay","rockhampton","hervey-bay","bundaberg","caloundra","narangba","yeppoon","maryborough",
+      "gracemere","gympie","kingaroy","moranbah","mareeba","charters-towers","goondiwindi","biloela","stanthorpe","calliope","tannum-sands"],
     },
     {
       state: "western-australia",
-      cities: [
-        "perth",
-        "bunbury",
-        "geraldton",
-        "kalgoorlie",
-        "karratha",
-        "wagga-wagga",
-      ],
+      cities: ["perth","greater-perth","bunbury","geraldton",        "kalgoorlie","busselton","karratha","margaret-river","mandurah","dunsborough","kununurra",       
+      "manjimup","port-hedland","pinjarra","narrogin","katanning","tom-price","waroona","merredin","lower-chittering","kambalda-west","jurien-bay","quindalup","kalbarri","port-denison","dongara"],
     },
     {
       state: "south-australia",
-      cities: [
-        "adelaide",
-        "mount-gambier",
-        "whyalla",
-        "gawler",
-        "port-pirie",
-        "port-lincoln",
-        "murray-bridge",
-        "port-augusta",
-        "victor-harbor",
-        "mount-barker"
-      ],
+      cities: ["adelaide","gawler","mount-gambier","whyalla","mount-barker","murray-bridge",  
+      "port-lincoln","port-pirie","port-augusta","strathalbyn","nuriootpa","naracoorte","nairne",  
+      "moonta","victor-harbor","tanunda","roxby-downs","aldgate","two-wells",
+      "bordertown","barmera","moonta-bay","goolwa","mannum","willunga","port-elliot","angaston","lobethal","lyndoch"],
     },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     {
       state: "tasmania",
       cities: [

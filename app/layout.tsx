@@ -49,11 +49,11 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         <Script
-          id="adsense-init"
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5703495087334224"
-          crossOrigin="anonymous"
-        />
+        id="adsense-init"
+        strategy="afterInteractive" 
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5703495087334224"
+        crossOrigin="anonymous"
+      />
         <meta property="fb:app_id" content="24164145333270926" />
       </head>
 
