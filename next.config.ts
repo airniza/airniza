@@ -26,15 +26,7 @@ const nextConfig: NextConfig = {
           {
             key: "Permissions-Policy",
             value: "geolocation=(), microphone=(), camera=()",
-          },
-          {
-            key: "Content-Security-Policy",
-            value: `
-    default-src * 'unsafe-inline' data: blob:;
-  `
-              .replace(/\s{2,}/g, " ")
-              .trim(),
-          },
+          }
         ],
       },
     ];
