@@ -83,16 +83,7 @@ export default function Faqs({ place, aqi, status, exp }: faqProps) {
               <span className="font-bold">Ans:</span> We use the US AQI (United
               States Air Quality Index) standard for measuring air quality. It
               is widely accepted internationally and provides a consistent way
-              to understand how polluted the air is. Learn more on the{" "}
-              <a
-                href="https://www.epa.gov/air-trends"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-primary"
-              >
-                U.S. Environmental Protection Agency (EPA)
-              </a>{" "}
-              Website.
+              to understand how polluted the air is.
             </p>
           </AccordionContent>
         </AccordionItem>
