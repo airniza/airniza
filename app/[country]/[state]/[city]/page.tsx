@@ -148,12 +148,12 @@ export default async function CityPage({
         }
       />
       {/*Ad Unit 2 */}
-      <SecondParagraph city={citySlug} />
+      
       
       <MajorPollutants pm25={pm2_5} pm10={pm10} no2={no2} o3={o3} co={co} so2={so2} place={cityName} />
       {/*Ad Unit 3 */}
       <PollutantInfo city={cityName} mainPollutant={mainPollutant} />
-      
+      <SecondParagraph city={citySlug} cityName={cityName} />
 
       <RelatedCities
         country={country}

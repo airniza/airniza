@@ -78,5 +78,5 @@ export default function PollutantInfo({
 
   const text = `In ${city}, the main air pollutant is ${mainPollutant}. It mostly comes from ${pollutant.source}. ${pollutant.healthImpact}. To stay safe, ${pollutant.prevention}.`;
 
-  return <p className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5">{text}</p>;
+  return <p className="max-w-7xl mx-auto px-4 sm:px-5 lg:px-5 py-5">{text}</p>;
 }

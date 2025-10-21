@@ -1,20 +1,51 @@
 import React from "react";
-import { cityData } from "./LocaldataofCities";
+import { cityData, CityInfo } from "./LocaldataofCities";
+import Image from "next/image";
 
-type CityParagraphProps = {
-  city: string;
+type CityAirQualityProps = {
+  city: string; // should match a key in cityData
+  cityName?: string; // optional display name
+  
 };
 
-const CityParagraph: React.FC<CityParagraphProps> = ({ city }) => {
-  const data = cityData[city.toLowerCase()]; // city key ko lowercase me check karo
+export default function CityAirQuality({
+  city,
+  cityName,
+  
+}: CityAirQualityProps) {
+  const data: CityInfo | undefined = cityData[city];
+  if (!data) return null;
 
-  if (!data) return null; // agar city match nahi hui to kuchh render mat karo
+  const displayName = cityName ?? city.replace(/-/g, " ");
 
-  const paragraph = `${city.charAt(0).toUpperCase() + city.slice(1)} is ${data.city_feature}. 
-It experiences ${data.climate_description}, with major pollution sources including ${data.pollution_cause}. 
-Local environmental factors such as ${data.local_factor} influence overall air quality.`;
+  return (
+    <section className="max-w-7xl mx-auto px-4 sm:px-5 lg:px-5 py-5">
+      <h3 className="text-2xl text-primary font-bold mb-3">
+        {cityName} air quality
+      </h3>
 
-  return <p>{paragraph}</p>;
-};
+      {/* Paragraph 1: Overview + Climate */}
+      <p>{data.description}</p>
 
-export default CityParagraph;
+      {/* Image if available */}
+       {data.image && (
+          <div className="mt-6 ">
+            <figure className="my-6">
+              <Image
+                src={data.image}
+                alt={`${cityName} air quality`}
+                width={600}
+                height={315}
+                className="mx-auto rounded-xl"
+              />
+              <figcaption className="text-center text-sm text-gray-500 mt-2">
+                {cityName}
+              </figcaption>
+            </figure>
+          </div>
+        )}
+      {/* Paragraph 2: Pollution Insight */}
+      <p className="mt-2">{data.pollutionInsight}</p>
+    </section>
+  );
+}
