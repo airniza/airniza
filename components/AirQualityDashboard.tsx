@@ -154,5 +154,6 @@ export default function AirQualityDashboard ({breadcrumbs,place,state,country,aq
             </div>
           </div>
         </div>
+        
       </div>
 }

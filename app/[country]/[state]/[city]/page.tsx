@@ -7,6 +7,8 @@ import FetchLocationData from "@/components/FetchLocationData";
 import MajorPollutants from "@/components/MajorPollutants";
 import { CitypageSchema } from "@/components/allSchema/CitypageSchema";
 import SocialShare from "@/components/SocialShare";
+import SecondParagraph from "@/components/Page UI Helpers/SecondParagraph";
+import PollutantInfo from "@/components/Page UI Helpers/MainPollutantinfo";
 
 // Shared Promise Start
 async function getData(place: string) {
@@ -146,9 +148,11 @@ export default async function CityPage({
         }
       />
       {/*Ad Unit 2 */}
+      <SecondParagraph city={citySlug} />
       
       <MajorPollutants pm25={pm2_5} pm10={pm10} no2={no2} o3={o3} co={co} so2={so2} place={cityName} />
       {/*Ad Unit 3 */}
+      <PollutantInfo city={cityName} mainPollutant={mainPollutant} />
       
 
       <RelatedCities
