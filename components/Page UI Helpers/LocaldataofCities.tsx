@@ -1016,4 +1016,39 @@ export const cityData: Record<string, CityInfo> = {
 
 //---------------------------UAE----------------------------------
 
+
+
+
+//-----------Unites States -------------------------
+//Colorado
+"colorado-springs": {
+  description:
+    "Colorado Springs is located at the base of the majestic Pikes Peak in central Colorado. It is known for its breathtaking mountain scenery, vibrant downtown, and active outdoor lifestyle. The city has a semi arid climate with over 250 sunny days a year. Summers are warm and dry while winters are cool with occasional snowfall. Famous places include Garden of the Gods, the US Air Force Academy, and Broadmoor Seven Falls. Colorado Springs combines natural beauty with a growing tech and tourism economy. Its neighborhoods offer a mix of modern developments and historic districts, giving residents a balanced lifestyle between nature and urban comfort.",
+  pollutionInsight:
+    "Air quality in Colorado Springs is generally good because of its elevation and frequent mountain winds that disperse pollutants. However, there are times when mild to moderate pollution can occur due to vehicle emissions along major highways, regional wildfire smoke during summer, and ozone formation on warmer days. Industrial activity is relatively low, and city efforts to promote green energy and public transportation help maintain cleaner air. For most of the year, residents and visitors enjoy healthy air conditions suitable for outdoor recreation and tourism.",
+    image: "/air-quality/colorado-springs.webp"
+  
+},
+//Oklahoma
+"oklahoma-city": {
+  description:
+    "Oklahoma City is the capital and largest city of the state of Oklahoma in the southern United States. It is known for its western heritage, modern skyline, and friendly community. The city experiences a humid subtropical climate with hot summers, mild winters, and variable weather patterns due to its central location on the Great Plains. Popular attractions include the Oklahoma City National Memorial, Bricktown Entertainment District, and the Myriad Botanical Gardens. The economy is supported by energy, aerospace, and technology industries. Residents enjoy a mix of urban amenities, open spaces, and a growing cultural scene that reflects both traditional and contemporary influences.",
+  pollutionInsight:
+    "Air quality in Oklahoma City is generally moderate to good depending on the season. Occasional pollution arises from vehicle traffic, industrial activity, and dust from nearby plains. Ozone levels can increase during hot summer days, while winds often help disperse pollutants and refresh the air. Local authorities continue to promote cleaner transportation and energy practices to improve overall air conditions. Most of the year, the air remains suitable for outdoor activities and healthy living.",
+    image: "/air-quality/oklahoma-city.webp"
+},
+
+//------------------Canada-----------
+//Ontario
+"ottawa": {
+  description:
+    "Ottawa is the capital city of Canada and lies along the Ottawa River in the province of Ontario. It is known for its elegant government buildings, cultural diversity, and beautiful natural surroundings. The city experiences a humid continental climate with cold snowy winters and warm humid summers. Popular attractions include Parliament Hill, the Rideau Canal, and the National Gallery of Canada. Ottawa combines political importance with a relaxed lifestyle, featuring parks, museums, and waterfront areas. It also has a growing technology sector and a strong focus on sustainability and green living, offering residents a high quality of life and a clean urban environment.",
+  pollutionInsight:
+    "Air quality in Ottawa is generally very good because of its abundant green spaces, moderate traffic, and effective environmental management. Minor pollution can occur from vehicle emissions during rush hours or from wood burning in residential areas during winter. Occasionally, wildfire smoke from nearby regions can affect the air temporarily. Overall, the city maintains healthy air throughout the year, supported by clean energy policies and widespread use of public transportation and cycling routes.",
+    image: "/air-quality/ottawa.webp"
+},
+
+
+
+
 };
