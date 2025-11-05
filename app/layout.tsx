@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import NewNavigation from "@/components/NewNavigation";
 import WebsiteSchema from "@/components/allSchema/WebsiteSchema";
+import { headers } from "next/headers";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
@@ -37,16 +38,17 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   // WebSite schema
   const schemaData = WebsiteSchema();
-
+ //lang
+ const lang = (await headers()).get("x-lang") || "en";
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang={lang} suppressHydrationWarning>
       <head>
         <Script
         id="adsense-init"
