@@ -171,7 +171,7 @@ export default async function CityPage({
         adSlot="4717622864"
         adFormat="fluid"
         adLayout="in-article"
-        style={{ margin: "20px 0" }}
+        style={{ margin: "18px 0" }}
       />
        
       <MajorPollutants
