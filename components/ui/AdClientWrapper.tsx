@@ -1,7 +1,7 @@
 "use client";
 
-import AdUnit from "../AdUnit";
+import AdUnit, { AdUnitProps } from "../AdUnit";
 
-export default function AdClientWrapper(props: any) {
+export default function AdClientWrapper(props: Readonly<AdUnitProps>) {
   return <AdUnit {...props} />;
 }
