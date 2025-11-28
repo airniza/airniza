@@ -1,24 +1,24 @@
-// components/AdUnit.tsx
 "use client";
 
 import { useEffect } from "react";
 
 export interface AdUnitProps {
   adSlot: string;
-  adLayout?: string;      // <-- IMPORTANT: Added
-  adFormat?: string;      
+  adFormat?: string;
+  adLayout?: string;
   fullWidth?: boolean;
+  style?: React.CSSProperties;
 }
 
 export default function AdUnit({
   adSlot,
-  adLayout,
   adFormat = "auto",
+  adLayout,
   fullWidth = true,
+  style = {},
 }: AdUnitProps) {
   useEffect(() => {
     try {
-      // Load Adsense
       (window.adsbygoogle = window.adsbygoogle || []).push({});
     } catch (e) {
       console.log("Adsense error:", e);
@@ -28,12 +28,12 @@ export default function AdUnit({
   return (
     <ins
       className="adsbygoogle"
-      style={{ display: "block", textAlign: "center" }}
+      style={{ display: "block", textAlign: "center", ...style }}
       data-ad-client="ca-pub-5703495087334224"
       data-ad-slot={adSlot}
       data-ad-format={adFormat}
       data-full-width-responsive={fullWidth ? "true" : "false"}
-      {...(adLayout ? { "data-ad-layout": adLayout } : {})}  // <-- Works safely
+      {...(adLayout ? { "data-ad-layout": adLayout } : {})}
     />
   );
 }

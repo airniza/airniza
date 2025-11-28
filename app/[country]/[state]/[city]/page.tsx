@@ -9,8 +9,7 @@ import { CitypageSchema } from "@/components/allSchema/CitypageSchema";
 import SocialShare from "@/components/SocialShare";
 import SecondParagraph from "@/components/Page UI Helpers/SecondParagraph";
 import PollutantInfo from "@/components/Page UI Helpers/MainPollutantinfo";
-import AdUnit from "@/components/AdUnit";
-
+import AdClientWrapper from "@/components/ui/AdClientWrapper";
 // Shared Promise Start
 async function getData(place: string) {
   return FetchLocationData(place);
@@ -168,8 +167,13 @@ export default async function CityPage({
         }
       />
       {/*Ad Unit 2 */}
-      <AdUnit adSlot="4717622864" adLayout="in-article" adFormat="fluid" />
-
+      <AdClientWrapper
+        adSlot="4717622864"
+        adFormat="fluid"
+        adLayout="in-article"
+        style={{ margin: "20px 0" }}
+      />
+       
       <MajorPollutants
         pm25={pm2_5}
         pm10={pm10}
