@@ -3,21 +3,22 @@
 
 import { useEffect } from "react";
 
-interface AdUnitProps {
+export interface AdUnitProps {
   adSlot: string;
-  adFormat?: string; // auto, rectangle, vertical, horizontal, fluid
+  adLayout?: string;      // <-- IMPORTANT: Added
+  adFormat?: string;      
   fullWidth?: boolean;
-  layoutKey?: string; // sirf in-feed/in-article ke liye
 }
 
 export default function AdUnit({
   adSlot,
+  adLayout,
   adFormat = "auto",
   fullWidth = true,
-  layoutKey,
 }: AdUnitProps) {
   useEffect(() => {
     try {
+      // Load Adsense
       (window.adsbygoogle = window.adsbygoogle || []).push({});
     } catch (e) {
       console.log("Adsense error:", e);
@@ -28,11 +29,11 @@ export default function AdUnit({
     <ins
       className="adsbygoogle"
       style={{ display: "block", textAlign: "center" }}
-      data-ad-client="ca-pub-5703495087334224" // <- Yaha apna publisher ID dalna hai
+      data-ad-client="ca-pub-5703495087334224"
       data-ad-slot={adSlot}
       data-ad-format={adFormat}
       data-full-width-responsive={fullWidth ? "true" : "false"}
-      {...(layoutKey ? { "data-ad-layout-key": layoutKey } : {})}
+      {...(adLayout ? { "data-ad-layout": adLayout } : {})}  // <-- Works safely
     />
   );
 }

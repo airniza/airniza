@@ -83,9 +83,9 @@ export default function MajorPollutants({
 
   return (
     <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-      <h2 className="text-2xl font-bold mb-5">
+      <p className="text-2xl font-bold mb-5">
         Major Pollutants <span className="text-primary">{place}</span>
-      </h2>
+      </p>
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {pollutants.map((p) => {
           const { label, level, colorClass } = getPollutantStatus(p.name, p.value)

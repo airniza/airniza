@@ -9,6 +9,7 @@ import { CitypageSchema } from "@/components/allSchema/CitypageSchema";
 import SocialShare from "@/components/SocialShare";
 import SecondParagraph from "@/components/Page UI Helpers/SecondParagraph";
 import PollutantInfo from "@/components/Page UI Helpers/MainPollutantinfo";
+import AdUnit from "@/components/AdUnit";
 
 // Shared Promise Start
 async function getData(place: string) {
@@ -42,22 +43,22 @@ export async function generateMetadata({
   const siteURL = "https://airniza.com";
   const pageUrl = `${siteURL}/${country}/${state}/${citySlug}-air-quality`;
 
-
   const { aqi, condition, temp, humidity, ws, mainPollutant } = await getData(
     cityName
   );
 
-  const metaDescription = `The current air quality in ${cityName} is ${aqi} (${condition}). Main pollutant is ${mainPollutant}, temperature ${temp}°C, humidity ${humidity}%, and wind speed ${ws} km/h.`;
+  const metaDescription = `The live air quality index (AQI) in ${cityName} is ${aqi} (${condition}). Main pollutant: ${mainPollutant}. Temperature: ${temp}°C, humidity: ${humidity}%, wind speed: ${ws} km/h.
+`;
 
   return {
-    title: `${cityName} Air Quality Index (AQI) and Air Pollution`,
+    title: `${cityName} Live Air Quality Index (AQI) and Air Pollution`,
     description: metaDescription,
     alternates: {
       canonical: pageUrl,
     },
 
     openGraph: {
-      title: `${cityName} Air Quality Index (AQI) and Air Pollution`,
+      title: `${cityName} Live Air Quality Index (AQI) and Air Pollution`,
       description: metaDescription,
       url: pageUrl,
       siteName: "Airniza",
@@ -71,7 +72,7 @@ export async function generateMetadata({
     },
     twitter: {
       card: "summary_large_image",
-      title: `${cityName} Air Quality Index (AQI) and Air Pollution`,
+      title: `${cityName} Live Air Quality Index (AQI) and Air Pollution`,
       description: metaDescription,
       images: [
         `https://airniza.com/api/og?city=${encodeURIComponent(
@@ -167,6 +168,7 @@ export default async function CityPage({
         }
       />
       {/*Ad Unit 2 */}
+      <AdUnit adSlot="4717622864" adLayout="in-article" adFormat="fluid" />
 
       <MajorPollutants
         pm25={pm2_5}

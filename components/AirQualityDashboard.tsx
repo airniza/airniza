@@ -52,9 +52,9 @@ export default function AirQualityDashboard ({breadcrumbs,place,state,country,aq
            {breadcrumbs}
           
           <h1 className="text-2xl font-bold font-serif mt-3">
-          {place || state || country} Air Quality Index (AQI) and Air Pollution
+          {place || state || country} Live Air Quality Index (AQI) and Air Pollution
           </h1>
-          <p className="mt-3 text-muted-foreground ">The {singleLocation} Air Quality Index (AQI) today is {aqi} ({condition}). The dominant pollutant is {mainPollutant}. Other measured pollutants include NO₂ ({NO2} ppb), SO₂ ({SO2} ppb), CO ({CO} ppm), O₃ ({O3} ppm), PM10 ({PM10}µg/m³), PM2.5 ({pm25} µg/m³), contributing to air pollution.</p>
+          <p className="mt-3 text-muted-foreground ">The live {singleLocation} Air Quality Index (AQI) today is {aqi} ({condition}). The dominant pollutant is {mainPollutant}. Other measured pollutants include NO₂ ({NO2} ppb), SO₂ ({SO2} ppb), CO ({CO} ppm), O₃ ({O3} ppm), PM10 ({PM10}µg/m³), PM2.5 ({pm25} µg/m³), contributing to air pollution.</p>
           <div className="flex flex-wrap items-center justify-between flex-1 gap-4 mt-4">
             {/* Radiation ball and AQI */}
             <div className="flex flex-col">
