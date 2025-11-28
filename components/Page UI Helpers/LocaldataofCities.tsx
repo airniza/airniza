@@ -1016,6 +1016,74 @@ export const cityData: Record<string, CityInfo> = {
 
 //---------------------------UAE----------------------------------
 
+// ----ABu dhabi 
+
+"abu-dhabi": {
+  description:
+    "Abu Dhabi is the capital of the United Arab Emirates and one of the most developed cities in the region. The city is known for its wide clean roads, tall glass buildings, and long coastal areas that create a bright modern look. The climate remains hot for most of the year and the winter season stays calm and pleasant. People spend time at beaches, cultural centers, modern malls, and large public parks. The city features many attractions including museums, performance venues, shopping districts, and waterfront paths for walking and cycling. Planned neighborhoods, green spaces, and open coastal views give the city a balanced mix of urban and natural environments.",
+  pollutionInsight:
+    "Air quality stays moderate to good on most days. Traffic movement, construction work, and desert winds can create short periods of dust or light pollution. The large coastal area allows regular sea winds to flow through the city which helps in clearing the air and maintaining healthy conditions for residents and travelers.",
+},
+"al-ain": {
+  description:
+    "Al Ain is a major city in the United Arab Emirates known for its calm surroundings, natural landscapes, and wide green areas. The city is often called the garden city because of its parks, farms, and tree lined roads. The climate is hot in summer months while winters remain cool and refreshing. People visit the zoo, mountain viewpoints, heritage sites, and traditional markets. The city also includes old forts, natural springs, and desert areas that create a strong cultural and environmental identity. Al Ain feels more peaceful compared to coastal cities and provides a slower lifestyle with many family friendly outdoor spaces. The presence of Jebel Hafeet mountain adds scenic views and attracts visitors throughout the year.",
+  pollutionInsight:
+    "Air quality in Al Ain is mostly stable and clean because of its open layout and large natural areas. Some days experience dust due to desert winds or regional weather patterns. Even during such conditions, the open landscapes and steady natural airflow help reduce pollutants and keep the environment comfortable and safe for daily activities.",
+},
+
+// Dubai
+"dubai": {
+  description:
+    "Dubai is one of the most well known cities in the United Arab Emirates and is famous for its modern skyline, luxury lifestyle, and large entertainment areas. The city grows rapidly with tall towers, wide highways, and large shopping centers that attract visitors from all parts of the world. The climate remains hot for most months and the winter season stays cool and comfortable. People enjoy beaches, water parks, cultural events, outdoor markets, and night time activities across different districts. Dubai combines modern city life with traditional coastal and desert elements. Popular areas include long waterfront paths, art districts, historic neighborhoods, and large public spaces. The blend of new development and preserved heritage gives the city a unique character where residents and visitors find many options for leisure, business, and daily living.",
+  pollutionInsight:
+    "Air quality in Dubai stays moderate on most days. Traffic movement, construction activity, and desert winds can create short periods of increased dust or fine particles. The city experiences regular coastal winds during the cooler season which help in dispersing pollutants and improving overall air conditions. Most residential and commercial zones maintain comfortable air quality that supports outdoor activities for most of the year.",
+},
+// sharjah
+"sharjah": {
+  description:
+    "Sharjah is an important cultural city in the United Arab Emirates known for its museums, preserved heritage sites, and peaceful family friendly environment. The city features traditional markets, art centers, calm residential areas, and long waterfront sections along the creek. Summers remain hot while winters stay cool and pleasant which allows outdoor activities across parks, beaches, and cultural districts. Sharjah also maintains many educational institutions, large libraries, and community spaces that create a strong academic and cultural identity. The city layout includes a mix of modern buildings, traditional structures, open parks, and carefully designed public areas that give it a balanced and welcoming atmosphere for residents and visitors.",
+  pollutionInsight:
+    "Air quality in Sharjah is generally moderate with comfortable conditions for most days. Traffic and industrial zones can create short periods of haze or dust. Weather changes such as desert winds may also increase fine particles for a limited time. Natural airflow from the coast and open city planning help reduce pollutants and maintain overall healthy conditions for outdoor activities and daily life.",
+},
+"khorfakkan": {
+  description:
+    "Khorfakkan is a coastal city located on the eastern side of the United Arab Emirates and is well known for its natural beauty, mountain surroundings, and clean beaches. The city offers a calm lifestyle with scenic views of the sea and rocky hills that rise close to the coastline. People visit the beach park, waterfalls, promenades, and historic sites that reflect the regions traditional charm. The climate stays warm with cooler winters and the sea breeze creates a refreshing environment for outdoor activities. Khorfakkan has grown steadily with new public facilities, walking paths, family parks, and waterfront attractions while still maintaining its natural coastal identity.",
+  pollutionInsight:
+    "Air quality in Khorfakkan usually stays good because of strong sea winds and the cities open coastal layout. Pollution levels remain low on most days. Mild dust can appear during regional weather changes but fresh airflow from the sea helps clear the environment quickly and keeps conditions comfortable for residents and visitors.",
+},
+// Ras-al-khaimah
+"ras-al-khaimah": {
+  description:
+    "Ras Al Khaimah is a northern city in the United Arab Emirates known for its natural scenery, peaceful lifestyle, and strong connection with mountains and coastal areas. The city offers wide beaches, clear waters, desert landscapes, and impressive mountain views including the famous Jebel Jais peak. The climate stays warm for most of the year while winters remain cool and attract visitors who enjoy outdoor adventures. People explore historic forts, nature trails, coastal resorts, and traditional markets spread across the city. Ras Al Khaimah maintains a slow calm rhythm of life with open spaces, family friendly parks, cultural attractions, and new development areas that blend modern living with natural surroundings.",
+  pollutionInsight:
+    "Air quality in Ras Al Khaimah stays mostly clean because of its open layout and natural airflow from mountains and the coast. Light dust can appear during strong desert winds or regional weather shifts but such conditions do not last long. Fresh winds from both the sea and the mountain sides help clear the air and maintain a healthy comfortable environment for daily activities and tourism.",
+},
+//fujirah
+"fujairah": {
+  description:
+    "Fujairah is a coastal city on the eastern side of the United Arab Emirates known for its natural landscapes, calm environment, and long stretches of clean beaches. The city is surrounded by rocky hills and mountain ranges that create a unique view different from the rest of the country. The climate remains warm for most months and the winter season brings cool pleasant weather that supports outdoor trips and sightseeing. People visit historic forts, coastal parks, diving spots, and peaceful walking areas along the water. The city grows steadily with new public facilities, hotels, markets, and cultural locations while still protecting its natural charm. Fujairah offers a relaxed lifestyle with a smooth blend of seaside views, mountain scenery, and quiet residential neighborhoods.",
+  pollutionInsight:
+    "Air quality in Fujairah stays good for most days because of strong sea winds and the open coastal layout. Dust levels can rise slightly during regional weather changes or desert wind movement but such conditions usually improve quickly. The presence of mountains and steady airflow helps maintain clean and comfortable air conditions suitable for outdoor activities and tourism.",
+},
+//ajman
+"ajman": {
+  description:
+    "Ajman is a growing city in the United Arab Emirates known for its peaceful coastal atmosphere, modern residential areas, and a friendly community environment. The city has clean beaches, open waterfront paths, and calm neighborhoods that create a comfortable setting for families and visitors. The climate stays warm for most months and winters remain cool and pleasant which encourages outdoor activities across parks, markets, and seaside areas. People enjoy visiting traditional markets, museums, cultural centers, and modern shopping spots. Ajman continues to develop with new public facilities, hotels, community spaces, and planned districts while still maintaining a simple and welcoming lifestyle. The mix of coastal views, organized residential zones, and easy access to nearby cities makes Ajman an attractive and balanced place to live.",
+  pollutionInsight:
+    "Air quality in Ajman remains moderate to good on most days. Traffic and nearby industrial activity can create short periods of haze or light dust, especially during busy hours. Seasonal desert winds may also increase fine particles for a limited time. Regular coastal winds and open city planning help clear the air and maintain comfortable conditions for outdoor activities and daily routines.",
+},
+// Umm-al-Quwain
+"umm-al-quwain": {
+  description:
+    "Umm Al Quwain is a quiet coastal city in the United Arab Emirates known for its calm lifestyle, natural lagoons, and open waterfront areas. The city has a relaxed environment with wide beaches, mangrove forests, and peaceful residential neighborhoods. The climate stays warm for most of the year and winters are cool and enjoyable which supports outdoor activities across parks, beaches, and community spaces. People visit the water front promenade, traditional markets, cultural sites, and nature reserves that reflect the regions simple and natural character. The city is not heavily crowded which gives it a slower and more comfortable pace of life. New development areas, public facilities, and family friendly spots continue to grow while keeping the natural coastal identity of the region.",
+  pollutionInsight:
+    "Air quality in Umm Al Quwain remains mostly clean because of fresh sea winds and the open coastal layout. Mild dust can appear during seasonal weather changes or desert winds but such conditions do not last long. Regular airflow from the sea helps maintain healthy and comfortable air conditions for residents and visitors throughout the year.",
+},
+
+
+
+
+
 
 
 
@@ -1049,6 +1117,7 @@ export const cityData: Record<string, CityInfo> = {
 },
 
 
+//--------------United Arab Emirates----------------///
 
 
 };
