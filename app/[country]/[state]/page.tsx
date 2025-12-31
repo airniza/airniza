@@ -115,7 +115,7 @@ Do not include Markdown symbols like ** or *.
     aiContent = await fetchAIContent(aiPrompt);
   } catch (error) {
     console.error("AI Worker fetch failed:", error);
-    aiContent = "AI content is currently unavailable. Please check back later.";
+    aiContent = "Content is currently unavailable. Please check back later.";
   }
 
 

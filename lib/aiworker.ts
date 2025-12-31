@@ -9,7 +9,7 @@ export async function fetchAIContent(prompt: string) {
     body: JSON.stringify({ prompt })
   });
 
-  if (!res.ok) throw new Error("Worker AI fetch failed");
+  if (!res.ok) throw new Error("Worker Content fetch failed");
 
   const data = (await res.json()) as AIResponse;
   return data.output;
