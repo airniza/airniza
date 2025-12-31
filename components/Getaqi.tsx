@@ -2,10 +2,20 @@
 
 import { GeoIP } from "./GeoIP";
 
+// GeoIP response type
+type GeoIPResponse = {
+  address: {
+    latitude: number;
+    longitude: number;
+  };
+};
+
 // Location by IP start
-const ipcords = await GeoIP();
+const ipcords = (await GeoIP()) as GeoIPResponse;
+
 const ip_lat = ipcords.address.latitude;
 const ip_lon = ipcords.address.longitude;
+
 const lat = ip_lat;
 const lon = ip_lon;
 // Location by IP end

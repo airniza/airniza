@@ -7,6 +7,10 @@ import FetchLocationData from "@/components/FetchLocationData";
 import MajorPollutants from "@/components/MajorPollutants";
 import Faqs from "@/components/Faqs";
 import { StatepageSchema } from "@/components/allSchema/StatepageSchema";
+import { fetchAIContent } from "@/lib/aiworker";
+
+export const revalidate = 3600; // 1 hour
+
 
 // ✅ Shared Promise: Fetch AQI and weather data for given location
 async function getData(place: string) {
@@ -94,6 +98,27 @@ export default async function StatePage({
   // ✅ Local data lookup for states & cities
   const countryData = locations.find((c) => c.country === countrySlug);
   const stateData = countryData?.states.find((s) => s.state === stateSlug);
+
+
+// ✅ Generate AI prompt
+  const aiPrompt = `
+Explain AQI ${aqi} in ${stateName} in HTML format.
+Use headings (<h2>, <h3>), bold (<strong>), lists (<ul><li>) where appropriate.
+Include health precautions for children, elderly, and sensitive groups.
+Use simple, SEO-friendly language.
+Do not include Markdown symbols like ** or *.
+`;
+
+  // ✅ Fetch AI content from Worker
+  let aiContent = "";
+  try {
+    aiContent = await fetchAIContent(aiPrompt);
+  } catch (error) {
+    console.error("AI Worker fetch failed:", error);
+    aiContent = "AI content is currently unavailable. Please check back later.";
+  }
+
+
   //Statepage Schema
   const schemaData = StatepageSchema({
     State: stateName,
@@ -112,6 +137,10 @@ export default async function StatePage({
     CO: co,
     mainPollutant: mainPollutant,
   });
+  // ✅ RETURN props + ISR 1 hour
+  
+
+  
 
   return (
     <main className="p-0">
@@ -140,6 +169,13 @@ export default async function StatePage({
         mainPollutant={mainPollutant}
         breadcrumbs={<StateBreadcrumbs country={country} state={state} />}
       />
+      {/* ✅ AI-generated content */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+  <h3 className="text-2xl font-bold mb-3">Air Quality Overview for {stateName}</h3>
+  <div dangerouslySetInnerHTML={{ __html: aiContent }} className="prose dark:prose-invert" />
+</div>
+
+
       <MajorPollutants
         pm25={pm2_5}
         pm10={pm10}
@@ -186,3 +222,4 @@ export default async function StatePage({
     </main>
   );
 }
+

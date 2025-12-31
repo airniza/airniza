@@ -1,6 +1,11 @@
 "use client";
 import { useState } from "react";
 
+type Web3FormsResponse = {
+  success: boolean;
+  message?: string;
+};
+
 export default function ContactPageHelper() {
   const [status, setStatus] = useState("");
   const [loading, setLoading] = useState(false);
@@ -12,14 +17,15 @@ export default function ContactPageHelper() {
 
     const form = e.currentTarget;
     const formData = new FormData(form);
-    formData.append("access_key", "f567d544-9ccc-48d1-ad9a-dade5c0f4758"); // <-- Apni key 
+    formData.append("access_key", "f567d544-9ccc-48d1-ad9a-dade5c0f4758");
 
     const res = await fetch("https://api.web3forms.com/submit", {
       method: "POST",
       body: formData,
     });
 
-    const data = await res.json();
+    const data = (await res.json()) as Web3FormsResponse;
+
     setLoading(false);
 
     if (data.success) {
