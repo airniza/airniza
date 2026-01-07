@@ -63,11 +63,20 @@ export async function generateMetadata({
       siteName: "Airniza",
       locale: "en_US",
       type: "website",
-      images: [
-        `https://airniza.com/api/og?city=${encodeURIComponent(
-          cityName
-        )}&aqi=${aqi}`,
-      ],
+     images: [
+      {
+        url: `/images/united-states/alabama/${citySlug}/air-quality-good.webp`,
+        width: 1200,   // actual width
+        height: 675,   // actual height
+        alt:  `${cityName} air quality index today showing ${condition} AQI`,
+      },
+      {
+        url: `https://airniza.com/api/og?city=${encodeURIComponent( cityName )}&aqi=${aqi}`,
+        width: 1200,
+        height: 630,   // OG API default
+        alt: `${cityName} AQI today`,
+      },
+    ],
     },
     twitter: {
       card: "summary_large_image",
