@@ -40,7 +40,7 @@ export async function GET(
   return new NextResponse(res.body, {
     headers: {
       "Content-Type": res.headers.get("content-type") ?? "image/webp",
-      "Cache-Control": "public, max-age=0, immutable",
+      "Cache-Control": "public, max-age=31536000, immutable",
     },
   });
 }
