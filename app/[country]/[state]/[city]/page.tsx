@@ -9,7 +9,8 @@ import { CitypageSchema } from "@/components/allSchema/CitypageSchema";
 import SocialShare from "@/components/SocialShare";
 import SecondParagraph from "@/components/Page UI Helpers/SecondParagraph";
 import PollutantInfo from "@/components/Page UI Helpers/MainPollutantinfo";
-import AdClientWrapper from "@/components/ui/AdClientWrapper";
+import Adsterra from "@/components/Adsterra";
+import Popunder from "@/components/popunder";
 // Shared Promise Start
 async function getData(place: string) {
   return FetchLocationData(place);
@@ -169,13 +170,9 @@ export default async function CityPage({
           />
         }
       />
+      <Adsterra smartlinkUrl="https://www.effectivegatecpm.com/gj5b7zru?key=f1dce79451227858454204169c1bf6b0" />
       {/*Ad Unit 2 */}
-      <AdClientWrapper
-        adSlot="4717622864"
-        adFormat="fluid"
-        adLayout="in-article"
-        style={{ margin: "18px 0" }}
-      />
+      <Popunder />
        
       <MajorPollutants
         pm25={pm2_5}

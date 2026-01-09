@@ -17,8 +17,6 @@ export const locations = [
           "opelika",
           "alabaster",
           "gadsden",
-          "athens",
-          "northport",
           "daphne",
         ],
       },
@@ -891,3 +889,6 @@ export const locations = [
     ],
   },
 ];
+
+
+//

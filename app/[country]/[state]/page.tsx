@@ -8,9 +8,9 @@ import MajorPollutants from "@/components/MajorPollutants";
 import Faqs from "@/components/Faqs";
 import { StatepageSchema } from "@/components/allSchema/StatepageSchema";
 import { fetchAIContent } from "@/lib/aiworker";
+import AdClientWrapper from "@/components/ui/AdClientWrapper";
 
 export const revalidate = 3600; // 1 hour
-
 
 // ✅ Shared Promise: Fetch AQI and weather data for given location
 async function getData(place: string) {
@@ -99,8 +99,7 @@ export default async function StatePage({
   const countryData = locations.find((c) => c.country === countrySlug);
   const stateData = countryData?.states.find((s) => s.state === stateSlug);
 
-
-// ✅ Generate AI prompt
+  // ✅ Generate AI prompt
   const aiPrompt = `
 Explain AQI ${aqi} in ${stateName} in HTML format.
 Use headings (<h2>, <h3>), bold (<strong>), lists (<ul><li>) where appropriate.
@@ -117,7 +116,6 @@ Do not include Markdown symbols like ** or *.
     console.error("AI Worker fetch failed:", error);
     aiContent = "Content is currently unavailable. Please check back later.";
   }
-
 
   //Statepage Schema
   const schemaData = StatepageSchema({
@@ -138,9 +136,6 @@ Do not include Markdown symbols like ** or *.
     mainPollutant: mainPollutant,
   });
   // ✅ RETURN props + ISR 1 hour
-  
-
-  
 
   return (
     <main className="p-0">
@@ -169,12 +164,12 @@ Do not include Markdown symbols like ** or *.
         mainPollutant={mainPollutant}
         breadcrumbs={<StateBreadcrumbs country={country} state={state} />}
       />
-      {/* ✅ AI-generated content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-  <h3 className="text-2xl font-bold mb-3">Air Quality Overview for {stateName}</h3>
-  <div dangerouslySetInnerHTML={{ __html: aiContent }} className="prose dark:prose-invert" />
-</div>
-
+      <AdClientWrapper
+        adSlot="4717622864"
+        adFormat="fluid"
+        adLayout="in-article"
+        style={{ margin: "18px 0" }}
+      />
 
       <MajorPollutants
         pm25={pm2_5}
@@ -222,4 +217,3 @@ Do not include Markdown symbols like ** or *.
     </main>
   );
 }
-
