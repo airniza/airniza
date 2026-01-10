@@ -8,7 +8,6 @@ interface AdsterraProps {
 
 const Adsterra: React.FC<AdsterraProps> = ({
   smartlinkUrl,
-  cityName = "your city",
 }) => {
   return (
     <div style={styles.wrapper}>

@@ -108,14 +108,7 @@ Use simple, SEO-friendly language.
 Do not include Markdown symbols like ** or *.
 `;
 
-  // ✅ Fetch AI content from Worker
-  let aiContent = "";
-  try {
-    aiContent = await fetchAIContent(aiPrompt);
-  } catch (error) {
-    console.error("AI Worker fetch failed check again:", error);
-    aiContent = "Content is currently unavailable. Please check back later.";
-  }
+  
 
   //Statepage Schema
   const schemaData = StatepageSchema({
