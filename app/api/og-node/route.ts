@@ -1,7 +1,17 @@
 import sharp from "sharp";
 import { NextRequest } from "next/server";
+import path from "path";
 
 export const runtime = "nodejs";
+
+
+//fonts
+
+async function getFontConfig() {
+  const fontPath = path.join(process.cwd(), "public/fonts/Montserrat-Bold.ttf");
+  // Agar Montserrat nahi hai toh server ke default font par fallback karein
+  return { family: "Montserrat", path: fontPath };
+}
 
 /* ---------------- HELPERS ---------------- */
 
@@ -109,7 +119,7 @@ const overlay = Buffer.from(`
     <rect width="1200" height="630" fill="${color}" fill-opacity="0.3"/>
   </svg>
 `);
-
+   await getFontConfig();
     const finalImage = await sharp(bgBuffer)
       .resize(1200, 630)
       .composite([
