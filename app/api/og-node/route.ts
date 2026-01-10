@@ -37,14 +37,14 @@ function generateMainBadge(aqi: number) {
   return Buffer.from(`
 <svg width="900" height="350" xmlns="http://www.w3.org/2000/svg">
  <defs>
-  <style>
+  <style><![CDATA[
     @font-face {
-      font-family: 'MontserratBold';
-      src: url(data:font/ttf;base64,${fontBase64}) format('truetype');
+      font-family: MontserratBold;
+      src: url("data:font/ttf;base64,${fontBase64}") format("truetype");
       font-weight: 800;
       font-style: normal;
     }
-  </style>
+  ]]></style>
 
   <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
     <feGaussianBlur in="SourceAlpha" stdDeviation="6" result="blur" />
@@ -81,14 +81,14 @@ function generateLocationFooter(citySlug: string, stateSlug: string) {
   return Buffer.from(`
 <svg width="1200" height="300" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <style>
+    <style><![CDATA[
       @font-face {
-        font-family: 'MontserratBold';
-        src: url(data:font/ttf;base64,${fontBase64}) format('truetype');
+        font-family: MontserratBold;
+        src: url("data:font/ttf;base64,${fontBase64}") format("truetype");
         font-weight: 800;
         font-style: normal;
       }
-    </style>
+    ]]></style>
   </defs>
 
   <text x="600" y="25" text-anchor="middle" fill="white"
