@@ -66,7 +66,7 @@ export async function generateMetadata({
       type: "website",
      images: [
       {
-        url: `${siteURL}/api/og-node?country=${country}&state=${state}&city=${citySlug}&aqi=${aqi}`,
+        url: `${siteURL}/api/og?country=${country}&state=${state}&city=${citySlug}&aqi=${aqi}`,
         alt: `${cityName} AQI today`,
       },
     ],
