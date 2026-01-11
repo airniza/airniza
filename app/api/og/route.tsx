@@ -11,6 +11,15 @@ function getAQILabel(aqi: number) {
   if (aqi <= 300) return "SEVERE";
   return "HAZARDOUS";
 }
+function leftAlign(aqi:number){
+  if (aqi <= 50) return 285;
+  if (aqi <= 100) return 285;
+  if (aqi <= 150) return 275;
+  if (aqi <= 200) return 275;
+  if (aqi <= 300) return 266;
+  return 260;
+}
+
 
 function humanize(str: string) {
   if (!str) return "";
@@ -64,18 +73,61 @@ export async function GET(req: Request) {
         <div
           style={{
             position: "absolute",
-            left: 300,
+            left: leftAlign(aqi),
             top: 130,
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
             color: "white",
           }}
-        >
-          <div style={{ display: "flex", fontSize: 28, fontWeight: 700 }}>
-            AQI
-          </div>
-          <div style={{ display: "flex", fontSize: 92, fontWeight: 900 }}>
+         >
+          
+          <div
+  style={{
+    display: "flex",
+    alignItems: "center", // baseline feel yahin se aayega
+    fontSize: 34,
+    fontWeight: 700,
+    lineHeight: 1,
+  }}
+>
+  {/* LIVE DOT */}
+  <div
+    style={{
+      width: 8,
+      height: 8,
+      borderRadius: 999,
+      backgroundColor: "#ff4d4f",
+      marginRight: 6,
+      position: "relative",
+      top: 6, // 👈 baseline nudge
+      display: "flex",
+    }}
+  />
+
+  {/* LIVE TEXT */}
+  <div
+    style={{
+      display: "flex",
+      fontSize: 14,
+      fontWeight: 700,
+      marginRight: 10,
+      letterSpacing: 1,
+      position: "relative",
+      top: 6, // 👈 baseline nudge
+      opacity: 0.85,
+    }}
+  >
+    LIVE
+  </div>
+
+  {/* AQI */}
+  <div style={{ display: "flex" }}>
+    AQI
+  </div>
+</div>
+
+          <div style={{ display: "flex", fontSize: 100, fontWeight: 900 }}>
             {aqi}
           </div>
         </div>
@@ -88,30 +140,76 @@ export async function GET(req: Request) {
             top: 180,
             display: "flex",
             color: "white",
-            fontSize: 52,
+            fontSize: 62,
             fontWeight: 900,
           }}
-        >
+         >
           {getAQILabel(aqi)}
         </div>
 
-        {/* LOCATION ✅ FIXED */}
-        <div
-          style={{
-            position: "absolute",
-            bottom: 80,
-            width: "100%",
-            display: "flex",
-            justifyContent: "center",
-            color: "white",
-            fontSize: 42,
-            fontWeight: 800,
-          }}
-        >
-          <div style={{ display: "flex" }}>
-            {`${cityText}, ${stateText}`}
-          </div>
-        </div>
+       
+        {/* GLASS LOCATION PANEL */}
+<div
+  style={{
+    position: "absolute",
+    bottom: 60,
+    display: "flex",
+    justifyContent: "center",
+    width: "100%",
+  }}
+>
+  <div
+    style={{
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+      padding: "22px 36px",
+      borderRadius: 16,
+      backgroundColor: "rgba(0, 0, 0, 0.45)", // glass feel
+      border: "1px solid rgba(255, 255, 255, 0.25)",
+      boxShadow: "0 8px 24px rgba(0,0,0,0.35)",
+      color: "white",
+    }}
+  >
+    {/* TOP LABEL */}
+    <div
+      style={{
+        display: "flex",
+        fontSize: 20,
+        fontWeight: 600,
+        letterSpacing: 4,
+        marginBottom: 8,
+        opacity: 0.9,
+      }}
+    >
+      {"AIR QUALITY INDEX • PM2.5"}
+    </div>
+
+    {/* LINE */}
+    <div
+      style={{
+        display: "flex",
+        width: 420,
+        height: 2,
+        backgroundColor: "white",
+        opacity: 0.3,
+        marginBottom: 14,
+      }}
+    />
+
+    {/* LOCATION */}
+    <div
+      style={{
+        display: "flex",
+        fontSize: 42,
+        fontWeight: 800,
+        whiteSpace: "nowrap",
+      }}
+    >
+      {`${cityText}, ${stateText}`}
+    </div>
+  </div>
+</div>
 
         {/* BRAND */}
         <div

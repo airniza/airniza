@@ -7,18 +7,18 @@ export const runtime = "nodejs";
 /* ---------------- HELPERS ---------------- */
 
 function getAQIData(aqi: number) {
-  if (aqi <= 50) return { color: "#2d9d43" };
-  if (aqi <= 100) return { color: "#dcb92d" };
-  if (aqi <= 150) return { color: "#ff7e00" };
-  if (aqi <= 200) return { color: "#ff0000" };
-  if (aqi <= 300) return { color: "#8f3f97" };
-  return { color: "#8f3f97" };
+  if (aqi <= 50) return { color: "#2d9d43", width: "450" };
+  if (aqi <= 100) return { color: "#dcb92d", width: "600"  };
+  if (aqi <= 150) return { color: "#ff7e00", width: "450"  };
+  if (aqi <= 200) return { color: "#ff0000", width: "630"  };
+  if (aqi <= 300) return { color: "#8f3f97", width: "480" };
+  return { color: "#8f3f97",width:"630" };
 }
 
 /* ---------------- SVG (NO TEXT) ---------------- */
 
 function generateBadgeShape(aqi: number) {
-  const { color } = getAQIData(aqi);
+  const { color,width } = getAQIData(aqi);
 
   return Buffer.from(`
 <svg width="900" height="350" xmlns="http://www.w3.org/2000/svg">
@@ -33,7 +33,7 @@ function generateBadgeShape(aqi: number) {
     </filter>
   </defs>
 
-  <rect x="250" y="115" width="600" height="160" rx="25"
+  <rect x="250" y="115" width="${width}" height="160" rx="25"
     fill="${color}" filter="url(#shadow)" />
 
   <circle cx="255" cy="195" r="130"
