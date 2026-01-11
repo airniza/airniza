@@ -1,4 +1,4 @@
-// app/api/og-bg/route.ts
+// app/api/og-node/route.ts
 import sharp from "sharp";
 import { NextRequest } from "next/server";
 
@@ -9,9 +9,10 @@ export const runtime = "nodejs";
 function getAQIData(aqi: number) {
   if (aqi <= 50) return { color: "#2d9d43" };
   if (aqi <= 100) return { color: "#dcb92d" };
-  if (aqi <= 150) return { color: "#f29201" };
-  if (aqi <= 200) return { color: "#e30321" };
-  return { color: "#8a24bd" };
+  if (aqi <= 150) return { color: "#ff7e00" };
+  if (aqi <= 200) return { color: "#ff0000" };
+  if (aqi <= 300) return { color: "#8f3f97" };
+  return { color: "#8f3f97" };
 }
 
 /* ---------------- SVG (NO TEXT) ---------------- */
@@ -66,7 +67,7 @@ export async function GET(req: NextRequest) {
     `);
 
     const image = await sharp(bgBuffer)
-      .resize(1200, 630)
+      // ❌ resize REMOVED — image stays at original 1200×675
       .composite([
         { input: overlay },
         { input: generateBadgeShape(aqi), left: 100, top: 40 },
