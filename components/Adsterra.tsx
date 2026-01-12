@@ -19,9 +19,7 @@ const Adsterra: React.FC<AdsterraProps> = ({
       >
         Continue to Live Air Quality Report
       </a>
-      <p style={styles.note}>
-        Free • Works best for US users
-      </p>
+      
     </div>
   );
 };

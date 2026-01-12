@@ -7,6 +7,7 @@ import { MdWaterDrop } from "react-icons/md";
 import { FaTemperatureThreeQuarters } from "react-icons/fa6";
 import { TbBuildingWindTurbine } from "react-icons/tb";
 import { ReactElement } from "react";
+import Adsterra from "./Adsterra";
 
 
 
@@ -96,7 +97,7 @@ export default function AirQualityDashboard ({breadcrumbs,place,state,country,aq
             </p>
             <LiveUpdatedText initialTime={lastUpdated}/>
           </div>
-
+<Adsterra smartlinkUrl="https://www.effectivegatecpm.com/gj5b7zru?key=f1dce79451227858454204169c1bf6b0" />
           {/* AQI Scale Bar */}
           <div className="mt-7">
             <AirQualityBar value={aqi} />
@@ -131,7 +132,7 @@ export default function AirQualityDashboard ({breadcrumbs,place,state,country,aq
                 //border: "1px solid rgba(255, 255, //255, 0.3)",
               }}
               >
-              <div className="flex-[1] md:flex-1 flex items-center justify-center">
+              <div className="flex-1 md:flex-1 flex items-center justify-center">
                 <div className="flex items-center gap-1">
                   <FaTemperatureThreeQuarters className="text-primary"/>
                   <span className="font-semibold">{temp}°C</span>

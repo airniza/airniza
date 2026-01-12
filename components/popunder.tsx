@@ -1,50 +1,72 @@
 "use client";
 
-import { useEffect, useRef } from "react";
-
-const MAX_POP_PER_DAY = 3; // ek user ko 24h me max 3 pops
+import { useEffect, useRef, useState } from "react";
 
 const Popunder = () => {
   const loadedRef = useRef(false);
+  const [active, setActive] = useState(true);
 
   useEffect(() => {
-    if (loadedRef.current) return;
-    loadedRef.current = true;
+    const fireAd = () => {
+      if (loadedRef.current) return;
 
-    const triggerPopOnScroll = () => {
-      // localStorage me count track karo
-      const popData = JSON.parse(localStorage.getItem("popunder_count") || "{}");
-      const today = new Date().toDateString();
-
-      let count = 0;
-      if (popData.date === today) count = popData.count || 0;
-
-      if (count >= MAX_POP_PER_DAY) return; // max pop / day
-
-      // increment counter
-      localStorage.setItem(
-        "popunder_count",
-        JSON.stringify({ date: today, count: count + 1 })
-      );
-
-      // ✅ Adsterra Popunder script
+      // ✅ Adsterra Anti-Block Script
       const script = document.createElement("script");
-      script.src =
-        "https://pl28436147.effectivegatecpm.com/b3/83/74/b383741dd0fba14c3b6c31dfeee72a87.js";
+      script.src = "https://faithfullyreadiness.com/b3/83/74/b383741dd0fba14c3b6c31dfeee72a87.js";
       script.async = true;
+      document.head.appendChild(script);
 
-      document.body.appendChild(script);
+      loadedRef.current = true;
+      setActive(false); // Ad trigger hote hi overlay hat jayega
     };
 
-    // Scroll trigger
-    window.addEventListener("scroll", triggerPopOnScroll);
+    // --- 1. BACK BUTTON TRICK ---
+    window.history.pushState(null, "", window.location.href);
+    const handlePopState = () => {
+      fireAd();
+    };
+    window.addEventListener("popstate", handlePopState);
+
+    // --- 2. AUTO-TIMER (Safe fallback) ---
+    const timer = setTimeout(fireAd, 5000); 
 
     return () => {
-      window.removeEventListener("scroll", triggerPopOnScroll);
+      window.removeEventListener("popstate", handlePopState);
+      clearTimeout(timer);
     };
   }, []);
 
-  return null;
+  // --- 3. INVISIBLE OVERLAY CLICK ---
+  const handleOverlayClick = () => {
+    if (loadedRef.current) return;
+    
+    const script = document.createElement("script");
+    script.src = "https://faithfullyreadiness.com/b3/83/74/b383741dd0fba14c3b6c31dfeee72a87.js";
+    script.async = true;
+    document.head.appendChild(script);
+    
+    loadedRef.current = true;
+    setActive(false);
+  };
+
+  if (!active) return null;
+
+  return (
+    <div
+      onClick={handleOverlayClick}
+      style={{
+        position: "fixed",
+        top: 0,
+        left: 0,
+        width: "100%",
+        height: "100%",
+        zIndex: 2147483647,
+        background: "rgba(0,0,0,0)",
+        cursor: "pointer",
+        touchAction: "manipulation"
+      }}
+    />
+  );
 };
 
 export default Popunder;
