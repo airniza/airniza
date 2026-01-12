@@ -7,6 +7,7 @@ import { GoogleAnalytics } from "@next/third-parties/google";
 import NewNavigation from "@/components/NewNavigation";
 import WebsiteSchema from "@/components/allSchema/WebsiteSchema";
 import { headers } from "next/headers";
+import Popunder from "@/components/popunder";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
@@ -68,6 +69,7 @@ export default async function RootLayout({
           }}
         />
         <NewNavigation />
+        <Popunder />
         {children}
         <Footer />
         <GoogleAnalytics gaId="G-C4HYV9CTDC" />

@@ -9,7 +9,6 @@ import { CitypageSchema } from "@/components/allSchema/CitypageSchema";
 import SocialShare from "@/components/SocialShare";
 import SecondParagraph from "@/components/Page UI Helpers/SecondParagraph";
 import PollutantInfo from "@/components/Page UI Helpers/MainPollutantinfo";
-import Popunder from "@/components/popunder";
 // Shared Promise Start
 async function getData(place: string) {
   return FetchLocationData(place);
@@ -169,7 +168,7 @@ export default async function CityPage({
       />
       
       {/*Ad Unit 2 */}
-      <Popunder />
+      
        
       <MajorPollutants
         pm25={pm2_5}
