@@ -81,23 +81,30 @@ export async function GET(
 
   <!-- 🔎 WebStory JSON-LD Schema -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebStory",
-    "name": "${story.title}",
-    "url": "${storyUrl}",
-    "image": "${posterUrl}",
-    "publisher": {
-      "@type": "Organization",
-      "name": "Airniza",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "${siteUrl}/web-stories/logo.png"
-      }
-    },
-    "datePublished": "${story.publishDate || new Date().toISOString()}"
-  }
-  </script>
+{
+  "@context": "https://schema.org",
+  "@type": "NewsArticle",
+  "headline": "${story.title}",
+  "url": "${storyUrl}",
+  "image": ["${posterUrl}"],
+  "datePublished": "${story.publishDate || new Date().toISOString()}",
+  "dateModified": "${story.publishDate || new Date().toISOString()}",
+  "author": {
+    "@type": "Organization",
+    "name": "Airniza"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Airniza",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "${siteUrl}/web-stories/logo.png"
+    }
+  },
+  "mainEntityOfPage": "${storyUrl}"
+}
+</script>
+
 </head>
 
 <body>
