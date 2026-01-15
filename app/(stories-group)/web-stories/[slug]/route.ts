@@ -17,6 +17,7 @@ interface StoryPage {
 
 interface StoryData {
   title: string;
+  description: string; // Added description to interface
   poster: string;
   publishDate?: string;
   pages: StoryPage[];
@@ -46,16 +47,13 @@ export async function GET(
   <title>${story.title}</title>
   <link rel="canonical" href="${storyUrl}">
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+  
+  <meta name="description" content="${story.description}">
 
   <script async src="https://cdn.ampproject.org/v0.js"></script>
-  <script async custom-element="amp-story"
-    src="https://cdn.ampproject.org/v0/amp-story-1.0.js"></script>
+  <script async custom-element="amp-story" src="https://cdn.ampproject.org/v0/amp-story-1.0.js"></script>
+  <script async custom-element="amp-story-auto-analytics" src="https://cdn.ampproject.org/v0/amp-story-auto-analytics-0.1.js"></script>
 
-  <!-- AMP Story Auto Analytics -->
-  <script async custom-element="amp-story-auto-analytics"
-    src="https://cdn.ampproject.org/v0/amp-story-auto-analytics-0.1.js"></script>
-
-  <!-- 📌 MANDATORY AMP BOILERPLATE -->
   <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style>
   <noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
 
@@ -69,7 +67,9 @@ export async function GET(
       margin: auto;
       text-align: center;
     }
-    h1 { font-size: 24px; line-height: 1.2; margin-bottom: 8px; }
+    /* Fixed: Changed from h1 to classes for SEO */
+    .story-title { font-size: 24px; line-height: 1.2; margin-bottom: 8px; font-weight: bold; }
+    .page-title { font-size: 22px; line-height: 1.2; margin-bottom: 8px; font-weight: bold; }
     p { font-size: 16px; line-height: 1.4; opacity: 0.9; }
     .cta {
       display: inline-block;
@@ -83,32 +83,25 @@ export async function GET(
     }
   </style>
 
-  <!-- 🔎 WebStory JSON-LD Schema -->
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "NewsArticle",
   "headline": "${story.title}",
+  "description": "${story.description}",
   "url": "${storyUrl}",
   "image": ["${posterUrl}"],
   "datePublished": "${story.publishDate || new Date().toISOString()}",
   "dateModified": "${story.publishDate || new Date().toISOString()}",
-  "author": {
-    "@type": "Organization",
-    "name": "Airniza"
-  },
+  "author": { "@type": "Organization", "name": "Airniza" },
   "publisher": {
     "@type": "Organization",
     "name": "Airniza",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "${siteUrl}/web-stories/logo.png"
-    }
+    "logo": { "@type": "ImageObject", "url": "${siteUrl}/web-stories/logo.png" }
   },
   "mainEntityOfPage": "${storyUrl}"
 }
 </script>
-
 </head>
 
 <body>
@@ -119,8 +112,6 @@ export async function GET(
     publisher-logo-src="${siteUrl}/web-stories/logo.png"
     poster-portrait-src="${posterUrl}"
   >
-
-    <!-- ✅ Google Analytics Auto Tracking -->
     <amp-story-auto-analytics gtag-id="G-C4HYV9CTDC"></amp-story-auto-analytics>
 
     ${story.pages
@@ -128,12 +119,15 @@ export async function GET(
         (page: StoryPage, i: number) => `
       <amp-story-page id="page-${i}" auto-advance-after="7s">
         <amp-story-grid-layer template="fill">
-          <amp-img src="${page.image}" width="720" height="1280" layout="responsive"></amp-img>
+          <amp-img src="${page.image}" width="720" height="1280" layout="responsive" alt="${page.title}"></amp-img>
         </amp-story-grid-layer>
 
         <amp-story-grid-layer template="vertical">
           <div class="text-box">
-            <h1>${page.title}</h1>
+            ${i === 0 
+              ? `<h1 class="story-title">${page.title}</h1>` 
+              : `<h2 class="page-title">${page.title}</h2>`
+            }
             ${page.description ? `<p>${page.description}</p>` : ``}
             ${
               page.ctaLink
