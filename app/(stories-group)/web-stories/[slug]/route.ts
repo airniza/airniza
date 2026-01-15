@@ -36,13 +36,16 @@ export async function GET(
   if (!story) notFound();
 
   const siteUrl = "https://airniza.com";
+  const storyUrl = `${siteUrl}/web-stories/${slug}`;
   const posterUrl = `${siteUrl}${story.poster}`;
 
   const ampHtml = `<!doctype html>
-<html amp lang="en">
+<html amp lang="en-US">
 <head>
   <meta charset="utf-8">
   <title>${story.title}</title>
+
+  <link rel="canonical" href="${storyUrl}">
 
   <script async src="https://cdn.ampproject.org/v0.js"></script>
   <script async custom-element="amp-story"
@@ -55,6 +58,12 @@ export async function GET(
     animation:-amp-start 8s steps(1,end) 0s 1 normal both}
     @keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}
   </style>
+
+  <noscript>
+    <style amp-boilerplate>
+      body{-webkit-animation:none;animation:none}
+    </style>
+  </noscript>
 
   <style amp-custom>
     amp-story {
@@ -94,6 +103,26 @@ export async function GET(
       font-weight: 600;
     }
   </style>
+
+  <!-- WebStory Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebStory",
+    "name": "${story.title}",
+    "url": "${storyUrl}",
+    "image": "${posterUrl}",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Airniza",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "${siteUrl}/web-stories/logo.png"
+      }
+    },
+    "datePublished": "${story.publishDate || new Date().toISOString()}"
+  }
+  </script>
 </head>
 
 <body>
