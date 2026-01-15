@@ -1,79 +1,8 @@
-import type { Metadata } from "next";
-import Script from "next/script";
-import { Inter, Playfair_Display } from "next/font/google";
-import "./globals.css";
-import Footer from "@/components/Footer";
-import { GoogleAnalytics } from "@next/third-parties/google";
-import NewNavigation from "@/components/NewNavigation";
-import WebsiteSchema from "@/components/allSchema/WebsiteSchema";
-import { headers } from "next/headers";
-import Popunder from "@/components/popunder";
-
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
-
-const playfair = Playfair_Display({
-  subsets: ["latin"],
-  variable: "--font-playfair",
-});
-
-export const metadata: Metadata = {
-  title: {
-    default: "Airniza",
-    template: "%s - Airniza",
-  },
-  description:
-    "Check real-time Air Quality Index (AQI), PM2.5, humidity, and temperature to monitor air pollution instantly.",
-  applicationName: "Airniza",
-  openGraph: {
-    siteName: "Airniza",
-    title: "Airniza",
-    description:
-      "Check real-time AQI, PM2.5, humidity, and temperature to stay informed about air pollution instantly.",
-    url: "https://airniza.com",
-    type: "website",
-  },
-  other: {
-    "apple-mobile-web-app-title": "Airniza",
-    "mobile-web-app-capable": "Yes",
-    "apple-mobile-web-app-status-bar-style": "default",
-  },
-};
-
-export default async function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  // WebSite schema
-  const schemaData = WebsiteSchema();
- //lang
- const lang = (await headers()).get("x-lang") || "en";
+// app/layout.tsx
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang={lang} suppressHydrationWarning>
-      <head>
-        <Script
-        id="adsense-init"
-        strategy="afterInteractive" 
-        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5703495087334224"
-        crossOrigin="anonymous"
-      />
-        <meta property="fb:app_id" content="24164145333270926" />
-      </head>
-
-      <body className={`${inter.variable} ${playfair.variable} antialiased`}>
-        <script
-          type="application/ld+json"
-          suppressHydrationWarning
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(schemaData),
-          }}
-        />
-        <NewNavigation />
-        <Popunder />
-        {children}
-        <Footer />
-        <GoogleAnalytics gaId="G-C4HYV9CTDC" />
-      </body>
+    <html lang="en-US" suppressHydrationWarning>
+      <body suppressHydrationWarning>{children}</body>
     </html>
   );
 }

@@ -1,0 +1,55 @@
+{
+  "title": "California Air Quality Worsens as Wildfire Smoke Spreads",
+  "description": "Air quality levels across California are declining due to wildfire smoke and pollution. Check current alerts, health risks, and safety tips.",
+  "publishDate": "2026-01-15T10:00:00Z",
+  "poster": "/web-stories/california-air-quality-worsens-as-wildfire-smoke-spreads/poster.jpg",
+  "pages": [
+    {
+      "title": "Air Quality Alerts Issued in California",
+      "image": "/web-stories/california-air-quality-worsens-as-wildfire-smoke-spreads/01.jpg",
+      "description": "Several parts of the state are reporting moderate to unhealthy air quality levels today."
+    },
+    {
+      "title": "Smoke and Pollution Driving AQI Higher",
+      "image": "/web-stories/california-air-quality-worsens-as-wildfire-smoke-spreads/02.jpg",
+      "description": "Wildfire smoke, trapped weather conditions, and urban emissions are pushing pollution levels up."
+    },
+    {
+      "title": "Wildfire Smoke Reaches Major Cities",
+      "image": "/web-stories/california-air-quality-worsens-as-wildfire-smoke-spreads/03.jpg",
+      "description": "Los Angeles, the Bay Area, and Central California are seeing rising PM2.5 pollution from smoke."
+    },
+    {
+      "title": "Urban and Valley Regions Hit Hardest",
+      "image": "/web-stories/california-air-quality-worsens-as-wildfire-smoke-spreads/04.jpg",
+      "description": "Cities and low-lying areas are experiencing reduced visibility and unhealthy air conditions."
+    },
+    {
+      "title": "Poor Air Can Affect Your Health",
+      "image": "/web-stories/california-air-quality-worsens-as-wildfire-smoke-spreads/05.jpg",
+      "description": "Breathing issues, coughing, eye irritation, and fatigue are common during poor air quality days."
+    },
+    {
+      "title": "Sensitive Groups Urged to Be Careful",
+      "image": "/web-stories/california-air-quality-worsens-as-wildfire-smoke-spreads/06.jpg",
+      "description": "Children, older adults, and people with asthma or heart disease face higher health risks."
+    },
+    {
+      "title": "How to Protect Yourself",
+      "image": "/web-stories/california-air-quality-worsens-as-wildfire-smoke-spreads/07.jpg",
+      "description": "Stay indoors, keep windows closed, wear an N95 mask outdoors, and limit physical activity."
+    },
+    {
+      "title": "Stay Alert as Air Quality Changes",
+      "image": "/web-stories/california-air-quality-worsens-as-wildfire-smoke-spreads/08.jpg",
+      "description": "Conditions may improve with weather changes, but wildfire smoke remains a concern."
+    },
+    {
+      "title": "Stay Updated",
+      "image": "/web-stories/california-air-quality-worsens-as-wildfire-smoke-spreads/09.jpg",
+      "description": "Use trusted air quality apps and official alerts to track AQI levels in your area.",
+      "ctaText": "Check Realtime AQI",
+      "ctaLink": "https://airniza.com/united-states/california"
+    }
+  ]
+}
