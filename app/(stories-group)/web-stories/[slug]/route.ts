@@ -51,7 +51,11 @@ export async function GET(
   <script async custom-element="amp-story"
     src="https://cdn.ampproject.org/v0/amp-story-1.0.js"></script>
 
-  <!-- 📌 MANDATORY AMP BOILERPLATE (must match exactly) -->
+  <!-- AMP Story Auto Analytics -->
+  <script async custom-element="amp-story-auto-analytics"
+    src="https://cdn.ampproject.org/v0/amp-story-auto-analytics-0.1.js"></script>
+
+  <!-- 📌 MANDATORY AMP BOILERPLATE -->
   <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style>
   <noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
 
@@ -115,6 +119,10 @@ export async function GET(
     publisher-logo-src="${siteUrl}/web-stories/logo.png"
     poster-portrait-src="${posterUrl}"
   >
+
+    <!-- ✅ Google Analytics Auto Tracking -->
+    <amp-story-auto-analytics gtag-id="G-C4HYV9CTDC"></amp-story-auto-analytics>
+
     ${story.pages
       .map(
         (page: StoryPage, i: number) => `
