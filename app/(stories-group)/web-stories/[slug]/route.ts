@@ -1,5 +1,5 @@
-import { getStoryData } from '@/lib/web-stories/getStory';
-import { notFound } from 'next/navigation';
+import { getStoryData } from "@/lib/web-stories/getStory";
+import { notFound } from "next/navigation";
 
 export const runtime = "nodejs";
 
@@ -43,13 +43,48 @@ export async function GET(
   const ampHtml = `<!doctype html>
 <html amp lang="en-US">
 <head>
+    <!-- Basic -->
   <meta charset="utf-8">
   <title>${story.title}</title>
-  <link rel="canonical" href="${storyUrl}">
-  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
   
-  <meta name="description" content="${story.description}">
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
 
+
+    <!-- Canonical -->
+  <link rel="canonical" href="${storyUrl}">
+
+
+
+    <!-- SEO -->
+  <meta name="description" content="${story.description}">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta name="googlebot" content="index,follow">
+
+
+    <!-- Favicons -->
+  <link rel="icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon.png">
+
+
+    <!-- Manifest -->
+  <link rel="manifest" href="/stories-manifest.json">
+
+
+  <!-- Open Graph / Discover Preview -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="${story.title}">
+  <meta property="og:description" content="${story.description}">
+  <meta property="og:url" content="${storyUrl}">
+  <meta property="og:image" content="${posterUrl}">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="2133">
+
+
+
+  <!-- Preload poster image (performance boost) -->
+  <link rel="preload" as="image" href="${posterUrl}">
+
+        <!-- AMP Core -->
   <script async src="https://cdn.ampproject.org/v0.js"></script>
   <script async custom-element="amp-story" src="https://cdn.ampproject.org/v0/amp-story-1.0.js"></script>
   <script async custom-element="amp-story-auto-analytics" src="https://cdn.ampproject.org/v0/amp-story-auto-analytics-0.1.js"></script>
@@ -119,19 +154,26 @@ export async function GET(
         (page: StoryPage, i: number) => `
       <amp-story-page id="page-${i}" auto-advance-after="7s">
         <amp-story-grid-layer template="fill">
-          <amp-img src="${page.image}" width="720" height="1280" layout="responsive" alt="${page.title}"></amp-img>
+          <amp-img src="${
+            page.image
+          }" width="720" height="1280" layout="responsive" alt="${
+          page.title
+        }"></amp-img>
         </amp-story-grid-layer>
 
         <amp-story-grid-layer template="vertical">
           <div class="text-box">
-            ${i === 0 
-              ? `<h1 class="story-title">${page.title}</h1>` 
-              : `<h2 class="page-title">${page.title}</h2>`
+            ${
+              i === 0
+                ? `<h1 class="story-title">${page.title}</h1>`
+                : `<h2 class="page-title">${page.title}</h2>`
             }
             ${page.description ? `<p>${page.description}</p>` : ``}
             ${
               page.ctaLink
-                ? `<a href="${page.ctaLink}" class="cta">${page.ctaText || "Read More"}</a>`
+                ? `<a href="${page.ctaLink}" class="cta">${
+                    page.ctaText || "Read More"
+                  }</a>`
                 : ``
             }
           </div>
