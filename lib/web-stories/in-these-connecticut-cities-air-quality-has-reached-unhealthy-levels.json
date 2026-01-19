@@ -1,0 +1,59 @@
+{
+  "title": "In These Connecticut Cities, Air Quality Has Reached Unhealthy Levels",
+  "description": "In These Connecticut Cities, air quality shows elevated AQI levels as PM2.5 remains the primary pollutant affecting daily conditions.",
+  "publishDate": "2026-01-15T10:00:00Z",
+  "poster": "/web-stories/in-these-connecticut-cities-air-quality-has-reached-unhealthy-levels/poster.jpg",
+  "pages": [
+    {
+      "title": "In These Connecticut Cities, Air Quality Has Reached Elevated Levels",
+      "image": "/web-stories/in-these-connecticut-cities-air-quality-has-reached-unhealthy-levels/01.jpg"
+    },
+    {
+      "title": "",
+      "image": "/web-stories/in-these-connecticut-cities-air-quality-has-reached-unhealthy-levels/02.jpg",
+      "description": "Air quality conditions across parts of Connecticut show elevated AQI readings, largely driven by fine particle pollution."
+    },
+    {
+      "title": "",
+      "image": "/web-stories/in-these-connecticut-cities-air-quality-has-reached-unhealthy-levels/03.jpg",
+      "description": "PM2.5 is the dominant pollutant affecting air quality in these cities, contributing most to current AQI levels."
+    },
+    {
+      "title": "West Hartford",
+      "image": "/web-stories/in-these-connecticut-cities-air-quality-has-reached-unhealthy-levels/04.jpg",
+      "description": "West Hartford is reporting an AQI of 61, with PM2.5 as the primary pollutant influencing air quality conditions."
+    },
+    {
+      "title": "Waterbury",
+      "image": "/web-stories/in-these-connecticut-cities-air-quality-has-reached-unhealthy-levels/05.jpg",
+      "description": "Waterbury currently shows an AQI of 59, as elevated PM2.5 concentrations continue to impact the air."
+    },
+    {
+      "title": "East Hartford",
+      "image": "/web-stories/in-these-connecticut-cities-air-quality-has-reached-unhealthy-levels/06.jpg",
+      "description": "East Hartford has an AQI reading of 56, driven mainly by increased levels of PM2.5 in the air."
+    },
+    {
+      "title": "Hartford",
+      "image": "/web-stories/in-these-connecticut-cities-air-quality-has-reached-unhealthy-levels/07.jpg",
+      "description": "Hartford is recording an AQI of 52, with PM2.5 remaining the most significant air pollutant."
+    },
+    {
+      "title": "New Britain",
+      "image": "/web-stories/in-these-connecticut-cities-air-quality-has-reached-unhealthy-levels/08.jpg",
+      "description": "New Britain is also reporting an AQI of 52, where PM2.5 levels are contributing most to air quality concerns."
+    },
+    {
+      "title": "Meriden",
+      "image": "/web-stories/in-these-connecticut-cities-air-quality-has-reached-unhealthy-levels/09.jpg",
+      "description": "Meriden shows a live AQI of 49, with PM2.5 still the leading pollutant affecting air conditions."
+    },
+    {
+      "title": "",
+      "image": "/web-stories/in-these-connecticut-cities-air-quality-has-reached-unhealthy-levels/10.jpg",
+      "description": "Air quality levels can change throughout the day, so residents are encouraged to monitor real time AQI updates and limit exposure when pollution rises.",
+      "ctaText": "Check Live AQI",
+      "ctaLink": "https://airniza.com/united-states/connecticut"
+    }
+  ]
+}
