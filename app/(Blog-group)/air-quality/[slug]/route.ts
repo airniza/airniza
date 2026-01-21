@@ -248,7 +248,8 @@ export async function GET(
 
             </header>
             
-            <img src="${post.image}" alt="${post.title}" class="featured-img" fetchpriority="high">
+            <img src="${post.image}" alt="${post.title}" class="featured-img" width="1200" height="675" fetchpriority="high" decoding="async"/>
+
             
             <div class="content">
               ${post.content}
