@@ -271,7 +271,7 @@ export async function GET(
 
       <footer>
         <div class="container">
-          <p>© 2026 Airniza • Real-time Air Quality Updates & Expert Insights</p>
+          <p>© 2026 Airniza</p>
         </div>
       </footer>
     </body>
