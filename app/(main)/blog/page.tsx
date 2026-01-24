@@ -1,40 +1,36 @@
 import Link from "next/link";
+import { getAllPosts } from "@/lib/blog-content/blog-posts";
 
+export default function BlogIndex() {
+  const posts = getAllPosts();
 
+  return (
+    <section className="max-w-5xl mx-auto p-6">
+      <h1 className="text-3xl font-bold mb-6">Blog</h1>
 
+      <div className="space-y-8">
+        {posts.map((post) => (
+          <article key={post.id} className="border-b pb-6">
+            {post.featuredImage && (
+              <img
+                src={post.featuredImage}
+                alt={post.title}
+                className="w-full rounded mb-4"
+              />
+            )}
 
-export const metadata = {
-  title: "Blog",
-  description: "Airniza Blog page", 
-  alternates:{
-    canonical: "https://airniza.com/blog"
-  }
-}
+            <h2 className="text-2xl font-semibold mb-2">
+              <Link href={`/blog/${post.slug}`}>{post.title}</Link>
+            </h2>
 
+            <div className="text-sm text-gray-500 mb-2">
+              Published: {post.date} · Updated: {post.modifiedDate}
+            </div>
 
-
-
-export default function BlogPage () {
-
-  return <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center">
-    <h1 className="text-3xl font-bold">Latest Blog Posts</h1>
-    <div>
-     <ol className="text-primary list-decimal list-inside space-y-3 mt-4">
-      <li><Link href="/best-air-purifiers-for-allergies-asthma-and-dust" className="text-xl">Best Air Purifiers for Allergies, Asthma and Dust</Link></li>
-      <li><Link href="/can-air-purifiers-remove-cigarette-smoke" className="text-xl">Can Air Purifiers remove Cigarette Smoke?</Link></li>
-      <li><Link href="/how-long-to-run-air-purifier-in-bedroom" className="text-xl">How long to run Air purifier in Bedroom?</Link></li>
-      <li><Link href="/best-place-to-put-dehumidifier-in-2-story-house" className="text-xl">Best place to put Dehumidifier in 2 story house</Link></li>
-      <li><Link href="/how-to-clean-crane-humidifier-with-vinegar" className="text-xl">How to Clean Humidifier with vinegar</Link></li>
-     </ol>
-    </div>
-
-
-
-
-
-
-
-
-
-  </div>
+            <p className="text-gray-700">{post.excerpt}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+  );
 }
