@@ -75,6 +75,7 @@ export default function FeaturedSection() {
           ))}
         </div>
       </div>
+      
     </section>
   );
 }

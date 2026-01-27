@@ -12,7 +12,7 @@ export default function NewNavigation() {
         {/* Top row */}
         <div className="flex flex-wrap md:flex-nowrap justify-between items-center py-3 md:h-16">
           {/* Logo */}
-          <div className="flex-shrink-0">
+          <div className="shrink-0">
             <Link href={"/"}>
               <div className="ml-2">
                 <Image

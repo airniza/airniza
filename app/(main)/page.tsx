@@ -1,6 +1,7 @@
 import CountrywiseSection from "@/components/CountrywiseSection";
 import FeaturedSection from "@/components/helpers/FeaturedSection";
 import Showdata from "@/components/Showdata";
+import Link from "next/link";
 
 
 
@@ -23,6 +24,9 @@ export default function Home() {
         <Showdata />
         <CountrywiseSection/>
         <FeaturedSection/>
+        <div className="mb-6  mx-auto px-12"><Link href={"/aqi-to-cigarette-calculator"} className="text-primary font-bold"> <span/> AQI to Cigarette Calculator</Link></div>
+        
+        
        
         
       </main>
