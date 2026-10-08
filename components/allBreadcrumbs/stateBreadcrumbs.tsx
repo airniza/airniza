@@ -20,6 +20,11 @@ export function StateBreadcrumbs({ country, state }: { country: string; state: s
         <BreadcrumbItem>
           <BreadcrumbLink href="/">Home</BreadcrumbLink>
         </BreadcrumbItem>
+        <BreadcrumbSeparator />
+
+        <BreadcrumbItem>
+          <BreadcrumbLink href="/air-quality">Air Quality</BreadcrumbLink>
+        </BreadcrumbItem>
 
         <BreadcrumbSeparator />
 

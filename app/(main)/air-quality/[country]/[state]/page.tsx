@@ -7,8 +7,6 @@ import FetchLocationData from "@/components/FetchLocationData";
 import MajorPollutants from "@/components/MajorPollutants";
 import Faqs from "@/components/Faqs";
 import { StatepageSchema } from "@/components/allSchema/StatepageSchema";
-import { fetchAIContent } from "@/lib/aiworker";
-import AdClientWrapper from "@/components/ui/AdClientWrapper";
 
 export const revalidate = 3600; // 1 hour
 
@@ -37,7 +35,7 @@ export async function generateMetadata({
 
   const title = `${stateName} Air Quality Index (AQI) and ${countryName} Air Pollution`;
   const description = `The current air quality in ${stateName} is ${aqi} (${condition}). Main pollutant is ${mainPollutant}, temperature ${temp}°C, humidity ${humidity}%, and wind speed ${ws} km/h.`;
-  const canonical = `https://airniza.com/${country}/${state}`;
+  const canonical = `https://airniza.com/air-quality/${country}/${state}`;
 
   return {
     title,
@@ -157,12 +155,6 @@ Do not include Markdown symbols like ** or *.
         mainPollutant={mainPollutant}
         breadcrumbs={<StateBreadcrumbs country={country} state={state} />}
       />
-      <AdClientWrapper
-        adSlot="4717622864"
-        adFormat="fluid"
-        adLayout="in-article"
-        style={{ margin: "18px 0" }}
-      />
 
       <MajorPollutants
         pm25={pm2_5}
@@ -187,7 +179,7 @@ Do not include Markdown symbols like ** or *.
               return (
                 <Link
                   key={city}
-                  href={`/${countrySlug}/${stateSlug}/${city}-air-quality`}
+                  href={`/air-quality/${countrySlug}/${stateSlug}/${city}`}
                 >
                   <Badge
                     variant="secondary"

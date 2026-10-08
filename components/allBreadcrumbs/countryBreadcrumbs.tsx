@@ -20,6 +20,12 @@ export function CountryBreadcrumbs({ country }: { country: string }) {
         <BreadcrumbSeparator />
 
         <BreadcrumbItem>
+          <BreadcrumbLink href="/air-quality">Air Quality</BreadcrumbLink>
+        </BreadcrumbItem>
+
+        <BreadcrumbSeparator />
+
+        <BreadcrumbItem>
           <BreadcrumbPage className="font-bold">{countryName}</BreadcrumbPage>
         </BreadcrumbItem>
 

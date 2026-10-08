@@ -38,13 +38,18 @@ export function CityPageBreadcrumbs({
     <BreadcrumbSeparator />
 
     <BreadcrumbItem>
-      <BreadcrumbLink href={`/${countrySlug}`} className="hover:underline">{countryName}</BreadcrumbLink>
+      <BreadcrumbLink href={`/air-quality`} className="hover:underline">Air Quality</BreadcrumbLink>
+    </BreadcrumbItem>
+     <BreadcrumbSeparator />
+
+    <BreadcrumbItem>
+      <BreadcrumbLink href={`/air-quality/${countrySlug}`} className="hover:underline">{countryName}</BreadcrumbLink>
     </BreadcrumbItem>
 
     <BreadcrumbSeparator />
 
     <BreadcrumbItem>
-      <BreadcrumbLink href={`/${countrySlug}/${stateSlug}`} className="hover:underline">{stateName}</BreadcrumbLink>
+      <BreadcrumbLink href={`/air-quality/${countrySlug}/${stateSlug}`} className="hover:underline">{stateName}</BreadcrumbLink>
     </BreadcrumbItem>
 
     <BreadcrumbSeparator />

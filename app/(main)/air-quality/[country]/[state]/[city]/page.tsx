@@ -39,7 +39,7 @@ export async function generateMetadata({
   const cityName = formatCityName(citySlug); // "Lucknow" | "New York"
 
   const siteURL = "https://airniza.com";
-  const pageUrl = `${siteURL}/${country}/${state}/${citySlug}-air-quality`;
+  const pageUrl = `${siteURL}/air-quality/${country}/${state}/${citySlug}`;
 
   const { aqi, condition, temp, humidity, ws, mainPollutant } = await getData(
     cityName
@@ -114,7 +114,7 @@ export default async function CityPage({
 
   const schemaData = CitypageSchema({
     City: cityName,
-    pageUrl: `https://airniza.com/${countrySlug}/${stateSlug}/${citySlug}-air-quality`,
+    pageUrl: `https://airniza.com/air-quality/${countrySlug}/${stateSlug}/${citySlug}`,
     country: country,
     Aqi: aqi,
     Pm2five: pm2_5,
@@ -141,7 +141,6 @@ export default async function CityPage({
           __html: JSON.stringify(schemaData),
         }}
       />
-      {/*Ad Unit 1 */}
 
       <AirQualityDashboard
         place={cityName}
@@ -195,7 +194,7 @@ export default async function CityPage({
         </h3>
         <Faqs place={cityName} aqi={aqi} status={condition} exp={exp} />
         <SocialShare
-          url={`https://airniza.com/${countrySlug}/${stateSlug}/${citySlug}-air-quality`}
+          url={`https://airniza.com/air-quality/${countrySlug}/${stateSlug}/${citySlug}`}
           city={cityName}
         />
       </div>

@@ -32,14 +32,14 @@ export async function generateMetadata({
   return {
     title: `${countryName} Air Quality Index (AQI) and Air Pollution`,
     description: `The current air quality in ${countryName} is ${aqi} (${condition}). Main pollutant is ${mainPollutant}, temperature ${temp}°C, humidity ${humidity}%, and wind speed ${ws} km/h.`,
-    url: `https://airniza.com/${country}`,
+    url: `https://airniza.com/air-quality/${country}`,
     alternates: {
-      canonical: `https://airniza.com/${country}`,
+      canonical: `https://airniza.com/air-quality/${country}`,
     },
     openGraph: {
       title: `${countryName} Air Quality Index (AQI)`,
       description: `The current air quality in ${countryName} is ${aqi} (${condition}). Main pollutant is ${mainPollutant}, temperature ${temp}°C, humidity ${humidity}%, and wind speed ${ws} km/h.`,
-      url: `https://airniza.com/${country}`,
+      url: `https://airniza.com/air-quality/${country}`,
       type: "article",
     },
   };
@@ -145,7 +145,7 @@ export default async function CountryPage({
                 .replace(/\b\w/g, (c) => c.toUpperCase());
 
               return (
-                <Link key={state.state} href={`/${countrySlug}/${state.state}`}>
+                <Link key={state.state} href={`/air-quality/${countrySlug}/${state.state}`}>
                   <Badge
                     variant="secondary"
                     className="cursor-pointer text-sm px-4 py-2 text-primary"

@@ -51,7 +51,7 @@ export function RelatedCities({ country, currentState, currentPlace }: PlacesLis
         {random10.map((place) => (
           <Link
             key={place}
-            href={`/${normalizedCountry}/${normalizedState}/${place}-air-quality`}
+            href={`/air-quality/${normalizedCountry}/${normalizedState}/${place}`}
           >
             <Badge
               variant="secondary"
@@ -62,8 +62,8 @@ export function RelatedCities({ country, currentState, currentPlace }: PlacesLis
           </Link>
         ))}
 
-        <Link href={`/${normalizedCountry}/${normalizedState}`} >
-  <Button className="gap-x-3 px-5 py-3 min-h-[48px] min-w-[48px]">
+        <Link href={`/air-quality/${normalizedCountry}/${normalizedState}`} >
+  <Button className="gap-x-3 px-5 py-3 min-h-12 min-w-12">
     See All
   </Button>
 </Link>

@@ -41,27 +41,27 @@ export const countryWise = [
   
   {
     name: "United States",
-    slug: "united-states",
+    slug: "air-quality/united-states",
     image: "/country-icons/united-states.png",
   },
     {
     name: "Canada",
-    slug: "canada",
+    slug: "air-quality/canada",
     image: "/country-icons/canada.png",
   },
   {
     name: "United Kingdom",
-    slug: "united-kingdom",
+    slug: "air-quality/united-kingdom",
     image: "/country-icons/united-kingdom.png",
   },
   {
     name: "United Arab Emirates",
-    slug: "united-arab-emirates",
+    slug: "air-quality/united-arab-emirates",
     image: "/country-icons/united-arab-emirates.png",
   },
    {
     name: "Australia",
-    slug: "australia",
+    slug: "air-quality/australia",
     image: "/country-icons/australia.png",
   },
 ];
