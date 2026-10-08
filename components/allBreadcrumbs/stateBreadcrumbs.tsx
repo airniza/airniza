@@ -29,7 +29,7 @@ export function StateBreadcrumbs({ country, state }: { country: string; state: s
         <BreadcrumbSeparator />
 
         <BreadcrumbItem>
-          <BreadcrumbLink href={`/${countrySlug}`} className="hover:underline">
+          <BreadcrumbLink href={`/air-quality/${countrySlug}`} className="hover:underline">
             {countryName}
           </BreadcrumbLink>
         </BreadcrumbItem>

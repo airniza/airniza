@@ -45,8 +45,7 @@ export default function LocationSearch() {
       }
     };
     document.addEventListener("mousedown", handleClickOutside);
-    return () =>
-      document.removeEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
   // Fetch suggestions
@@ -60,22 +59,20 @@ export default function LocationSearch() {
     setLoading(true);
     const timeoutId = setTimeout(async () => {
       try {
-        const apikey =
-          "prj_live_pk_667f61d53d1fc82be88f89e64ec01b78a539d1ed";
+        const apikey = "prj_live_pk_667f61d53d1fc82be88f89e64ec01b78a539d1ed";
 
         const res = await fetch(
           `https://api.radar.io/v1/search/autocomplete?query=${encodeURIComponent(
-            query
+            query,
           )}`,
           {
             headers: {
               Authorization: apikey || "",
             },
-          }
+          },
         );
 
-        const data =
-          (await res.json()) as RadarAutocompleteResponse;
+        const data = (await res.json()) as RadarAutocompleteResponse;
 
         const filtered: CleanAddress[] = (data.addresses || [])
           .map((addr) => ({
@@ -83,22 +80,17 @@ export default function LocationSearch() {
             state: addr.state || "",
             country: addr.country || "",
           }))
-          .filter(
-            (addr) => addr.city || addr.state || addr.country
-          )
+          .filter((addr) => addr.city || addr.state || addr.country)
           .filter((addr) => /^[\x00-\x7F]*$/.test(addr.city)) // ASCII only
           .filter(
             (addr, index, self) =>
               index ===
               self.findIndex(
                 (a) =>
-                  a.city.toLowerCase() ===
-                    addr.city.toLowerCase() &&
-                  a.state.toLowerCase() ===
-                    addr.state.toLowerCase() &&
-                  a.country.toLowerCase() ===
-                    addr.country.toLowerCase()
-              )
+                  a.city.toLowerCase() === addr.city.toLowerCase() &&
+                  a.state.toLowerCase() === addr.state.toLowerCase() &&
+                  a.country.toLowerCase() === addr.country.toLowerCase(),
+              ),
           );
 
         setSuggestions(filtered);
@@ -117,14 +109,13 @@ export default function LocationSearch() {
     const slugify = (str: string) =>
       str.toLowerCase().trim().replace(/\s+/g, "-");
 
-    let url = "";
+    let url = "/air-quality";
 
     if (address.country) url += `/${slugify(address.country)}`;
     if (address.state) url += `/${slugify(address.state)}`;
-    if (address.city)
-      url += `/${slugify(address.city)}-air-quality`;
+    if (address.city) url += `/${slugify(address.city)}`;
 
-    if (url) router.push(url);
+    router.push(url);
 
     setSuggestions([]);
     setQuery("");
@@ -147,9 +138,7 @@ export default function LocationSearch() {
       {(loading || suggestions.length > 0) && (
         <ul className="absolute left-0 right-0 mt-1 bg-white border border-gray-300 rounded shadow z-50">
           {loading ? (
-            <li className="p-2 text-gray-500 italic">
-              Loading...
-            </li>
+            <li className="p-2 text-gray-500 italic">Loading...</li>
           ) : (
             suggestions.map((s, i) => (
               <li
@@ -159,14 +148,10 @@ export default function LocationSearch() {
               >
                 <span className="font-medium">{s.city}</span>
                 {s.state && (
-                  <span className="text-muted-foreground">
-                    , {s.state}
-                  </span>
+                  <span className="text-muted-foreground">, {s.state}</span>
                 )}
                 {s.country && (
-                  <span className="text-muted-foreground">
-                    , {s.country}
-                  </span>
+                  <span className="text-muted-foreground">, {s.country}</span>
                 )}
               </li>
             ))
