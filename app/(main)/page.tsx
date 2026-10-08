@@ -21,7 +21,7 @@ export default function Home() {
     <div className="min-h-screen bg-background">
       
       <main>
-        <Showdata />
+        
         <CountrywiseSection/>
         <FeaturedSection/>
         <div className="mb-6  mx-auto px-12"><Link href={"/aqi-to-cigarette-calculator"} className="text-primary font-bold"> <span/> AQI to Cigarette Calculator</Link></div>

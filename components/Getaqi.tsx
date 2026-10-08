@@ -16,8 +16,8 @@ const ipcords = (await GeoIP()) as GeoIPResponse;
 const ip_lat = ipcords.address.latitude;
 const ip_lon = ipcords.address.longitude;
 
-const lat = ip_lat;
-const lon = ip_lon;
+const lat = "40.7143";
+const lon = "74.006";
 // Location by IP end
 
 // Exported function

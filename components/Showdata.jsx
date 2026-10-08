@@ -143,7 +143,7 @@ export default function Showaqi() {
                       //border: "1px solid rgba(255, 255, //255, 0.3)",
                     }}
                     >
-                    <div className="flex-[1] md:flex-1 flex items-center justify-center">
+                    <div className="flex-1 md:flex-1 flex items-center justify-center">
                       <div className="flex items-center gap-1">
                         <FaTemperatureLow className="text-primary"/>{" "}
                         <span className="font-semibold">{temp}°C</span>
